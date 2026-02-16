@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { SITE_CONFIG, COURSES } from '../utils/constants';
+import { SITE_CONFIG, COURSES, FORMSPREE_FORM_ID } from '../utils/constants';
+const formAction = FORMSPREE_FORM_ID ? `https://formspree.io/f/${FORMSPREE_FORM_ID}` : '#';
 ---
 
 <BaseLayout
@@ -28,11 +29,14 @@ import { SITE_CONFIG, COURSES } from '../utils/constants';
         <div>
           <h2 class="text-2xl font-bold mb-6 text-black">Send us a Message</h2>
           <form
-            action="/api/contact"
+            action={formAction}
             method="POST"
             class="space-y-6"
             id="contact-form"
           >
+            {!FORMSPREE_FORM_ID && (
+              <p class="text-amber-600 text-sm mb-4">Contact form: set PUBLIC_FORMSPREE_FORM_ID at build time (e.g. in GitHub repo Secrets) and use Formspree.</p>
+            )}
             <div>
               <label for="name" class="block text-sm font-semibold text-black mb-2">
                 Name <span class="text-red-500">*</span>

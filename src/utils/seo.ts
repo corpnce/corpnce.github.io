@@ -1,4 +1,5 @@
 import type { AstroComponentFactory } from 'astro/runtime/server/index.js';
+import { SITE_CONFIG } from './constants';
 
 export interface SEOProps {
   title?: string;
@@ -21,7 +22,7 @@ export function getSEOMetadata(props: SEOProps = {}) {
     canonical,
   } = props;
 
-  const siteUrl = 'https://corpnce.com';
+  const siteUrl = SITE_CONFIG.url;
   const fullImage = image.startsWith('http') ? image : `${siteUrl}${image}`;
   const canonicalUrl = canonical || '';
 
@@ -56,8 +57,8 @@ export function getStructuredData(type: 'Organization' | 'Article', data?: Recor
       '@context': 'https://schema.org',
       '@type': 'Organization',
       name: 'Corpnce Technologies Pvt. Ltd.',
-      url: 'https://corpnce.com',
-      logo: 'https://corpnce.com/images/logo.png',
+      url: SITE_CONFIG.url,
+      logo: `${SITE_CONFIG.url}/images/logo.png`,
       contactPoint: {
         '@type': 'ContactPoint',
         telephone: '+91-9739604796',
@@ -101,7 +102,7 @@ export function getStructuredData(type: 'Organization' | 'Article', data?: Recor
         name: 'Corpnce Technologies',
         logo: {
           '@type': 'ImageObject',
-          url: 'https://corpnce.com/images/logo.png',
+          url: `${SITE_CONFIG.url}/images/logo.png`,
         },
       },
       ...data,

@@ -2,16 +2,13 @@
 import { defineConfig } from 'astro/config';
 import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
-import node from '@astrojs/node';
 import tailwindcss from '@tailwindcss/vite';
 
-// https://astro.build/config
+// https://astro.build/config — static build for GitHub Pages
 export default defineConfig({
-  site: 'https://corpnce.com',
-  output: 'server',
-  adapter: node({
-    mode: 'standalone',
-  }),
+  site: 'https://corpnce.github.io',
+  base: '/',
+  output: 'static',
   integrations: [
     mdx(),
     sitemap({

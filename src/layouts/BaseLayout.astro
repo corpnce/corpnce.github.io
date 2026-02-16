@@ -55,6 +55,8 @@ const currentUrl = new URL(Astro.url.pathname, SITE_CONFIG.url).href;
     <meta name="generator" content={Astro.generator} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="canonical" href={currentUrl} />
+    <link rel="preconnect" href="https://formspree.io" />
+    <link rel="preconnect" href="https://remotive.com" crossorigin />
 
     <!-- SEO Meta Tags -->
     <title>{seo.title}</title>

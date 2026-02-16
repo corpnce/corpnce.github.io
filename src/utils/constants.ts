@@ -1,8 +1,11 @@
+/** Set in env or leave empty to show "Configure Formspree" message. */
+export const FORMSPREE_FORM_ID = import.meta.env.PUBLIC_FORMSPREE_FORM_ID || '';
+
 export const SITE_CONFIG = {
   name: 'Corpnce Technologies',
   title: 'Corpnce Technologies Pvt. Ltd.',
   description: 'Exclusive PBL & 1st TQ Based Training Company. Project-based Classroom Learning by Industry Experts & Researchers as Instructors along with Evaluating Your Technology Quotient (TQ).',
-  url: 'https://corpnce.com',
+  url: 'https://corpnce.github.io',
   ogImage: '/images/og-image.jpg',
   contact: {
     email: 'info@corpnce.com',

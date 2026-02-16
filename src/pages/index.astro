@@ -1,9 +1,10 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { COURSES, SITE_CONFIG } from '../utils/constants';
+import { COURSES, SITE_CONFIG, FORMSPREE_FORM_ID } from '../utils/constants';
 import { getStructuredData } from '../utils/seo';
 
 const structuredData = getStructuredData('Organization');
+const contactFormAction = FORMSPREE_FORM_ID ? `https://formspree.io/f/${FORMSPREE_FORM_ID}` : '#';
 ---
 
 <BaseLayout
@@ -70,6 +71,7 @@ const structuredData = getStructuredData('Organization');
                 class="w-full h-full object-cover rounded-xl shadow-2xl relative z-20"
                 style="image-rendering: -webkit-optimize-contrast; image-rendering: crisp-edges; filter: contrast(1.05) saturate(1.1) brightness(1.02);"
                 width="1200"
+                fetchpriority="high"
                 height="800"
                 loading="eager"
                 decoding="async"
@@ -644,6 +646,7 @@ const structuredData = getStructuredData('Organization');
                 width="400"
                 height="300"
                 loading="lazy"
+                loading="lazy"
                 decoding="async"
               />
             </div>
@@ -961,10 +964,10 @@ const structuredData = getStructuredData('Organization');
         results.innerHTML =
           '<div class="text-center text-gray-500">Loading jobs...</div>';
         try {
-          const response = await fetch(`/api/jobs?keyword=${encodeURIComponent(keyword || '')}`);
-          if (!response.ok) {
-            throw new Error('API error');
-          }
+          const search = (keyword || 'data scientist').trim();
+          const url = `https://remotive.com/api/remote-jobs${search ? `?search=${encodeURIComponent(search)}` : ''}`;
+          const response = await fetch(url, { headers: { Accept: 'application/json' } });
+          if (!response.ok) throw new Error('API error');
           const data = await response.json();
           const jobs = data?.jobs || [];
           const normalizedLocation = (location || '').trim().toLowerCase();
@@ -972,8 +975,7 @@ const structuredData = getStructuredData('Organization');
             normalizedLocation === 'banglaore' ? 'bangalore' : normalizedLocation;
           const filtered = normalizedLocation
             ? jobs.filter((job) => {
-                const locationText = String(job.candidate_required_location || '')
-                  .toLowerCase();
+                const locationText = String(job.candidate_required_location || '').toLowerCase();
                 return (
                   locationText.includes(normalizedLocationFixed) ||
                   locationText.includes('remote') ||
@@ -982,11 +984,7 @@ const structuredData = getStructuredData('Organization');
                 );
               })
             : jobs;
-          if (data?.keywordFallback) {
-            keywordNote?.classList.remove('hidden');
-          } else {
-            keywordNote?.classList.add('hidden');
-          }
+          keywordNote?.classList.add('hidden');
           if (normalizedLocation && filtered.length === 0 && jobs.length > 0) {
             locationNote?.classList.remove('hidden');
             renderJobs(jobs);
@@ -995,11 +993,11 @@ const structuredData = getStructuredData('Organization');
             renderJobs(filtered);
           }
         } catch (error) {
-          results.innerHTML = '';
+          results.innerHTML = '<div class="text-center text-gray-600">Unable to load jobs from Remotive. <a href="https://remotive.com/remote-jobs/data" class="text-yellow-600 underline" target="_blank" rel="noreferrer">Browse Data jobs on Remotive</a> · <a href="https://www.arbeitnow.com/" class="text-yellow-600 underline" target="_blank" rel="noreferrer">Arbeitnow</a></div>';
           emptyState?.classList.add('hidden');
           keywordNote?.classList.add('hidden');
           locationNote?.classList.add('hidden');
-          errorState?.classList.remove('hidden');
+          errorState?.classList.add('hidden');
         }
       };
 
@@ -1044,7 +1042,7 @@ const structuredData = getStructuredData('Organization');
         </div>
         
         <form
-          action="/api/contact"
+          action={contactFormAction}
           method="POST"
           class="bg-gray-900 rounded-xl shadow-2xl p-8 border-2 border-gray-800"
           id="contact-form"
