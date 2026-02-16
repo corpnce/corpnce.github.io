@@ -1,0 +1,148 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getEntry } from 'astro:content';
+import { getStructuredData } from '../../utils/seo';
+import readingTime from 'reading-time';
+
+const { slug } = Astro.params;
+
+let post;
+let content;
+let readingTimeMinutes = 0;
+
+try {
+  const entry = await getEntry('blog', slug || '');
+  if (entry) {
+    post = entry.data;
+    content = await entry.render();
+    const textContent = entry.body || '';
+    const stats = readingTime(textContent);
+    readingTimeMinutes = Math.ceil(stats.minutes);
+  }
+} catch (e) {
+  // Post doesn't exist
+}
+
+if (!post || !slug) {
+  return Astro.redirect('/404');
+}
+
+const structuredData = getStructuredData('Article', {
+  title: post.title,
+  description: post.description,
+  image: post.image || '/images/og-image.jpg',
+  publishedTime: post.publishedDate.toISOString(),
+  modifiedTime: post.modifiedDate?.toISOString() || post.publishedDate.toISOString(),
+  author: post.author,
+  tags: post.tags,
+});
+---
+
+<BaseLayout
+  title={`${post.title} - Blog`}
+  description={post.description}
+  type="article"
+  publishedTime={post.publishedDate.toISOString()}
+  modifiedTime={post.modifiedDate?.toISOString() || post.publishedDate.toISOString()}
+  author={post.author}
+  tags={post.tags}
+>
+  <!-- Hero Section -->
+  <section class="bg-black text-white py-12 lg:py-16">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl mx-auto">
+        <a href="/blog" class="text-yellow-400 hover:text-yellow-500 font-semibold inline-flex items-center mb-6">
+          <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+          </svg>
+          Back to Blog
+        </a>
+        <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">{post.title}</h1>
+        <div class="flex flex-wrap items-center text-sm text-gray-300">
+          <time datetime={post.publishedDate.toISOString()}>
+            {post.publishedDate.toLocaleDateString('en-US', {
+              year: 'numeric',
+              month: 'long',
+              day: 'numeric',
+            })}
+          </time>
+          {post.modifiedDate && (
+            <>
+              <span class="mx-2">•</span>
+              <span>
+                Updated:{' '}
+                {post.modifiedDate.toLocaleDateString('en-US', {
+                  year: 'numeric',
+                  month: 'long',
+                  day: 'numeric',
+                })}
+              </span>
+            </>
+          )}
+          <span class="mx-2">•</span>
+          <span>{readingTimeMinutes} min read</span>
+          {post.author && (
+            <>
+              <span class="mx-2">•</span>
+              <span>By {post.author}</span>
+            </>
+          )}
+        </div>
+        {post.tags && post.tags.length > 0 && (
+          <div class="flex flex-wrap gap-2 mt-4">
+            {post.tags.map((tag) => (
+              <span class="px-3 py-1 bg-yellow-400 text-black rounded-full text-sm font-semibold">
+                {tag}
+              </span>
+            ))}
+          </div>
+        )}
+      </div>
+    </div>
+  </section>
+
+  <article class="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <div class="max-w-3xl mx-auto">
+      <div class="prose prose-lg max-w-none">
+        <Fragment set:html={content.Content} />
+      </div>
+
+      <footer class="mt-12 pt-8 border-t-2 border-gray-200">
+        <div class="bg-yellow-50 border-2 border-yellow-200 p-6 rounded-xl">
+          <h3 class="text-lg font-bold mb-4 text-black">Enjoyed this article?</h3>
+          <p class="text-gray-700 mb-4">
+            Share it with others or check out more of our blog posts.
+          </p>
+          <a
+            href="/blog"
+            class="text-black font-bold inline-flex items-center hover:text-yellow-400 transition-colors"
+          >
+            ← Back to Blog
+          </a>
+        </div>
+      </footer>
+    </div>
+  </article>
+
+  <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
+  <script>
+    // Track blog completion
+    document.addEventListener('DOMContentLoaded', () => {
+      const article = document.querySelector('article');
+      if (article && window.trackBlogComplete) {
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                window.trackBlogComplete('{slug}', {readingTimeMinutes});
+                observer.disconnect();
+              }
+            });
+          },
+          { threshold: 0.9 }
+        );
+        observer.observe(article);
+      }
+    });
+  </script>
+</BaseLayout>

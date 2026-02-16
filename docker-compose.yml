@@ -1,0 +1,54 @@
+version: '3.8'
+
+services:
+  website:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "4321:4321"
+    environment:
+      - NODE_ENV=production
+      - SMTP_HOST=${SMTP_HOST:-mailhog}
+      - SMTP_PORT=${SMTP_PORT:-1025}
+      - SMTP_USER=${SMTP_USER:-}
+      - SMTP_PASS=${SMTP_PASS:-}
+      - SMTP_FROM=${SMTP_FROM:-noreply@corpnce.com}
+      - CONTACT_EMAIL=${CONTACT_EMAIL:-info@corpnce.com}
+      - PUBLIC_PLAUSIBLE_URL=${PUBLIC_PLAUSIBLE_URL:-}
+      - PUBLIC_PLAUSIBLE_DOMAIN=${PUBLIC_PLAUSIBLE_DOMAIN:-corpnce.com}
+      - PUBLIC_POSTHOG_URL=${PUBLIC_POSTHOG_URL:-}
+      - PUBLIC_POSTHOG_KEY=${PUBLIC_POSTHOG_KEY:-}
+    depends_on:
+      - mailhog
+    restart: unless-stopped
+
+  mailhog:
+    image: mailhog/mailhog:latest
+    ports:
+      - "1025:1025"  # SMTP
+      - "8025:8025"  # Web UI
+    restart: unless-stopped
+
+  # Uncomment to use self-hosted Plausible Analytics
+  # plausible:
+  #   image: plausible/analytics:latest
+  #   environment:
+  #     - BASE_URL=https://plausible.corpnce.com
+  #     - SECRET_KEY_BASE=${PLAUSIBLE_SECRET_KEY}
+  #   volumes:
+  #     - plausible_db:/var/lib/postgresql/data
+  #   restart: unless-stopped
+
+  # Uncomment to use self-hosted PostHog
+  # posthog:
+  #   image: posthog/posthog:latest
+  #   environment:
+  #     - POSTHOG_SECRET_KEY=${POSTHOG_SECRET_KEY}
+  #   volumes:
+  #     - posthog_data:/var/lib/postgresql/data
+  #   restart: unless-stopped
+
+# volumes:
+#   plausible_db:
+#   posthog_data:

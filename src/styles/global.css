@@ -1,0 +1,99 @@
+@import "tailwindcss";
+
+/* Custom styles - Corpnce Brand Colors (Black, White, Yellow) */
+:root {
+  --color-primary: #FFD700; /* Yellow - Primary brand color */
+  --color-secondary: #000000; /* Black - Secondary brand color */
+  --color-accent: #FFED4E; /* Lighter yellow for accents */
+  --color-text: #1F2937; /* Dark gray for text */
+  --color-text-light: #6B7280; /* Light gray for secondary text */
+  --color-bg: #FFFFFF; /* White background */
+  --color-bg-dark: #000000; /* Black background */
+  --color-bg-yellow: #FFF9E6; /* Light yellow background */
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply antialiased bg-white text-gray-900;
+}
+
+/* Custom utility classes */
+.text-brand-yellow {
+  color: #FFD700;
+}
+
+.bg-brand-yellow {
+  background-color: #FFD700;
+}
+
+.bg-brand-black {
+  background-color: #000000;
+}
+
+.border-brand-yellow {
+  border-color: #FFD700;
+}
+
+/* Button styles */
+.btn-primary {
+  @apply bg-yellow-400 text-black font-bold px-8 py-4 rounded-lg hover:bg-yellow-500 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-1;
+}
+
+.btn-secondary {
+  @apply bg-black text-white font-bold px-8 py-4 rounded-lg hover:bg-gray-900 transition-all duration-200;
+}
+
+.btn-outline {
+  @apply border-2 border-yellow-400 text-black font-bold px-8 py-4 rounded-lg hover:bg-yellow-400 transition-all duration-200;
+}
+
+/* Custom animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+/* Gradient animation */
+@keyframes gradient {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.animate-gradient {
+  animation: gradient 3s ease infinite;
+}
+
+/* Perspective for 3D effects */
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+/* Delay utilities for staggered animations */
+.delay-100 {
+  animation-delay: 100ms;
+}
+
+.delay-200 {
+  animation-delay: 200ms;
+}
+
+.delay-1000 {
+  animation-delay: 1000ms;
+}

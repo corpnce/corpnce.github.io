@@ -1,0 +1,188 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { SITE_CONFIG, COURSES } from '../utils/constants';
+---
+
+<BaseLayout
+  title={`Contact Us - ${SITE_CONFIG.title}`}
+  description="Get in touch with Corpnce Technologies. Drop your enquiry and one of our executives will get in touch with you."
+>
+  <!-- Hero Section -->
+  <section class="bg-black text-white py-16 lg:py-24">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-4xl mx-auto text-center">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+          Contact <span class="text-yellow-400">Us</span>
+        </h1>
+        <p class="text-xl md:text-2xl text-gray-300">
+          Drop your enquiry and one of our executives will get in touch with you
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <div class="max-w-4xl mx-auto">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <!-- Contact Form -->
+        <div>
+          <h2 class="text-2xl font-bold mb-6 text-black">Send us a Message</h2>
+          <form
+            action="/api/contact"
+            method="POST"
+            class="space-y-6"
+            id="contact-form"
+          >
+            <div>
+              <label for="name" class="block text-sm font-semibold text-black mb-2">
+                Name <span class="text-red-500">*</span>
+              </label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                required
+                class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-400 focus:border-yellow-400 transition-all"
+                placeholder="Your Name"
+              />
+            </div>
+            <div>
+              <label for="email" class="block text-sm font-semibold text-black mb-2">
+                Email <span class="text-red-500">*</span>
+              </label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                required
+                class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-400 focus:border-yellow-400 transition-all"
+                placeholder="your.email@example.com"
+              />
+            </div>
+            <div>
+              <label for="phone" class="block text-sm font-semibold text-black mb-2">
+                Phone <span class="text-red-500">*</span>
+              </label>
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                required
+                class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-400 focus:border-yellow-400 transition-all"
+                placeholder="Your Phone"
+              />
+            </div>
+            <div>
+              <label for="course" class="block text-sm font-semibold text-black mb-2">
+                Course Interest
+              </label>
+              <select
+                id="course"
+                name="course"
+                class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-400 focus:border-yellow-400 transition-all"
+              >
+                <option value="">Select a course</option>
+                {COURSES.map((course) => (
+                  <option value={course.name}>{course.name}</option>
+                ))}
+              </select>
+            </div>
+            <div>
+              <label for="message" class="block text-sm font-semibold text-black mb-2">
+                Message
+              </label>
+              <textarea
+                id="message"
+                name="message"
+                rows="4"
+                class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-400 focus:border-yellow-400 transition-all"
+                placeholder="Your message..."
+              ></textarea>
+            </div>
+            <button
+              type="submit"
+              class="w-full btn-primary"
+              onclick="if(window.trackFormSubmit) window.trackFormSubmit('contact_page', 'contact');"
+            >
+              Submit Enquiry
+            </button>
+          </form>
+        </div>
+
+        <!-- Contact Information -->
+        <div>
+          <h2 class="text-2xl font-bold mb-6 text-black">Get in Touch</h2>
+          <div class="space-y-6">
+            <div class="bg-gray-50 border-2 border-gray-200 p-6 rounded-xl">
+              <h3 class="text-lg font-bold mb-3 text-black">
+                {SITE_CONFIG.contact.address.main.label}
+              </h3>
+              <p class="text-gray-700 mb-4">
+                {SITE_CONFIG.contact.address.main.street}
+                <br />
+                {SITE_CONFIG.contact.address.main.city}, {SITE_CONFIG.contact.address.main.state}{' '}
+                {SITE_CONFIG.contact.address.main.zip}
+                <br />
+                {SITE_CONFIG.contact.address.main.country}
+              </p>
+              <a
+                href={`https://maps.google.com/?q=${encodeURIComponent(
+                  `${SITE_CONFIG.contact.address.main.street}, ${SITE_CONFIG.contact.address.main.city}`
+                )}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-yellow-400 hover:text-yellow-500 font-semibold inline-flex items-center"
+              >
+                Get Directions →
+              </a>
+            </div>
+
+            <div class="bg-gray-50 border-2 border-gray-200 p-6 rounded-xl">
+              <h3 class="text-lg font-bold mb-3 text-black">Contact Details</h3>
+              <div class="space-y-2 text-gray-700">
+                <p>
+                  <strong class="text-yellow-400">Phone (India):</strong>{' '}
+                  <a
+                    href={`tel:${SITE_CONFIG.contact.phone.india.replace(/\s/g, '')}`}
+                    class="text-yellow-400 hover:text-yellow-500 font-semibold"
+                  >
+                    {SITE_CONFIG.contact.phone.india}
+                  </a>
+                </p>
+                <p>
+                  <strong class="text-yellow-400">Phone (USA):</strong>{' '}
+                  <a
+                    href={`tel:${SITE_CONFIG.contact.phone.usa.replace(/\s/g, '')}`}
+                    class="text-yellow-400 hover:text-yellow-500 font-semibold"
+                  >
+                    {SITE_CONFIG.contact.phone.usa}
+                  </a>
+                </p>
+                <p>
+                  <strong class="text-yellow-400">Email:</strong>{' '}
+                  <a
+                    href={`mailto:${SITE_CONFIG.contact.email}`}
+                    class="text-yellow-400 hover:text-yellow-500 font-semibold"
+                  >
+                    {SITE_CONFIG.contact.email}
+                  </a>
+                </p>
+              </div>
+            </div>
+
+            <div class="bg-yellow-50 border-2 border-yellow-200 p-6 rounded-xl">
+              <h3 class="text-lg font-bold mb-3 text-black">Business Hours</h3>
+              <p class="text-gray-700">
+                Monday - Friday: 9:00 AM - 6:00 PM IST
+                <br />
+                Saturday: 10:00 AM - 4:00 PM IST
+                <br />
+                Sunday: Closed
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</BaseLayout>

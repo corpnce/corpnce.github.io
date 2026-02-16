@@ -1,0 +1,182 @@
+---
+import { SITE_CONFIG, COURSES, NAVIGATION } from '../utils/constants';
+---
+
+<footer class="bg-black text-white border-t-2 border-yellow-400">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <!-- Company Info -->
+      <div>
+        <h3 class="text-yellow-400 text-lg font-bold mb-4">
+          {SITE_CONFIG.contact.address.main.label}
+        </h3>
+        <h4 class="text-white font-bold mb-2">{SITE_CONFIG.title}</h4>
+        <p class="mb-4 text-sm text-gray-300">
+          {SITE_CONFIG.contact.address.main.street}
+          <br />
+          {SITE_CONFIG.contact.address.main.city}, {SITE_CONFIG.contact.address.main.state}{' '}
+          {SITE_CONFIG.contact.address.main.zip}
+        </p>
+        <a
+          href={`https://maps.google.com/?q=${encodeURIComponent(
+            `${SITE_CONFIG.contact.address.main.street}, ${SITE_CONFIG.contact.address.main.city}`
+          )}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-yellow-400 hover:text-yellow-500 text-sm font-semibold inline-flex items-center"
+        >
+          Direction →
+        </a>
+        <div class="mt-4 space-y-2 text-sm">
+          <p class="text-gray-300">
+            <strong class="text-yellow-400">Phone:</strong>{' '}
+            <a
+              href={`tel:${SITE_CONFIG.contact.phone.india.replace(/\s/g, '')}`}
+              class="text-yellow-400 hover:text-yellow-500"
+            >
+              {SITE_CONFIG.contact.phone.india}
+            </a>
+          </p>
+          <p class="text-gray-300">
+            <strong class="text-yellow-400">Email:</strong>{' '}
+            <a
+              href={`mailto:${SITE_CONFIG.contact.email}`}
+              class="text-yellow-400 hover:text-yellow-500"
+            >
+              {SITE_CONFIG.contact.email}
+            </a>
+          </p>
+          <p class="text-gray-300">
+            <strong class="text-yellow-400">Web:</strong>{' '}
+            <a
+              href={SITE_CONFIG.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-yellow-400 hover:text-yellow-500"
+            >
+              {SITE_CONFIG.url}
+            </a>
+          </p>
+        </div>
+      </div>
+
+      <!-- Other Branches -->
+      <div>
+        <h3 class="text-yellow-400 text-lg font-bold mb-4">OTHER BRANCHES</h3>
+        <div class="space-y-3 text-sm">
+          <div class="text-gray-300">
+            <strong class="text-yellow-400">Jayanagar Branch:</strong>
+            <div class="mt-1">
+              2nd floor, 19/1, Model House St, S, Kariappa Rd,
+              <br />
+              Basavanagudi, Bengaluru, Karnataka 560004
+            </div>
+          </div>
+          <p class="text-gray-300">
+            <strong class="text-yellow-400">Phone:</strong>{' '}
+            <a
+              href="tel:7019910931"
+              class="text-yellow-400 hover:text-yellow-500"
+            >
+              7019910931
+            </a>
+          </p>
+          <p class="text-gray-300">
+            <strong class="text-yellow-400">Email:</strong>{' '}
+            <a
+              href="mailto:raghu@corpnce.com"
+              class="text-yellow-400 hover:text-yellow-500"
+            >
+              raghu@corpnce.com
+            </a>
+          </p>
+        </div>
+      </div>
+
+      <!-- Courses -->
+      <div>
+        <h3 class="text-yellow-400 text-lg font-bold mb-4">Our Courses</h3>
+        <ul class="space-y-2">
+          {COURSES.map((course) => (
+            <li>
+              <a
+                  href={course.href ?? `/courses/${course.slug}`}
+                class="text-sm text-gray-300 hover:text-yellow-400 transition-colors"
+              >
+                {course.name} Course in Bangalore
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Quick Links -->
+      <div>
+        <h3 class="text-yellow-400 text-lg font-bold mb-4">Quick Links</h3>
+        <ul class="space-y-2">
+          <li>
+            <a href="/about" class="text-sm text-gray-300 hover:text-yellow-400 transition-colors">
+              About Us
+            </a>
+          </li>
+          <li>
+            <a href="/contact" class="text-sm text-gray-300 hover:text-yellow-400 transition-colors">
+              Contact Us
+            </a>
+          </li>
+          <li>
+            <a href="/blog" class="text-sm text-gray-300 hover:text-yellow-400 transition-colors">
+              Blog
+            </a>
+          </li>
+          <li>
+            <a href="/gallery" class="text-sm text-gray-300 hover:text-yellow-400 transition-colors">
+              Gallery
+            </a>
+          </li>
+          <li>
+            <a href="/services/training" class="text-sm text-gray-300 hover:text-yellow-400 transition-colors">
+              Training
+            </a>
+          </li>
+          <li>
+            <a href="/services/saas" class="text-sm text-gray-300 hover:text-yellow-400 transition-colors">
+              SaaS
+            </a>
+          </li>
+          <li>
+            <a
+              href="/services/consultancy"
+              class="text-sm text-gray-300 hover:text-yellow-400 transition-colors"
+            >
+              Consultancy
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Copyright -->
+    <div class="border-t-2 border-gray-800 mt-8 pt-8">
+      <div class="flex flex-col md:flex-row justify-between items-center">
+        <p class="text-sm text-gray-400">
+          © Copyright {new Date().getFullYear()} {SITE_CONFIG.title}. All rights reserved.
+        </p>
+        <div class="flex space-x-6 mt-4 md:mt-0">
+          <a
+            href="/privacy"
+            class="text-sm text-gray-400 hover:text-yellow-400 transition-colors"
+          >
+            Privacy Policy
+          </a>
+          <a
+            href="/terms"
+            class="text-sm text-gray-400 hover:text-yellow-400 transition-colors"
+          >
+            Terms of Service
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>

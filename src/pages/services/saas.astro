@@ -1,0 +1,304 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { SITE_CONFIG } from '../../utils/constants';
+---
+
+<BaseLayout
+  title={`SaaS Solutions - ${SITE_CONFIG.title}`}
+  description="Intelligence as a Service. Pluggable, scalable software solutions powered by Machine Learning and Agentic Workflows."
+>
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-br from-black via-gray-900 to-black text-white py-20 lg:py-32 relative overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute inset-0" style="background-image: repeating-linear-gradient(135deg, transparent, transparent 12px, rgba(255, 255, 255, 0.1) 12px, rgba(255, 255, 255, 0.1) 24px);"></div>
+    </div>
+    <div class="absolute -top-24 -right-24 w-96 h-96 bg-yellow-400/20 rounded-full blur-3xl"></div>
+    <div class="absolute -bottom-24 -left-24 w-96 h-96 bg-yellow-400/10 rounded-full blur-3xl"></div>
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="max-w-5xl mx-auto text-center">
+        <span class="inline-flex items-center gap-2 rounded-full border border-yellow-400/30 bg-yellow-400/10 px-4 py-2 text-xs font-bold uppercase tracking-widest text-yellow-400 mb-6">
+          <span class="h-2 w-2 rounded-full bg-yellow-400 animate-pulse"></span>
+          SaaS Solutions
+        </span>
+        <h1 class="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black mb-6 leading-tight text-center mx-auto">
+          Corpnce SaaS:<br />
+          <span class="text-yellow-400">Intelligence as a Service</span>
+        </h1>
+        <p class="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+          Advanced technology that doesn't require an advanced degree to operate
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
+    <div class="max-w-5xl mx-auto space-y-20">
+      
+      <!-- Introduction -->
+      <section class="relative">
+        <div class="absolute -left-4 top-0 bottom-0 w-1 bg-gradient-to-b from-yellow-400 to-yellow-600 rounded-full"></div>
+        <div class="pl-8">
+          <p class="text-xl md:text-2xl text-gray-700 leading-relaxed font-light">
+            At Corpnce, we believe that advanced technology shouldn't require an advanced degree to operate. Our SaaS vertical translates our deep research in Machine Learning and Agentic Workflows into pluggable, scalable software solutions. We provide the engines; you drive the growth.
+          </p>
+        </div>
+      </section>
+
+      <!-- Section I: Product Philosophy -->
+      <section class="relative overflow-hidden rounded-3xl border-2 border-gray-200 bg-gradient-to-br from-white via-yellow-50/30 to-white p-8 md:p-12 shadow-xl">
+        <div class="absolute top-0 right-0 w-64 h-64 bg-yellow-100/50 rounded-full blur-3xl -mr-32 -mt-32"></div>
+        <div class="relative">
+          <div class="flex items-center gap-4 mb-8">
+            <div class="flex-shrink-0 w-12 h-12 rounded-xl bg-yellow-400 flex items-center justify-center">
+              <span class="text-2xl font-black text-black">I</span>
+            </div>
+            <h2 class="text-3xl md:text-4xl font-black text-black">Our Product Philosophy: "Frictionless Intelligence"</h2>
+          </div>
+          <p class="text-lg text-gray-700 mb-8 leading-relaxed">
+            We don't sell software; we sell reduced latency between data and decision. Our SaaS products are built on three core engineering principles:
+          </p>
+          
+          <div class="grid gap-6 md:grid-cols-3">
+            <div class="group relative bg-white rounded-2xl border-2 border-gray-200 p-6 hover:border-yellow-400 hover:shadow-lg transition-all">
+              <div class="absolute -top-3 -left-3 w-8 h-8 rounded-full bg-yellow-400 flex items-center justify-center">
+                <svg class="w-5 h-5 text-black" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"/>
+                  <path fill-rule="evenodd" d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm9.707 5.707a1 1 0 00-1.414-1.414L9 12.586l-1.293-1.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold text-black mb-3 mt-2">Agentic Autonomy</h3>
+              <p class="text-gray-700 leading-relaxed">
+                Moving beyond static dashboards. Our tools don't just "show" data; they reason through it and suggest (or execute) next steps.
+              </p>
+            </div>
+
+            <div class="group relative bg-white rounded-2xl border-2 border-gray-200 p-6 hover:border-yellow-400 hover:shadow-lg transition-all">
+              <div class="absolute -top-3 -left-3 w-8 h-8 rounded-full bg-yellow-400 flex items-center justify-center">
+                <svg class="w-5 h-5 text-black" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z" clip-rule="evenodd"/>
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold text-black mb-3 mt-2">Modular Integration</h3>
+              <p class="text-gray-700 leading-relaxed">
+                We respect your existing tech stack. Our solutions are designed to sit atop your current CRM, ERP, or Database with zero-gravity migration.
+              </p>
+            </div>
+
+            <div class="group relative bg-white rounded-2xl border-2 border-gray-200 p-6 hover:border-yellow-400 hover:shadow-lg transition-all">
+              <div class="absolute -top-3 -left-3 w-8 h-8 rounded-full bg-yellow-400 flex items-center justify-center">
+                <svg class="w-5 h-5 text-black" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586l-1.293-1.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold text-black mb-3 mt-2">Ethical Transparency</h3>
+              <p class="text-gray-700 leading-relaxed">
+                Every automated decision made by a Corpnce engine is traceable. We build "White Box" AI, ensuring your business remains compliant and your stakeholders remain informed.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section II: The Corpnce Product Suite -->
+      <section class="relative overflow-hidden rounded-3xl border-2 border-gray-200 bg-gradient-to-br from-white via-blue-50/20 to-white p-8 md:p-12 shadow-xl">
+        <div class="absolute bottom-0 left-0 w-64 h-64 bg-blue-100/50 rounded-full blur-3xl -ml-32 -mb-32"></div>
+        <div class="relative">
+          <div class="flex items-center gap-4 mb-8">
+            <div class="flex-shrink-0 w-12 h-12 rounded-xl bg-blue-600 flex items-center justify-center">
+              <span class="text-2xl font-black text-white">II</span>
+            </div>
+            <h2 class="text-3xl md:text-4xl font-black text-black">The Corpnce Product Suite</h2>
+          </div>
+          
+          <div class="space-y-8">
+            <!-- Decision Engines -->
+            <div class="bg-white rounded-2xl border-2 border-blue-300 p-8 hover:border-blue-500 hover:shadow-xl transition-all">
+              <div class="flex items-center gap-3 mb-6">
+                <div class="w-12 h-12 rounded-xl bg-blue-600 flex items-center justify-center">
+                  <span class="text-white font-black text-xl">1</span>
+                </div>
+                <h3 class="text-2xl font-black text-black">Decision Engines (Analytics-as-a-Service)</h3>
+              </div>
+              <p class="text-lg text-gray-600 mb-6 italic">Designed for leadership teams who need clarity without the noise.</p>
+              
+              <div class="grid gap-4 md:grid-cols-2">
+                <div class="bg-blue-50 rounded-xl border border-blue-200 p-5">
+                  <h4 class="font-bold text-black mb-2">Real-Time Diagnostics</h4>
+                  <p class="text-gray-700 text-sm leading-relaxed">
+                    Automated root-cause analysis that identifies why your KPIs are shifting before they hit the red zone.
+                  </p>
+                </div>
+                <div class="bg-blue-50 rounded-xl border border-blue-200 p-5">
+                  <h4 class="font-bold text-black mb-2">Predictive Forecasting</h4>
+                  <p class="text-gray-700 text-sm leading-relaxed">
+                    Move from reactive planning to proactive strategy with high-confidence demand and risk modeling.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- AI Agents -->
+            <div class="bg-white rounded-2xl border-2 border-blue-300 p-8 hover:border-blue-500 hover:shadow-xl transition-all">
+              <div class="flex items-center gap-3 mb-6">
+                <div class="w-12 h-12 rounded-xl bg-blue-600 flex items-center justify-center">
+                  <span class="text-white font-black text-xl">2</span>
+                </div>
+                <h3 class="text-2xl font-black text-black">AI Agents (Ops-as-a-Service)</h3>
+              </div>
+              <p class="text-lg text-gray-600 mb-6 italic">Digital co-pilots that handle the heavy lifting of repetitive cognitive tasks.</p>
+              
+              <div class="grid gap-4 md:grid-cols-2">
+                <div class="bg-blue-50 rounded-xl border border-blue-200 p-5">
+                  <h4 class="font-bold text-black mb-2">Autonomous Research Agents</h4>
+                  <p class="text-gray-700 text-sm leading-relaxed">
+                    Scouring internal and external data to provide comprehensive market or technical briefs in minutes.
+                  </p>
+                </div>
+                <div class="bg-blue-50 rounded-xl border border-blue-200 p-5">
+                  <h4 class="font-bold text-black mb-2">Workflow Orchestrators</h4>
+                  <p class="text-gray-700 text-sm leading-relaxed">
+                    Agents that connect your apps (Slack, Jira, Salesforce) to automate complex, multi-step business processes.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section III: Why Partner with Corpnce SaaS -->
+      <section class="relative overflow-hidden rounded-3xl border-2 border-gray-200 bg-gradient-to-br from-white via-purple-50/20 to-white p-8 md:p-12 shadow-xl">
+        <div class="absolute top-0 right-0 w-64 h-64 bg-purple-100/50 rounded-full blur-3xl -mr-32 -mt-32"></div>
+        <div class="relative">
+          <div class="flex items-center gap-4 mb-8">
+            <div class="flex-shrink-0 w-12 h-12 rounded-xl bg-purple-600 flex items-center justify-center">
+              <span class="text-2xl font-black text-white">III</span>
+            </div>
+            <h2 class="text-3xl md:text-4xl font-black text-black">Why Partner with Corpnce SaaS?</h2>
+          </div>
+          <p class="text-lg text-gray-700 mb-8 leading-relaxed">
+            Unlike generic cloud platforms, Corpnce SaaS is born from a <strong class="text-black font-bold">Research-First Culture</strong>.
+          </p>
+          
+          <div class="grid gap-6 md:grid-cols-3">
+            <div class="bg-white rounded-2xl border-2 border-gray-200 p-6 hover:border-purple-400 hover:shadow-lg transition-all">
+              <div class="w-12 h-12 rounded-xl bg-purple-600 text-white flex items-center justify-center mb-4">
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"/>
+                  <path fill-rule="evenodd" d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm9.707 5.707a1 1 0 00-1.414-1.414L9 12.586l-1.293-1.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold text-black mb-3">Custom-Trained Models</h3>
+              <p class="text-gray-700 leading-relaxed">
+                Our software isn't just a wrapper for public APIs. We fine-tune our models on domain-specific logic to ensure higher accuracy and data privacy.
+              </p>
+            </div>
+
+            <div class="bg-white rounded-2xl border-2 border-gray-200 p-6 hover:border-purple-400 hover:shadow-lg transition-all">
+              <div class="w-12 h-12 rounded-xl bg-purple-600 text-white flex items-center justify-center mb-4">
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"/>
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold text-black mb-3">Rapid Deployment</h3>
+              <p class="text-gray-700 leading-relaxed">
+                Most of our modules are "Day 1 Ready." We focus on Time-to-Value, ensuring you see measurable ROI within the first billing cycle.
+              </p>
+            </div>
+
+            <div class="bg-white rounded-2xl border-2 border-gray-200 p-6 hover:border-purple-400 hover:shadow-lg transition-all">
+              <div class="w-12 h-12 rounded-xl bg-purple-600 text-white flex items-center justify-center mb-4">
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold text-black mb-3">Scalability without Complexity</h3>
+              <p class="text-gray-700 leading-relaxed">
+                As your data grows, our architecture scales automatically. You pay for the intelligence you use, not the infrastructure you don't.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section IV: The Ethical SaaS Commitment -->
+      <section class="relative overflow-hidden rounded-3xl border-2 border-gray-200 bg-gradient-to-br from-white via-emerald-50/20 to-white p-8 md:p-12 shadow-xl">
+        <div class="absolute bottom-0 left-0 w-64 h-64 bg-emerald-100/50 rounded-full blur-3xl -ml-32 -mb-32"></div>
+        <div class="relative">
+          <div class="flex items-center gap-4 mb-8">
+            <div class="flex-shrink-0 w-12 h-12 rounded-xl bg-emerald-600 flex items-center justify-center">
+              <span class="text-2xl font-black text-white">IV</span>
+            </div>
+            <h2 class="text-3xl md:text-4xl font-black text-black">The Ethical SaaS Commitment</h2>
+          </div>
+          <p class="text-lg text-gray-700 mb-8 leading-relaxed">
+            We maintain a strict ethical boundary between our training and our products:
+          </p>
+          
+          <div class="grid gap-6 md:grid-cols-3">
+            <div class="bg-white rounded-2xl border-2 border-gray-200 p-6 hover:border-emerald-400 hover:shadow-lg transition-all">
+              <h3 class="text-lg font-bold text-black mb-3">Data Sovereignty</h3>
+              <p class="text-gray-700 text-sm leading-relaxed">
+                Your business data belongs to you. We never use client data to train our public models or our students.
+              </p>
+            </div>
+
+            <div class="bg-white rounded-2xl border-2 border-gray-200 p-6 hover:border-emerald-400 hover:shadow-lg transition-all">
+              <h3 class="text-lg font-bold text-black mb-3">Bias Auditing</h3>
+              <p class="text-gray-700 text-sm leading-relaxed">
+                Every SaaS release undergoes a rigorous "Bias Audit" to ensure fair outcomes across customer demographics.
+              </p>
+            </div>
+
+            <div class="bg-white rounded-2xl border-2 border-gray-200 p-6 hover:border-emerald-400 hover:shadow-lg transition-all">
+              <h3 class="text-lg font-bold text-black mb-3">Human-in-the-Loop</h3>
+              <p class="text-gray-700 text-sm leading-relaxed">
+                Our AI is designed to augment human intelligence, not replace it. Every high-stakes decision is designed with a "Human Approval" toggle.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section V: Elevate Your Enterprise -->
+      <section class="relative overflow-hidden rounded-3xl bg-gradient-to-br from-black via-gray-900 to-black p-10 md:p-16 text-white border-2 border-yellow-400/30">
+        <div class="absolute bottom-0 left-0 w-96 h-96 bg-yellow-400/10 rounded-full blur-3xl -ml-48 -mb-48"></div>
+        <div class="relative text-center">
+          <div class="flex items-center justify-center gap-4 mb-6">
+            <div class="flex-shrink-0 w-12 h-12 rounded-xl bg-yellow-500 flex items-center justify-center">
+              <span class="text-2xl font-black text-black">V</span>
+            </div>
+            <h2 class="text-3xl md:text-4xl font-black">Elevate Your Enterprise</h2>
+          </div>
+          <p class="text-xl md:text-2xl text-gray-300 mb-8 leading-relaxed max-w-3xl mx-auto">
+            Stop building tools and start solving problems. Whether you are a startup in Indiranagar or a global hub in Rajajinagar, Corpnce SaaS provides the competitive edge you need to lead.
+          </p>
+          <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <a
+              href="/contact"
+              class="inline-flex items-center gap-2 rounded-xl bg-yellow-500 px-8 py-4 font-bold text-black shadow-lg hover:bg-yellow-400 transition-colors"
+              onclick="if(window.trackCTAClick) window.trackCTAClick('saas_demo', 'saas');"
+            >
+              Request a Product Demo
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </a>
+            <a
+              href="/contact"
+              class="inline-flex items-center gap-2 rounded-xl border-2 border-yellow-500 bg-transparent px-8 py-4 font-bold text-yellow-500 hover:bg-yellow-500/10 transition-colors"
+              onclick="if(window.trackCTAClick) window.trackCTAClick('saas_roadmap', 'saas');"
+            >
+              View Solution Roadmap
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </div>
+</BaseLayout>

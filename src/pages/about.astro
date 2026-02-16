@@ -1,0 +1,121 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { SITE_CONFIG } from '../utils/constants';
+---
+
+<BaseLayout
+  title={`About Us - ${SITE_CONFIG.title}`}
+  description="Learn about Corpnce Technologies, our mission, expertise, and commitment to providing world-class data science and AI training."
+>
+  <!-- Hero Section -->
+  <section class="bg-black text-white py-16 lg:py-24">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-4xl mx-auto text-center">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+          About <span class="text-yellow-400">Corpnce</span> Technologies
+        </h1>
+        <p class="text-xl md:text-2xl text-gray-300">
+          Leading provider of data science, AI, and machine learning training
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <div class="max-w-4xl mx-auto">
+      <div class="prose prose-lg max-w-none mb-12">
+        <p class="text-xl text-gray-700 mb-6">
+          Corpnce Technologies Pvt. Ltd. is a leading provider of data science, artificial
+          intelligence, and machine learning training programs. We are committed to delivering
+          project-based classroom learning experiences led by industry experts and researchers.
+        </p>
+
+        <h2 class="text-3xl font-bold mt-12 mb-6 text-black">Our Mission</h2>
+        <p class="text-gray-700 mb-6">
+          Our mission is to bridge the gap between academic knowledge and industry requirements by
+          providing comprehensive, hands-on training programs that prepare individuals and
+          organizations for the challenges of the modern data-driven world.
+        </p>
+
+        <h2 class="text-3xl font-bold mt-12 mb-6 text-black">What Makes Us Different</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+          <div class="bg-yellow-50 border-2 border-yellow-200 p-6 rounded-xl hover:border-yellow-400 transition-all">
+            <h3 class="text-xl font-bold mb-3 text-black">Project-Based Learning (PBL)</h3>
+            <p class="text-gray-700">
+              Our curriculum is built around real-world projects that mirror industry challenges,
+              ensuring students gain practical, applicable skills.
+            </p>
+          </div>
+          <div class="bg-yellow-50 border-2 border-yellow-200 p-6 rounded-xl hover:border-yellow-400 transition-all">
+            <h3 class="text-xl font-bold mb-3 text-black">Technology Quotient (TQ)</h3>
+            <p class="text-gray-700">
+              We evaluate and enhance your technical capabilities through our unique Technology
+              Quotient assessment system.
+            </p>
+          </div>
+          <div class="bg-yellow-50 border-2 border-yellow-200 p-6 rounded-xl hover:border-yellow-400 transition-all">
+            <h3 class="text-xl font-bold mb-3 text-black">Industry Experts</h3>
+            <p class="text-gray-700">
+              Learn from experienced professionals and researchers who bring real-world insights and
+              cutting-edge knowledge to the classroom.
+            </p>
+          </div>
+          <div class="bg-yellow-50 border-2 border-yellow-200 p-6 rounded-xl hover:border-yellow-400 transition-all">
+            <h3 class="text-xl font-bold mb-3 text-black">Comprehensive Programs</h3>
+            <p class="text-gray-700">
+              From data science fundamentals to advanced AI and deep learning, we offer a complete
+              range of courses to suit all skill levels.
+            </p>
+          </div>
+        </div>
+
+        <h2 class="text-3xl font-bold mt-12 mb-6 text-black">Our Location</h2>
+        <div class="bg-gray-50 border-2 border-gray-200 p-6 rounded-xl mb-12">
+          <h3 class="text-xl font-bold mb-3 text-black">
+            {SITE_CONFIG.contact.address.main.label}
+          </h3>
+          <p class="text-gray-700 mb-2">
+            {SITE_CONFIG.contact.address.main.street}
+            <br />
+            {SITE_CONFIG.contact.address.main.city}, {SITE_CONFIG.contact.address.main.state}{' '}
+            {SITE_CONFIG.contact.address.main.zip}
+            <br />
+            {SITE_CONFIG.contact.address.main.country}
+          </p>
+          <p class="text-gray-700">
+            <strong class="text-yellow-400">Phone:</strong>{' '}
+            <a
+              href={`tel:${SITE_CONFIG.contact.phone.india.replace(/\s/g, '')}`}
+              class="text-yellow-400 hover:text-yellow-500 font-semibold"
+            >
+              {SITE_CONFIG.contact.phone.india}
+            </a>
+          </p>
+          <p class="text-gray-700">
+            <strong class="text-yellow-400">Email:</strong>{' '}
+            <a
+              href={`mailto:${SITE_CONFIG.contact.email}`}
+              class="text-yellow-400 hover:text-yellow-500 font-semibold"
+            >
+              {SITE_CONFIG.contact.email}
+            </a>
+          </p>
+        </div>
+
+        <div class="bg-black text-white p-8 rounded-xl text-center border-2 border-yellow-400">
+          <h2 class="text-2xl font-bold mb-4">Ready to Start Your Journey?</h2>
+          <p class="mb-6 text-gray-300">
+            Join our comprehensive training programs and take your career to the next level.
+          </p>
+          <a
+            href="/contact"
+            class="btn-primary inline-block"
+            onclick="if(window.trackCTAClick) window.trackCTAClick('about_cta', 'about');"
+          >
+            Contact Us Today
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</BaseLayout>

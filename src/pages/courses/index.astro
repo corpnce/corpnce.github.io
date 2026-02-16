@@ -1,0 +1,95 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { COURSES, SITE_CONFIG } from '../../utils/constants';
+---
+
+<BaseLayout
+  title={`Courses - ${SITE_CONFIG.title}`}
+  description="Explore our comprehensive range of data science, machine learning, deep learning, and AI courses in Bangalore."
+>
+  <!-- Hero Section -->
+  <section class="bg-black text-white py-16 lg:py-24">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-4xl mx-auto text-center">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+          Our <span class="text-yellow-400">Courses</span>
+        </h1>
+        <p class="text-xl md:text-2xl text-gray-300">
+          Comprehensive training programs in data science, machine learning, deep learning, and artificial intelligence
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <div class="max-w-6xl mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+        {COURSES.map((course) => (
+          <div class="bg-white border-2 border-gray-200 rounded-xl overflow-hidden hover:border-yellow-400 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 group">
+            <!-- Course Image Placeholder -->
+            <div class="h-48 bg-gradient-to-br from-yellow-400 to-yellow-500 flex items-center justify-center">
+              <div class="text-center">
+                <div class="w-20 h-20 bg-black rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                  <svg class="w-10 h-10 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                </div>
+                <p class="text-black font-bold text-sm">COURSE IMAGE</p>
+              </div>
+            </div>
+            
+            <div class="p-6">
+              <h3 class="text-2xl font-bold mb-4 text-black group-hover:text-yellow-400 transition-colors">
+                {course.name}
+              </h3>
+              <p class="text-gray-600 mb-6 leading-relaxed">{course.description}</p>
+              <a
+                href={course.href ?? `/courses/${course.slug}`}
+                class="text-black font-bold inline-flex items-center group-hover:text-yellow-400 transition-colors"
+              >
+                Learn More
+                <svg
+                  class="ml-2 w-5 h-5 transform group-hover:translate-x-1 transition-transform"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9 5l7 7-7 7"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div class="bg-yellow-50 border-2 border-yellow-200 p-8 rounded-xl">
+        <h2 class="text-2xl font-bold mb-4 text-black">Why Choose Our Courses?</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div>
+            <h3 class="text-lg font-bold mb-2 text-black">Project-Based Learning</h3>
+            <p class="text-gray-700">
+              Hands-on projects that mirror real-world industry challenges
+            </p>
+          </div>
+          <div>
+            <h3 class="text-lg font-bold mb-2 text-black">Industry Experts</h3>
+            <p class="text-gray-700">
+              Learn from experienced professionals and researchers
+            </p>
+          </div>
+          <div>
+            <h3 class="text-lg font-bold mb-2 text-black">TQ Assessment</h3>
+            <p class="text-gray-700">
+              Evaluate and improve your technical capabilities
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</BaseLayout>

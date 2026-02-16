@@ -1,0 +1,111 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { SITE_CONFIG } from '../../utils/constants';
+---
+
+<BaseLayout
+  title={`Services - ${SITE_CONFIG.title}`}
+  description="Explore our comprehensive range of services including corporate training, SaaS solutions, and consultancy services."
+>
+  <!-- Hero Section -->
+  <section class="bg-black text-white py-16 lg:py-24">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-4xl mx-auto text-center">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+          Our <span class="text-yellow-400">Services</span>
+        </h1>
+        <p class="text-xl md:text-2xl text-gray-300">
+          Comprehensive solutions for your data science and AI needs
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <div class="max-w-4xl mx-auto">
+      <div class="space-y-12">
+        <!-- Training Service -->
+        <div class="bg-white border-2 border-gray-200 rounded-xl shadow-lg p-8 hover:border-yellow-400 transition-all">
+          <h2 class="text-3xl font-bold mb-4 text-black">Corporate Training</h2>
+          <p class="text-gray-700 mb-6">
+            We offer enterprise-focused training programs designed to upskill your workforce in data
+            science, machine learning, and artificial intelligence. Our training programs are
+            customized to meet your organization's specific needs and objectives.
+          </p>
+          <ul class="list-disc list-inside text-gray-700 mb-6 space-y-2">
+            <li>Customized curriculum based on your requirements</li>
+            <li>Flexible scheduling for corporate teams</li>
+            <li>Hands-on project-based learning</li>
+            <li>Industry expert instructors</li>
+            <li>Post-training support and resources</li>
+          </ul>
+          <a
+            href="/services/training"
+            class="btn-primary inline-block"
+          >
+            Learn More
+          </a>
+        </div>
+
+        <!-- SaaS Service -->
+        <div class="bg-white border-2 border-gray-200 rounded-xl shadow-lg p-8 hover:border-yellow-400 transition-all">
+          <h2 class="text-3xl font-bold mb-4 text-black">SaaS Solutions</h2>
+          <p class="text-gray-700 mb-6">
+            Our Software as a Service offerings provide scalable, cloud-based solutions for data
+            analytics, machine learning model deployment, and AI-powered applications. Leverage our
+            expertise to build and deploy your data science solutions.
+          </p>
+          <ul class="list-disc list-inside text-gray-700 mb-6 space-y-2">
+            <li>Cloud-based analytics platforms</li>
+            <li>ML model deployment and management</li>
+            <li>AI-powered application development</li>
+            <li>Scalable infrastructure solutions</li>
+            <li>Ongoing maintenance and support</li>
+          </ul>
+          <a
+            href="/services/saas"
+            class="btn-primary inline-block"
+          >
+            Learn More
+          </a>
+        </div>
+
+        <!-- Consultancy Service -->
+        <div class="bg-white border-2 border-gray-200 rounded-xl shadow-lg p-8 hover:border-yellow-400 transition-all">
+          <h2 class="text-3xl font-bold mb-4 text-black">Consultancy Services</h2>
+          <p class="text-gray-700 mb-6">
+            Get expert guidance on your data science and AI initiatives. Our consultancy services
+            help organizations strategize, implement, and optimize their data-driven solutions.
+          </p>
+          <ul class="list-disc list-inside text-gray-700 mb-6 space-y-2">
+            <li>Data strategy and roadmap development</li>
+            <li>AI/ML solution architecture design</li>
+            <li>Model development and optimization</li>
+            <li>Data infrastructure consulting</li>
+            <li>Team training and knowledge transfer</li>
+          </ul>
+          <a
+            href="/services/consultancy"
+            class="btn-primary inline-block"
+          >
+            Learn More
+          </a>
+        </div>
+      </div>
+
+      <div class="mt-12 bg-black text-white p-8 rounded-xl text-center border-2 border-yellow-400">
+        <h2 class="text-2xl font-bold mb-4">Interested in Our Services?</h2>
+        <p class="mb-6 text-gray-300">
+          Contact us to discuss how we can help your organization achieve its data science goals.
+        </p>
+        <a
+          href="/contact"
+          class="btn-primary inline-block"
+          onclick="if(window.trackCTAClick) window.trackCTAClick('services_cta', 'services');"
+        >
+          Get in Touch
+        </a>
+      </div>
+    </div>
+  </div>
+</BaseLayout>

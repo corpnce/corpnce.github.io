@@ -1,0 +1,322 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { SITE_CONFIG } from '../../utils/constants';
+---
+
+<BaseLayout
+  title={`Consultancy Services - ${SITE_CONFIG.title}`}
+  description="Strategic Intelligence, Architected. Bridge between raw information and executive impact through bespoke, ethical AI solutions."
+>
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-br from-black via-gray-900 to-black text-white py-20 lg:py-32 relative overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute inset-0" style="background-image: repeating-linear-gradient(135deg, transparent, transparent 12px, rgba(255, 255, 255, 0.1) 12px, rgba(255, 255, 255, 0.1) 24px);"></div>
+    </div>
+    <div class="absolute -top-24 -right-24 w-96 h-96 bg-yellow-400/20 rounded-full blur-3xl"></div>
+    <div class="absolute -bottom-24 -left-24 w-96 h-96 bg-yellow-400/10 rounded-full blur-3xl"></div>
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="max-w-5xl mx-auto text-center">
+        <span class="inline-flex items-center gap-2 rounded-full border border-yellow-400/30 bg-yellow-400/10 px-4 py-2 text-xs font-bold uppercase tracking-widest text-yellow-400 mb-6">
+          <span class="h-2 w-2 rounded-full bg-yellow-400 animate-pulse"></span>
+          Consultancy Services
+        </span>
+        <h1 class="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black mb-6 leading-tight text-center mx-auto">
+          Corpnce Consultancy:<br />
+          <span class="text-yellow-400">Strategic Intelligence, Architected</span>
+        </h1>
+        <p class="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+          Bridge between raw information and executive impact
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
+    <div class="max-w-5xl mx-auto space-y-20">
+      
+      <!-- Introduction -->
+      <section class="relative">
+        <div class="absolute -left-4 top-0 bottom-0 w-1 bg-gradient-to-b from-yellow-400 to-yellow-600 rounded-full"></div>
+        <div class="pl-8 space-y-4">
+          <p class="text-xl md:text-2xl text-gray-700 leading-relaxed font-light">
+            In an era where data is abundant but clarity is scarce, Corpnce Consultancy serves as the bridge between raw information and executive impact. We don't just provide reports; we build the cognitive infrastructure that allows your organization to move from reactive survival to proactive leadership.
+          </p>
+          <p class="text-lg text-gray-600 leading-relaxed">
+            Our consultancy arm is driven by a singular mission: to strip away the "Black Box" of AI and deliver bespoke, ethical, and high-ROI solutions tailored to your specific industrial DNA.
+          </p>
+        </div>
+      </section>
+
+      <!-- Section I: Strategic Philosophy -->
+      <section class="relative overflow-hidden rounded-3xl border-2 border-gray-200 bg-gradient-to-br from-white via-yellow-50/30 to-white p-8 md:p-12 shadow-xl">
+        <div class="absolute top-0 right-0 w-64 h-64 bg-yellow-100/50 rounded-full blur-3xl -mr-32 -mt-32"></div>
+        <div class="relative">
+          <div class="flex items-center gap-4 mb-8">
+            <div class="flex-shrink-0 w-12 h-12 rounded-xl bg-yellow-400 flex items-center justify-center">
+              <span class="text-2xl font-black text-black">I</span>
+            </div>
+            <h2 class="text-3xl md:text-4xl font-black text-black">Our Strategic Philosophy: Value First, Tech Second</h2>
+          </div>
+          <p class="text-lg text-gray-700 mb-8 leading-relaxed">
+            Many consulting firms start with a tool. We start with a Decision. Our process is built on identifying the core levers that drive your unit economics and then engineering the data systems to pull them.
+          </p>
+          
+          <div class="grid gap-6 md:grid-cols-3">
+            <div class="group relative bg-white rounded-2xl border-2 border-gray-200 p-6 hover:border-yellow-400 hover:shadow-lg transition-all">
+              <div class="absolute -top-3 -left-3 w-8 h-8 rounded-full bg-yellow-400 flex items-center justify-center">
+                <svg class="w-5 h-5 text-black" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"/>
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold text-black mb-3 mt-2">The Decision-Centric Roadmap</h3>
+              <p class="text-gray-700 leading-relaxed">
+                We identify the 5% of decisions—whether in pricing, supply chain, or customer retention—that drive 80% of your business outcomes.
+              </p>
+            </div>
+
+            <div class="group relative bg-white rounded-2xl border-2 border-gray-200 p-6 hover:border-yellow-400 hover:shadow-lg transition-all">
+              <div class="absolute -top-3 -left-3 w-8 h-8 rounded-full bg-yellow-400 flex items-center justify-center">
+                <svg class="w-5 h-5 text-black" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M11.49 3.17c-.38-1.56-2.6-1.56-2.98 0a1.532 1.532 0 01-2.286.948c-1.372-.836-2.942.734-2.106 2.106.54.886.061 2.042-.947 2.287-1.561.379-1.561 2.6 0 2.978a1.532 1.532 0 01.947 2.287c-.836 1.372.734 2.942 2.106 2.106a1.532 1.532 0 012.287.947c.379 1.561 2.6 1.561 2.978 0a1.533 1.533 0 012.287-.947c1.372.836 2.942-.734 2.106-2.106a1.533 1.533 0 01.947-2.287c1.561-.379 1.561-2.6 0-2.978a1.532 1.532 0 01-.947-2.287c.836-1.372-.734-2.942-2.106-2.106a1.532 1.532 0 01-2.287-.947zM10 13a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd"/>
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold text-black mb-3 mt-2">Bespoke Architecture</h3>
+              <p class="text-gray-700 leading-relaxed">
+                We reject generic templates. Every model we deploy is trained on your proprietary data, reflecting your risk tolerance and brand voice.
+              </p>
+            </div>
+
+            <div class="group relative bg-white rounded-2xl border-2 border-gray-200 p-6 hover:border-yellow-400 hover:shadow-lg transition-all">
+              <div class="absolute -top-3 -left-3 w-8 h-8 rounded-full bg-yellow-400 flex items-center justify-center">
+                <svg class="w-5 h-5 text-black" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4z" clip-rule="evenodd"/>
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold text-black mb-3 mt-2">White-Box Transparency</h3>
+              <p class="text-gray-700 leading-relaxed">
+                We believe in Explainable AI (XAI). Our consultancy ensures your leadership team understands exactly why a model recommends a specific path, maintaining human accountability at every step.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section II: Core Consultancy Verticals -->
+      <section class="relative overflow-hidden rounded-3xl border-2 border-gray-200 bg-gradient-to-br from-white via-blue-50/20 to-white p-8 md:p-12 shadow-xl">
+        <div class="absolute bottom-0 left-0 w-64 h-64 bg-blue-100/50 rounded-full blur-3xl -ml-32 -mb-32"></div>
+        <div class="relative">
+          <div class="flex items-center gap-4 mb-8">
+            <div class="flex-shrink-0 w-12 h-12 rounded-xl bg-blue-600 flex items-center justify-center">
+              <span class="text-2xl font-black text-white">II</span>
+            </div>
+            <h2 class="text-3xl md:text-4xl font-black text-black">Core Consultancy Verticals</h2>
+          </div>
+          
+          <div class="space-y-8">
+            <!-- AI Strategy & Enterprise Roadmap -->
+            <div class="bg-white rounded-2xl border-2 border-blue-300 p-8 hover:border-blue-500 hover:shadow-xl transition-all">
+              <div class="flex items-center gap-3 mb-6">
+                <div class="w-12 h-12 rounded-xl bg-blue-600 flex items-center justify-center">
+                  <span class="text-white font-black text-xl">1</span>
+                </div>
+                <h3 class="text-2xl font-black text-black">AI Strategy & Enterprise Roadmap</h3>
+              </div>
+              <p class="text-lg text-gray-600 mb-6 italic">We help C-suite executives navigate the complexity of AI adoption without the "hype-tax."</p>
+              
+              <div class="grid gap-4 md:grid-cols-2">
+                <div class="bg-blue-50 rounded-xl border border-blue-200 p-5">
+                  <h4 class="font-bold text-black mb-2">Readiness Assessment</h4>
+                  <p class="text-gray-700 text-sm leading-relaxed">
+                    Evaluating your data quality, tech stack, and cultural readiness for automation.
+                  </p>
+                </div>
+                <div class="bg-blue-50 rounded-xl border border-blue-200 p-5">
+                  <h4 class="font-bold text-black mb-2">ROI-Driven Pilot Programs</h4>
+                  <p class="text-gray-700 text-sm leading-relaxed">
+                    Identifying low-risk, high-reward use cases to prove value before scaling.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Custom Agentic Workflows -->
+            <div class="bg-white rounded-2xl border-2 border-blue-300 p-8 hover:border-blue-500 hover:shadow-xl transition-all">
+              <div class="flex items-center gap-3 mb-6">
+                <div class="w-12 h-12 rounded-xl bg-blue-600 flex items-center justify-center">
+                  <span class="text-white font-black text-xl">2</span>
+                </div>
+                <h3 class="text-2xl font-black text-black">Custom Agentic Workflows</h3>
+              </div>
+              <p class="text-lg text-gray-600 mb-6 italic">We build autonomous systems that don't just analyze data—they execute tasks.</p>
+              
+              <div class="grid gap-4 md:grid-cols-2">
+                <div class="bg-blue-50 rounded-xl border border-blue-200 p-5">
+                  <h4 class="font-bold text-black mb-2">Operations Automation</h4>
+                  <p class="text-gray-700 text-sm leading-relaxed">
+                    Intelligent agents that orchestrate complex multi-app workflows (ERP, CRM, Supply Chain).
+                  </p>
+                </div>
+                <div class="bg-blue-50 rounded-xl border border-blue-200 p-5">
+                  <h4 class="font-bold text-black mb-2">Diagnostic Engines</h4>
+                  <p class="text-gray-700 text-sm leading-relaxed">
+                    Real-time monitoring systems that automatically flag anomalies and suggest root-cause resolutions.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Data Modernization & Governance -->
+            <div class="bg-white rounded-2xl border-2 border-blue-300 p-8 hover:border-blue-500 hover:shadow-xl transition-all">
+              <div class="flex items-center gap-3 mb-6">
+                <div class="w-12 h-12 rounded-xl bg-blue-600 flex items-center justify-center">
+                  <span class="text-white font-black text-xl">3</span>
+                </div>
+                <h3 class="text-2xl font-black text-black">Data Modernization & Governance</h3>
+              </div>
+              <p class="text-lg text-gray-600 mb-6 italic">Building the "Single Source of Truth" required for reliable AI.</p>
+              
+              <div class="grid gap-4 md:grid-cols-2">
+                <div class="bg-blue-50 rounded-xl border border-blue-200 p-5">
+                  <h4 class="font-bold text-black mb-2">Unified Data Foundations</h4>
+                  <p class="text-gray-700 text-sm leading-relaxed">
+                    Breaking down organizational silos to create clean, scalable data lakes.
+                  </p>
+                </div>
+                <div class="bg-blue-50 rounded-xl border border-blue-200 p-5">
+                  <h4 class="font-bold text-black mb-2">Ethical Compliance Audits</h4>
+                  <p class="text-gray-700 text-sm leading-relaxed">
+                    Ensuring your data practices meet global standards (GDPR, CCPA) and are free from algorithmic bias.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section III: Why Choose Corpnce -->
+      <section class="relative overflow-hidden rounded-3xl border-2 border-gray-200 bg-gradient-to-br from-white via-purple-50/20 to-white p-8 md:p-12 shadow-xl">
+        <div class="absolute top-0 right-0 w-64 h-64 bg-purple-100/50 rounded-full blur-3xl -mr-32 -mt-32"></div>
+        <div class="relative">
+          <div class="flex items-center gap-4 mb-8">
+            <div class="flex-shrink-0 w-12 h-12 rounded-xl bg-purple-600 flex items-center justify-center">
+              <span class="text-2xl font-black text-white">III</span>
+            </div>
+            <h2 class="text-3xl md:text-4xl font-black text-black">Why Choose Corpnce for Consultancy?</h2>
+          </div>
+          
+          <div class="grid gap-6 md:grid-cols-3">
+            <div class="bg-white rounded-2xl border-2 border-gray-200 p-6 hover:border-purple-400 hover:shadow-lg transition-all">
+              <div class="w-12 h-12 rounded-xl bg-purple-600 text-white flex items-center justify-center mb-4">
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z"/>
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold text-black mb-3">The Research Edge</h3>
+              <p class="text-gray-700 leading-relaxed">
+                Our consultants are researchers and industry practitioners who stay at the frontier of technology, from Large Language Models (LLMs) to Predictive Maintenance.
+              </p>
+            </div>
+
+            <div class="bg-white rounded-2xl border-2 border-gray-200 p-6 hover:border-purple-400 hover:shadow-lg transition-all">
+              <div class="w-12 h-12 rounded-xl bg-purple-600 text-white flex items-center justify-center mb-4">
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z"/>
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold text-black mb-3">Human-Centered Change Management</h3>
+              <p class="text-gray-700 leading-relaxed">
+                We recognize that 70% of digital transformations fail due to culture, not code. We provide the training and change-management frameworks to ensure your team embraces, rather than resists, new intelligence.
+              </p>
+            </div>
+
+            <div class="bg-white rounded-2xl border-2 border-gray-200 p-6 hover:border-purple-400 hover:shadow-lg transition-all">
+              <div class="w-12 h-12 rounded-xl bg-purple-600 text-white flex items-center justify-center mb-4">
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clip-rule="evenodd"/>
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold text-black mb-3">Lean & Agile Execution</h3>
+              <p class="text-gray-700 leading-relaxed">
+                We operate with a "High-TQ" (Technology Quotient) mindset—delivering production-ready solutions in weeks, not years.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section IV: Ethical Partnership Commitment -->
+      <section class="relative overflow-hidden rounded-3xl border-2 border-gray-200 bg-gradient-to-br from-white via-emerald-50/20 to-white p-8 md:p-12 shadow-xl">
+        <div class="absolute bottom-0 left-0 w-64 h-64 bg-emerald-100/50 rounded-full blur-3xl -ml-32 -mb-32"></div>
+        <div class="relative">
+          <div class="flex items-center gap-4 mb-8">
+            <div class="flex-shrink-0 w-12 h-12 rounded-xl bg-emerald-600 flex items-center justify-center">
+              <span class="text-2xl font-black text-white">IV</span>
+            </div>
+            <h2 class="text-3xl md:text-4xl font-black text-black">Ethical Partnership Commitment</h2>
+          </div>
+          <p class="text-lg text-gray-700 mb-8 leading-relaxed">
+            Our consultancy is built on an Ethical Covenant:
+          </p>
+          
+          <div class="grid gap-6 md:grid-cols-3">
+            <div class="bg-white rounded-2xl border-2 border-gray-200 p-6 hover:border-emerald-400 hover:shadow-lg transition-all">
+              <h3 class="text-lg font-bold text-black mb-3">Data Sovereignty</h3>
+              <p class="text-gray-700 text-sm leading-relaxed">
+                Your data never leaves your ecosystem. We build tools that you own, ensuring long-term proprietary advantage.
+              </p>
+            </div>
+
+            <div class="bg-white rounded-2xl border-2 border-gray-200 p-6 hover:border-emerald-400 hover:shadow-lg transition-all">
+              <h3 class="text-lg font-bold text-black mb-3">Bias Mitigation</h3>
+              <p class="text-gray-700 text-sm leading-relaxed">
+                We rigorously audit every solution for fairness and unintended consequences before deployment.
+              </p>
+            </div>
+
+            <div class="bg-white rounded-2xl border-2 border-gray-200 p-6 hover:border-emerald-400 hover:shadow-lg transition-all">
+              <h3 class="text-lg font-bold text-black mb-3">Sustainability</h3>
+              <p class="text-gray-700 text-sm leading-relaxed">
+                We optimize our models for compute-efficiency, ensuring your tech growth doesn't come at an undue environmental cost.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Quote Section -->
+      <section class="relative overflow-hidden rounded-3xl bg-gradient-to-br from-black via-gray-900 to-black p-10 md:p-16 text-white border-2 border-yellow-400/30">
+        <div class="absolute top-0 right-0 w-96 h-96 bg-yellow-400/10 rounded-full blur-3xl -mr-48 -mt-48"></div>
+        <div class="relative">
+          <div class="text-6xl font-black text-yellow-400/30 mb-4">"</div>
+          <blockquote class="text-xl md:text-2xl font-light leading-relaxed mb-6 italic">
+            Technology is a multiplier. At Corpnce, we ensure it multiplies your intelligence, your efficiency, and your integrity.
+          </blockquote>
+        </div>
+      </section>
+
+      <!-- CTA Section -->
+      <section class="relative overflow-hidden rounded-3xl bg-gradient-to-br from-black via-gray-900 to-black p-10 md:p-16 text-white border-2 border-yellow-400/30">
+        <div class="absolute bottom-0 left-0 w-96 h-96 bg-yellow-400/10 rounded-full blur-3xl -ml-48 -mb-48"></div>
+        <div class="relative text-center">
+          <h2 class="text-3xl md:text-4xl font-black mb-6">Ready to Transform Your Organization?</h2>
+          <p class="text-xl md:text-2xl text-gray-300 mb-8 leading-relaxed max-w-3xl mx-auto">
+            Contact us to discuss your consultancy needs and how we can help your organization achieve strategic intelligence.
+          </p>
+          <a
+            href="/contact"
+            class="inline-flex items-center gap-2 rounded-xl bg-yellow-500 px-8 py-4 font-bold text-black shadow-lg hover:bg-yellow-400 transition-colors"
+            onclick="if(window.trackCTAClick) window.trackCTAClick('consultancy_cta', 'consultancy');"
+          >
+            Schedule a Consultation
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </a>
+        </div>
+      </section>
+
+    </div>
+  </div>
+</BaseLayout>

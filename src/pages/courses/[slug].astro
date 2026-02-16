@@ -1,0 +1,2589 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { COURSES, SITE_CONFIG } from '../../utils/constants';
+
+const { slug } = Astro.params;
+const course = COURSES.find((c) => c.slug === slug);
+
+if (!course) {
+  return Astro.redirect('/404');
+}
+---
+
+<BaseLayout
+  title={slug === 'machine-learning' 
+    ? `Machine Learning & Deep Learning Courses in Bangalore | Corpnce - ${SITE_CONFIG.title}`
+    : `${course.name} Course in Bangalore - ${SITE_CONFIG.title}`}
+  description={slug === 'machine-learning'
+    ? `Join Corpnce's Machine Learning and Deep Learning courses in Bangalore. Learn AI, MLOps, PyTorch, and Generative AI with hands-on training. 2026 curriculum with 1M+ job opportunities. Enroll now!`
+    : course.description}
+>
+  <!-- Hero Section -->
+  <section class="bg-black text-white py-16 lg:py-24">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        {slug === 'data-science' ? (
+        <div class="max-w-4xl mx-auto text-center">
+            <p class="text-sm uppercase tracking-widest text-yellow-400 mb-4">
+              Data Science Courses in Bangalore, Rajajinagar
+            </p>
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+              Complete Data Science Course in Bangalore
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-300">
+              Learn Data Science from Basics to Advance with project-based classroom learning.
+            </p>
+        </div>
+      ) : slug === 'machine-learning' ? (
+        <div class="relative overflow-hidden w-full">
+          <!-- Animated Background Elements -->
+          <div class="absolute inset-0 overflow-hidden pointer-events-none">
+            <div class="absolute top-20 left-10 w-72 h-72 bg-yellow-400/20 rounded-full blur-3xl animate-pulse"></div>
+            <div class="absolute bottom-20 right-10 w-96 h-96 bg-yellow-300/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
+            <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-gradient-to-r from-yellow-400/5 to-transparent rounded-full blur-3xl"></div>
+          </div>
+
+          <!-- Grid Pattern Overlay -->
+          <div class="absolute inset-0 opacity-5" style="background-image: linear-gradient(rgba(255, 215, 0, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 215, 0, 0.1) 1px, transparent 1px); background-size: 50px 50px;"></div>
+
+          <div class="relative z-10 grid grid-cols-1 lg:grid-cols-[1.2fr,0.8fr] gap-12 lg:gap-16 items-center w-full">
+            <!-- Left Content -->
+            <div class="space-y-6 animate-fade-in-up w-full">
+              <!-- Badge with glow -->
+              <div class="inline-flex items-center gap-2">
+                <span class="inline-flex items-center rounded-full border-2 border-yellow-400/60 bg-gradient-to-r from-yellow-400/20 to-yellow-300/10 px-4 py-2 text-xs font-bold uppercase tracking-widest text-yellow-300 shadow-lg shadow-yellow-400/30 backdrop-blur-sm">
+                  <span class="relative flex h-2 w-2 mr-2">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-yellow-400 opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-2 w-2 bg-yellow-400"></span>
+                  </span>
+                  Machine Learning Course · Rajajinagar
+                </span>
+              </div>
+
+              <!-- Main Heading with gradient text - Full Width -->
+              <h1 class="text-4xl md:text-5xl lg:text-7xl xl:text-8xl font-black leading-tight w-full">
+                <span class="block text-white mb-2 w-full">Complete Machine Learning</span>
+                <span class="block bg-gradient-to-r from-yellow-400 via-yellow-300 to-yellow-400 bg-clip-text text-transparent animate-gradient bg-[length:200%_auto] w-full">
+                  Course in Bangalore
+                </span>
+              </h1>
+
+                <!-- Subheading -->
+                <p class="text-xl md:text-2xl lg:text-3xl text-gray-200 leading-relaxed font-medium w-full max-w-3xl">
+                  Learn Machine Learning from <span class="text-yellow-300 font-bold">Basics to Advance</span>
+                </p>
+
+                <!-- Description Cards -->
+                <div class="space-y-4 pt-6 w-full max-w-3xl">
+                  <div class="flex items-start gap-4 p-5 rounded-xl bg-white/5 backdrop-blur-sm border border-white/10 hover:bg-white/10 transition-all duration-300 hover:border-yellow-400/30">
+                    <div class="flex-shrink-0 w-7 h-7 rounded-full bg-yellow-400/20 flex items-center justify-center mt-0.5">
+                      <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                      </svg>
+                    </div>
+                    <p class="text-gray-300 leading-relaxed text-base md:text-lg">
+                      Corpnce, one of the <span class="text-yellow-300 font-semibold">best machine learning institute</span> in Bangalore offers classroom training for machine learning courses.
+                    </p>
+                  </div>
+                  <div class="flex items-start gap-4 p-5 rounded-xl bg-white/5 backdrop-blur-sm border border-white/10 hover:bg-white/10 transition-all duration-300 hover:border-yellow-400/30">
+                    <div class="flex-shrink-0 w-7 h-7 rounded-full bg-yellow-400/20 flex items-center justify-center mt-0.5">
+                      <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                      </svg>
+                    </div>
+                    <p class="text-gray-300 leading-relaxed text-base md:text-lg">
+                      Get certified in machine learning course from the experts to help you <span class="text-yellow-300 font-semibold">land in your dream job</span>.
+                    </p>
+                  </div>
+                </div>
+
+                <!-- CTA Buttons -->
+                <div class="flex flex-col sm:flex-row items-start gap-4 pt-6">
+                  <a href="/contact" class="group relative inline-flex items-center justify-center px-10 py-5 bg-gradient-to-r from-yellow-400 to-yellow-500 text-black font-bold rounded-full shadow-lg shadow-yellow-400/50 hover:shadow-xl hover:shadow-yellow-400/60 transition-all duration-300 hover:-translate-y-1 hover:scale-105 text-base md:text-lg">
+                    <span class="relative z-10">Enquire Now</span>
+                    <div class="absolute inset-0 rounded-full bg-gradient-to-r from-yellow-300 to-yellow-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  </a>
+                  <a href="/courses" class="inline-flex items-center justify-center px-10 py-5 bg-white/10 backdrop-blur-sm border-2 border-white/30 text-white font-bold rounded-full hover:bg-white/20 hover:border-white/50 transition-all duration-300 hover:-translate-y-1 text-base md:text-lg">
+                    Our Courses
+                  </a>
+                </div>
+              </div>
+
+              <!-- Right Side - 3D Card Effect -->
+              <div class="relative lg:flex hidden items-center justify-end w-full">
+                <div class="relative perspective-1000 w-full max-w-md">
+                  <!-- Floating Stats Cards -->
+                  <div class="space-y-5">
+                    <div class="group relative transform transition-all duration-500 hover:scale-105 hover:rotate-1">
+                      <div class="absolute inset-0 bg-gradient-to-br from-yellow-400/20 to-yellow-300/10 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
+                      <div class="relative bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-7 shadow-2xl">
+                        <div class="flex items-center justify-between mb-5">
+                          <span class="text-yellow-400 text-sm font-semibold uppercase tracking-wider">Expert Trainer</span>
+                          <div class="w-14 h-14 rounded-full bg-gradient-to-br from-yellow-400 to-yellow-500 flex items-center justify-center shadow-lg shadow-yellow-400/50">
+                            <svg class="w-7 h-7 text-black" fill="currentColor" viewBox="0 0 20 20">
+                              <path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z"/>
+                            </svg>
+                          </div>
+                        </div>
+                        <p class="text-4xl font-black text-white mb-2">10+</p>
+                        <p class="text-gray-300 text-base">Years Experience</p>
+                      </div>
+                    </div>
+
+                    <div class="group relative transform transition-all duration-500 hover:scale-105 hover:-rotate-1 delay-100">
+                      <div class="absolute inset-0 bg-gradient-to-br from-yellow-400/20 to-yellow-300/10 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
+                      <div class="relative bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-7 shadow-2xl">
+                        <div class="flex items-center justify-between mb-5">
+                          <span class="text-yellow-400 text-sm font-semibold uppercase tracking-wider">Duration</span>
+                          <div class="w-14 h-14 rounded-full bg-gradient-to-br from-yellow-400 to-yellow-500 flex items-center justify-center shadow-lg shadow-yellow-400/50">
+                            <svg class="w-7 h-7 text-black" fill="currentColor" viewBox="0 0 20 20">
+                              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"/>
+                            </svg>
+                          </div>
+                        </div>
+                        <p class="text-4xl font-black text-white mb-2">5</p>
+                        <p class="text-gray-300 text-base">Months</p>
+                      </div>
+                    </div>
+
+                    <div class="group relative transform transition-all duration-500 hover:scale-105 hover:rotate-1 delay-200">
+                      <div class="absolute inset-0 bg-gradient-to-br from-yellow-400/20 to-yellow-300/10 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
+                      <div class="relative bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-7 shadow-2xl">
+                        <div class="flex items-center justify-between mb-5">
+                          <span class="text-yellow-400 text-sm font-semibold uppercase tracking-wider">Investment</span>
+                          <div class="w-14 h-14 rounded-full bg-gradient-to-br from-yellow-400 to-yellow-500 flex items-center justify-center shadow-lg shadow-yellow-400/50">
+                            <svg class="w-7 h-7 text-black" fill="currentColor" viewBox="0 0 20 20">
+                              <path d="M8.433 7.418c.155-.103.346-.196.567-.267v1.698a2.305 2.305 0 01-.567-.267C8.07 8.34 8 8.114 8 8c0-.114.07-.34.433-.582zM11 12.849v-1.698c.22.071.412.164.567.267.364.243.433.468.433.582 0 .114-.07.34-.433.582a2.305 2.305 0 01-.567.267z"/>
+                              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-13a1 1 0 10-2 0v.092a4.535 4.535 0 00-1.676.662C6.602 6.234 6 7.009 6 8c0 .99.602 1.765 1.324 2.246.48.32 1.054.545 1.676.662v1.941c-.391-.127-.68-.317-.843-.504a1 1 0 10-1.51 1.31c.562.649 1.413 1.076 2.353 1.253V15a1 1 0 102 0v-.092a4.535 4.535 0 001.676-.662C13.398 13.766 14 12.991 14 12c0-.99-.602-1.765-1.324-2.246A4.535 4.535 0 0011 9.092V7.151c.391.127.68.317.843.504a1 1 0 101.511-1.31c-.563-.649-1.413-1.076-2.354-1.253V5z" clip-rule="evenodd"/>
+                            </svg>
+                          </div>
+                        </div>
+                        <p class="text-4xl font-black text-white mb-2">₹75K</p>
+                        <p class="text-gray-300 text-base">Course Fee</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        ) : (
+          <div class="max-w-4xl mx-auto text-center">
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+              <span class="text-yellow-400">{course.name}</span> Course in Bangalore
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-300">
+              {course.description}
+            </p>
+          </div>
+        )}
+    </div>
+  </section>
+
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <div class="max-w-5xl mx-auto">
+      {slug === 'data-science' ? (
+        <div class="space-y-14">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="bg-white border border-gray-200 rounded-xl p-6 text-center transition-all duration-300 hover:-translate-y-0.5 hover:border-yellow-400 hover:shadow-lg">
+              <p class="text-sm text-gray-500">Trainer</p>
+              <p class="text-xl font-bold text-black">11+ Years Industry Experience</p>
+            </div>
+            <div class="bg-white border border-gray-200 rounded-xl p-6 text-center transition-all duration-300 hover:-translate-y-0.5 hover:border-yellow-400 hover:shadow-lg">
+              <p class="text-sm text-gray-500">Course Duration</p>
+              <p class="text-xl font-bold text-black">8 Months</p>
+            </div>
+            <div class="bg-white border border-gray-200 rounded-xl p-6 text-center transition-all duration-300 hover:-translate-y-0.5 hover:border-yellow-400 hover:shadow-lg">
+              <p class="text-sm text-gray-500">Certificate</p>
+              <p class="text-xl font-bold text-black">Course Completion</p>
+            </div>
+            <div class="bg-white border border-gray-200 rounded-xl p-6 text-center">
+              <p class="text-sm text-gray-500">Internships & Placement</p>
+              <p class="text-xl font-bold text-black">Assistance Available</p>
+            </div>
+          </div>
+
+          <section>
+            <h2 class="text-3xl font-bold text-black mb-4">Hands-on Data Science Training in Bangalore</h2>
+            <p class="text-gray-700 leading-relaxed">
+              Corpnce’s Advanced Data Science course in Bangalore, Rajajinagar covers everything
+              from basics to advanced concepts required for the industry. You don’t need any prior
+              knowledge to start our course. We simplify core concepts like Python, statistics,
+              Machine Learning, and Deep Learning through project-based learning (PBL). You will
+              team up with learners, faculties, interns, data scientists, and alumni to solve
+              real-time industry challenges and boost skills like technology quotient, critical
+              thinking, and team building.
+            </p>
+          </section>
+
+          <section>
+            <h2 class="text-3xl font-bold text-black mb-4">What is Data Science and why we need it?</h2>
+            <p class="text-gray-700 leading-relaxed mb-6">
+              Data Science combines domain expertise, programming skills, and knowledge of maths
+              and statistics to extract meaningful insights from data. Organizations are moving
+              from intuition-based decisions to data-driven decisions. Data Science integrates
+              traditional analytics with Machine Learning and Deep Learning techniques for better
+              decisions with lower risk.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <div class="bg-yellow-50 border border-yellow-200 rounded-xl p-5 text-center">
+                <p class="text-sm text-gray-600">Vacant Jobs</p>
+                <p class="text-2xl font-bold text-black">1.4 Lakh</p>
+              </div>
+              <div class="bg-yellow-50 border border-yellow-200 rounded-xl p-5 text-center">
+                <p class="text-sm text-gray-600">Jobs Filled</p>
+                <p class="text-2xl font-bold text-black">3.7 Lakh</p>
+              </div>
+              <div class="bg-yellow-50 border border-yellow-200 rounded-xl p-5 text-center">
+                <p class="text-sm text-gray-600">Demand Growth</p>
+                <p class="text-2xl font-bold text-black">417%</p>
+              </div>
+            </div>
+          </section>
+
+          <section class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div>
+              <h3 class="text-2xl font-bold text-black mt-4 mb-4">Learned Skills from Data Science Courses</h3>
+              <ul class="list-disc list-inside text-gray-700 space-y-2">
+                <li>Programming Skill – R / Python</li>
+                <li>Machine Learning Algorithms</li>
+                <li>Data Wrangling and Data Exploration</li>
+                <li>Deep Learning</li>
+                <li>Statistics</li>
+                <li>Data Visualization</li>
+                <li>Data Extraction & Transformation</li>
+              </ul>
+            </div>
+            <div class="bg-gradient-to-br from-yellow-50 via-white to-white border border-yellow-100 rounded-2xl p-6 md:p-8 shadow-sm">
+              <span class="inline-flex items-center rounded-full bg-yellow-100 text-yellow-900 px-3 py-1 text-xs font-semibold uppercase tracking-wide mb-4">
+                Designed For
+              </span>
+              <h3 class="text-2xl md:text-3xl font-bold text-black mb-3">Who Should Do The Data Science Course?</h3>
+              <p class="text-gray-700 mb-6">
+                The beauty of Data Science in 2026 is its universality. We have designed this program for anyone with a logical mindset and a hunger for problem-solving.
+              </p>
+              <ul class="grid gap-4 md:grid-cols-2 text-gray-700">
+                <li class="rounded-xl border border-gray-100 bg-white p-4 shadow-sm">
+                  <strong class="text-black">Corporate Leaders & Managers:</strong> Leverage "Decision Intelligence" to lead teams with data-backed strategies.
+                </li>
+                <li class="rounded-xl border border-gray-100 bg-white p-4 shadow-sm">
+                  <strong class="text-black">Career Switchers:</strong> Professionals from Finance, Healthcare, or Retail looking to pivot into high-growth tech roles.
+                </li>
+                <li class="rounded-xl border border-gray-100 bg-white p-4 shadow-sm">
+                  <strong class="text-black">Technical Minds:</strong> Software developers, Database admins, and BI professionals wanting to upgrade to AI-driven architectures.
+                </li>
+                <li class="rounded-xl border border-gray-100 bg-white p-4 shadow-sm">
+                  <strong class="text-black">Analytical Thinkers:</strong> Statisticians, Mathematicians, and Economists who want to apply theory to large-scale industry data.
+                </li>
+                <li class="rounded-xl border border-gray-100 bg-white p-4 shadow-sm md:col-span-2">
+                  <strong class="text-black">Fresh Graduates:</strong> Students from any stream (Tech or Non-Tech) with strong analytical foundations looking for a future-proof career.
+                </li>
+              </ul>
+            </div>
+          </section>
+
+          <section class="relative overflow-hidden rounded-3xl border border-gray-200 bg-white p-6 md:p-10 shadow-sm">
+            <div class="absolute -top-24 -right-24 h-56 w-56 rounded-full bg-yellow-100/70 blur-3xl"></div>
+            <div class="absolute -bottom-24 -left-24 h-56 w-56 rounded-full bg-gray-100 blur-3xl"></div>
+            <div class="relative flex flex-col gap-2 mb-8">
+              <span class="inline-flex w-fit items-center rounded-full border border-yellow-200 bg-yellow-50 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-yellow-900">
+                Data Science Specialization
+              </span>
+              <h2 class="text-3xl md:text-4xl font-bold text-black">Choose Your 2026 Path</h2>
+              <p class="text-sm md:text-base text-gray-600">
+                Two distinct tracks built for executive strategy and deep technical mastery.
+              </p>
+            </div>
+            <div class="grid grid-cols-1 gap-8">
+              <div class="rounded-2xl border border-yellow-100 bg-white p-6 md:p-8 shadow-md">
+                <div class="flex flex-col gap-2 mb-5">
+                  <span class="text-xs font-semibold uppercase tracking-wide text-yellow-800">Executive Track</span>
+                  <div class="h-1 w-12 rounded-full bg-yellow-400"></div>
+                </div>
+                <h3 class="text-2xl md:text-3xl font-bold text-black mb-2">
+                  EXECUTIVE DATA SCIENCE & AI STRATEGY
+                </h3>
+                <p class="text-sm font-semibold text-yellow-900 mb-4">
+                  The Leadership Blueprint for the 2026 Data Economy
+                </p>
+                <p class="text-gray-700 mb-6">
+                  This high-impact program is meticulously designed for Top Executives, Senior Managers, and Business Leaders who need to move beyond the hype and lead with "Decision Intelligence." In 2026, leadership isn't just about managing people; it's about managing AI-human hybrid workflows. No prior programming knowledge is required.
+                </p>
+                <h4 class="text-sm font-semibold text-black mb-3">PROGRAM KEY HIGHLIGHTS:</h4>
+                <ul class="list-disc list-inside text-gray-700 space-y-2 mb-6">
+                  <li>The AI Revolution: History of Data Science to the birth of Generative AI.</li>
+                  <li>Sector-Specific Case Studies: ROI-driven AI implementation in BFSI, Retail, Healthcare, and Manufacturing.</li>
+                  <li>Strategic Statistical Thinking: Moving from "gut feeling" to data-backed probability and risk assessment.</li>
+                  <li>Executive Machine Learning: Understanding how algorithms drive business value without getting lost in code.</li>
+                  <li>AI Governance & Ethics: Navigating the legal and ethical landscape of 2026 AI deployment.</li>
+                  <li>Data Storytelling: Mastering visualization techniques to influence boardroom decisions.</li>
+                  <li>Future-Proofing: A strategic view of NLP, LLMs, and Agentic AI in the enterprise.</li>
+                </ul>
+                <div class="grid gap-2 text-sm text-gray-700 mb-6 md:grid-cols-3">
+                  <div class="rounded-lg border border-gray-100 bg-white px-4 py-3">
+                    <p class="text-xs text-gray-500">Duration</p>
+                    <p class="font-semibold text-black">16 Weeks (Weekend Batches)</p>
+                  </div>
+                  <div class="rounded-lg border border-gray-100 bg-white px-4 py-3">
+                    <p class="text-xs text-gray-500">Learning Hours</p>
+                    <p class="font-semibold text-black">32+ Strategic Sessions</p>
+                  </div>
+                  <div class="rounded-lg border border-gray-100 bg-white px-4 py-3">
+                    <p class="text-xs text-gray-500">Data Science Course Fees in Bangalore</p>
+                    <p class="font-semibold text-black">₹68,000/-*</p>
+                  </div>
+                </div>
+                <a class="inline-flex items-center justify-center rounded-full bg-yellow-400 px-5 py-2 text-sm font-semibold text-black hover:bg-yellow-300 transition" href="/contact">
+                  Enquire Now — Secure Your Executive Seat
+                </a>
+              </div>
+
+              <div class="rounded-2xl border border-gray-200 bg-white p-6 md:p-8 shadow-md">
+                <div class="flex flex-col gap-2 mb-5">
+                  <span class="text-xs font-semibold uppercase tracking-wide text-gray-700">Advanced Track</span>
+                  <div class="h-1 w-12 rounded-full bg-gray-300"></div>
+                </div>
+                <h3 class="text-2xl md:text-3xl font-bold text-black mb-2">
+                  ADVANCED DATA SCIENCE & AI ENGINEERING
+                </h3>
+                <p class="text-sm font-semibold text-yellow-900 mb-4">
+                  Master the 2026 Tech Stack: From Python to Generative AI Pipelines
+                </p>
+                <p class="text-gray-700 mb-6">
+                  Are you looking to pivot your career or dominate the current AI-first job market? Our Advanced Data Science Course in Bangalore, Rajajinagar is an intensive, industry-aligned bootcamp that transforms you into a Full-Stack Data Scientist. With 6+ Industrial Projects, you will build a portfolio that recruiters in 2026 cannot ignore.
+                </p>
+                <h4 class="text-sm font-semibold text-black mb-3">PROGRAM KEY CONTENTS:</h4>
+                <ul class="list-disc list-inside text-gray-700 space-y-2 mb-6">
+                  <li>Modern Foundations: Python for Data Science, Advanced SQL, and Mathematical Foundations (Linear Algebra & Calculus for AI).</li>
+                  <li>Full-Stack Data Analytics: Exploratory Data Analysis (EDA), Data Wrangling, and automated Munging techniques.</li>
+                  <li>Next-Gen Visualization: Dashboarding with Tableau and Python-based interactive storytelling.</li>
+                  <li>Advanced Machine Learning: Supervised/Unsupervised Learning, Hyperparameter Tuning, and Optimization.</li>
+                  <li>Deep Learning & Computer Vision: ANN, CNNs, Transfer Learning, and Image Generation.</li>
+                  <li>The Generative AI Frontier: RNNs, Transformers, Hugging Face, Fine-Tuning LLMs, and RAG (Retrieval-Augmented Generation).</li>
+                  <li>Scalable MLOps: Model Building, Containerization (Docker), Deployment with FastAPI, and Cloud Monitoring.</li>
+                </ul>
+                <div class="rounded-xl border border-yellow-100 bg-yellow-50 px-4 py-3 text-sm text-black mb-6">
+                  <span class="font-semibold">2026 MASTER TOOLS:</span>
+                  Python • SQL • SciKit-Learn • PyTorch • Hugging Face • LangChain • FastAPI • Tableau • Docker
+              </div>
+                <div class="grid gap-2 text-sm text-gray-700 md:grid-cols-4">
+                  <div class="rounded-lg border border-gray-100 bg-white px-4 py-3">
+                    <p class="text-xs text-gray-500">Duration</p>
+                    <p class="font-semibold text-black">7-8 Months</p>
+                  </div>
+                  <div class="rounded-lg border border-gray-100 bg-white px-4 py-3">
+                    <p class="text-xs text-gray-500">Teaching Hours</p>
+                    <p class="font-semibold text-black">320+ Hours of Live Instruction</p>
+                  </div>
+                  <div class="rounded-lg border border-gray-100 bg-white px-4 py-3">
+                    <p class="text-xs text-gray-500">Hands-on Lab Hours</p>
+                    <p class="font-semibold text-black">150+ Hours of Guided Projects</p>
+                  </div>
+                  <div class="rounded-lg border border-gray-100 bg-white px-4 py-3">
+                    <p class="text-xs text-gray-500">Data Science Course Fees in Bangalore</p>
+                    <p class="font-semibold text-black">₹1,15,000/-*</p>
+                  </div>
+                </div>
+                <a class="inline-flex items-center justify-center rounded-full bg-yellow-400 px-5 py-2 text-sm font-semibold text-black hover:bg-yellow-300 transition mt-6" href="/contact">
+                  Enquire Now - Secure Your Seat
+                </a>
+              </div>
+            </div>
+          </section>
+
+          <section class="bg-white border border-gray-100 rounded-2xl p-6 md:p-8 animate-fade-in-up transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg">
+            <div class="grid gap-8 md:grid-cols-2 items-start">
+              <div>
+                <span class="inline-flex items-center rounded-full bg-yellow-50 border border-yellow-200 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-yellow-900 mb-3">
+                  Who Can Learn Data Science & AI with Corpnce?
+                </span>
+                <h2 class="text-3xl md:text-4xl font-bold text-black mb-3">Your Journey into the Future of Tech Starts Here.</h2>
+                <p class="text-gray-700 mb-4">
+                  The world runs on data, and the future is being built by AI. As industries across Bangalore and the globe pivot to AI-first strategies, the demand for skilled Data Scientists and AI Engineers has exploded. Forget traditional career paths—Data Science is a domain where passion, logic, and strategic thinking trump your background.
+                </p>
+
+                <div class="rounded-xl border border-yellow-100 bg-yellow-50 p-4 mb-5">
+                  <h3 class="text-sm font-semibold text-black mb-2">The Unprecedented Demand & Reward:</h3>
+                  <ul class="list-disc list-inside text-gray-700 space-y-1">
+                    <li>The Indian market currently boasts over 2.9 lakh active openings in Data Science, AI, and Machine Learning roles for 2025-2026. This demand is only set to double by 2030.</li>
+                    <li>High-Value Careers: A certified Data Scientist with 2-3 years of experience in Bangalore can command an average salary of ₹12L – ₹18L per annum, with specialized AI roles (Generative AI, MLOps) reaching ₹25L+.</li>
+                    <li>Exponential Growth: Your expertise in this rapidly evolving field means your earning potential and career growth are virtually limitless.</li>
+                </ul>
+                </div>
+
+                <p class="text-gray-800 font-semibold mb-2">
+                  Your Background Doesn't Define Your Future in Data Science – Your Ambition Does!
+                </p>
+                <p class="text-gray-700 mb-4">
+                  At Corpnce in Rajajinagar, we believe that anyone with strong analytical, logical reasoning, and problem-solving skills can excel. Our diverse student body proves that the best Data Scientists come from all walks of life.
+                </p>
+
+              </div>
+
+              <div class="rounded-2xl border border-dashed border-gray-300 bg-gray-50 p-4">
+                <button type="button" class="group w-full text-left" id="roadmap-image-trigger">
+                  <img
+                    src="/images/data_science_roadmap.png"
+                    alt="Data science and AI learning roadmap"
+                    class="aspect-[4/3] w-full rounded-xl border border-gray-200 bg-white object-contain shadow-sm transition group-hover:shadow-md"
+                  />
+                </button>
+                <div class="mt-4 grid gap-3 sm:grid-cols-2">
+                  <div class="group relative bg-white rounded-2xl p-3 border border-gray-100 hover:border-yellow-400 transition-all duration-500 hover:shadow-xl hover:shadow-yellow-400/10 overflow-hidden">
+                    <p class="text-xs text-gray-500">Active Openings (2025-2026)</p>
+                    <p class="text-lg font-semibold text-black">2.9 Lakh+</p>
+            </div>
+                  <div class="group relative bg-white rounded-2xl p-3 border border-gray-100 hover:border-yellow-400 transition-all duration-500 hover:shadow-xl hover:shadow-yellow-400/10 overflow-hidden">
+                    <p class="text-xs text-gray-500">Avg Salary (2-3 yrs)</p>
+                    <p class="text-lg font-semibold text-black">₹12L – ₹18L</p>
+                  </div>
+                  <div class="group relative bg-white rounded-2xl p-3 border border-gray-100 hover:border-yellow-400 transition-all duration-500 hover:shadow-xl hover:shadow-yellow-400/10 overflow-hidden sm:col-span-2">
+                    <p class="text-xs text-gray-500">Specialized AI Roles</p>
+                    <p class="text-lg font-semibold text-black">₹25L+ potential</p>
+                  </div>
+                </div>
+                <div class="mt-5 rounded-xl border border-yellow-300 bg-yellow-100 p-4 text-gray-800 shadow-md">
+                  <p class="font-semibold text-black mb-1">No Prior Coding Experience? No Problem!</p>
+                  <p>
+                    Our foundation modules are designed to bring everyone up to speed. For professionals and freshers from diverse educational backgrounds, we offer initial screening and personalized career counseling to ensure the perfect fit for your aspirations.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="mt-6">
+              <div class="flex items-center gap-3 mb-4">
+                <div class="h-10 w-10 rounded-full bg-yellow-100 text-yellow-900 flex items-center justify-center text-sm font-semibold">5</div>
+                <h3 class="text-base font-semibold text-black">Ideal Candidates for Our Data Science Courses Include</h3>
+              </div>
+              <div class="grid gap-4 md:grid-cols-2">
+                <div class="group rounded-2xl border border-gray-100 bg-white p-4 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-yellow-300 hover:shadow-lg">
+                  <p class="text-sm font-semibold text-black mb-1">IT & Tech Professionals</p>
+                  <p class="text-gray-700 text-sm">
+                    Software Developers, Testers, Database/Network Administrators, and Data Engineers looking to upskill into advanced AI roles.
+                  </p>
+                </div>
+                <div class="group rounded-2xl border border-gray-100 bg-white p-4 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-yellow-300 hover:shadow-lg">
+                  <p class="text-sm font-semibold text-black mb-1">Business & Product Minds</p>
+                  <p class="text-gray-700 text-sm">
+                    Business Analysts, Product Managers, and Customer Service Analysts aiming to drive strategy with data-backed insights.
+                  </p>
+                </div>
+                <div class="group rounded-2xl border border-gray-100 bg-white p-4 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-yellow-300 hover:shadow-lg">
+                  <p class="text-sm font-semibold text-black mb-1">Research & Academic Talent</p>
+                  <p class="text-gray-700 text-sm">
+                    Research Scientists, Academicians, and Statisticians eager to apply theoretical knowledge to real-world industrial problems.
+                  </p>
+                </div>
+                <div class="group rounded-2xl border border-gray-100 bg-white p-4 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-yellow-300 hover:shadow-lg">
+                  <p class="text-sm font-semibold text-black mb-1">Fresh Graduates</p>
+                  <p class="text-gray-700 text-sm">
+                    Ambitious freshers from ANY educational background (B.E., B.Tech, B.Sc., B.Com, Arts) with a keen interest in logic and problem-solving.
+                  </p>
+                </div>
+                <div class="group rounded-2xl border border-gray-100 bg-white p-4 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-yellow-300 hover:shadow-lg md:col-span-2">
+                  <p class="text-sm font-semibold text-black mb-1">Career Changers</p>
+                  <p class="text-gray-700 text-sm">
+                    Professionals from non-IT fields (e.g., Finance, Marketing, Healthcare) ready to embrace a high-growth tech career.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <dialog id="roadmap-image-dialog" class="rounded-2xl p-0 backdrop:bg-black/60">
+              <div class="max-w-4xl w-[92vw] bg-white rounded-2xl overflow-hidden">
+                <div class="flex items-center justify-between px-4 py-3 border-b border-gray-200">
+                  <p class="text-sm font-semibold text-black">Data Science & AI Roadmap</p>
+                  <button type="button" class="text-sm font-semibold text-gray-600 hover:text-black" id="roadmap-image-close">
+                    Close
+                  </button>
+                </div>
+                <img
+                  src="/images/data_science_roadmap.png"
+                  alt="Data science and AI learning roadmap"
+                  class="w-full h-auto"
+                />
+              </div>
+            </dialog>
+            <script>
+              const roadmapTrigger = document.getElementById('roadmap-image-trigger');
+              const roadmapDialog = document.getElementById('roadmap-image-dialog');
+              const roadmapClose = document.getElementById('roadmap-image-close');
+
+              if (roadmapTrigger && roadmapDialog && roadmapClose) {
+                roadmapTrigger.addEventListener('click', () => {
+                  roadmapDialog.showModal();
+                });
+                roadmapClose.addEventListener('click', () => {
+                  roadmapDialog.close();
+                });
+                roadmapDialog.addEventListener('click', (event) => {
+                  if (event.target === roadmapDialog) {
+                    roadmapDialog.close();
+                  }
+                });
+              }
+            </script>
+          </section>
+
+          <section class="bg-white border border-gray-100 rounded-2xl p-6 md:p-8">
+            <div class="text-center mb-8">
+              <p class="text-xs font-semibold uppercase tracking-wide text-yellow-700 mb-2">Why Choose Corpnce</p>
+              <h2 class="text-2xl md:text-3xl font-bold text-black">Our Core Features</h2>
+            </div>
+            <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+              <div class="rounded-xl border border-gray-100 bg-white p-4 shadow-sm">
+                <div class="h-10 w-10 rounded-lg bg-yellow-100 text-yellow-900 flex items-center justify-center mb-3">
+                  <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                  </svg>
+                </div>
+                <h3 class="text-base font-semibold text-black mb-1">A Product Company</h3>
+                <p class="text-sm text-gray-700">AI product DNA with R&D-led curriculum built for real industry needs.</p>
+              </div>
+              <div class="rounded-xl border border-gray-100 bg-white p-4 shadow-sm">
+                <div class="h-10 w-10 rounded-lg bg-yellow-100 text-yellow-900 flex items-center justify-center mb-3">
+                  <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.246m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.246" />
+                  </svg>
+                </div>
+                <h3 class="text-base font-semibold text-black mb-1">Personal Attention</h3>
+                <p class="text-sm text-gray-700">Smaller batches enable tailored guidance and faster skill growth.</p>
+              </div>
+              <div class="rounded-xl border border-gray-100 bg-white p-4 shadow-sm">
+                <div class="h-10 w-10 rounded-lg bg-yellow-100 text-yellow-900 flex items-center justify-center mb-3">
+                  <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+                  </svg>
+                </div>
+                <h3 class="text-base font-semibold text-black mb-1">Technology Quotient</h3>
+                <p class="text-sm text-gray-700">TQ methodology boosts adaptability and problem-solving.</p>
+              </div>
+              <div class="rounded-xl border border-gray-100 bg-white p-4 shadow-sm">
+                <div class="h-10 w-10 rounded-lg bg-yellow-100 text-yellow-900 flex items-center justify-center mb-3">
+                  <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  </svg>
+                </div>
+                <h3 class="text-base font-semibold text-black mb-1">Placement Assistance</h3>
+                <p class="text-sm text-gray-700">Career guidance and placement support to help you land roles.</p>
+              </div>
+              <div class="rounded-xl border border-gray-100 bg-white p-4 shadow-sm">
+                <div class="h-10 w-10 rounded-lg bg-yellow-100 text-yellow-900 flex items-center justify-center mb-3">
+                  <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                </div>
+                <h3 class="text-base font-semibold text-black mb-1">Life-Long Access</h3>
+                <p class="text-sm text-gray-700">Rejoin future batches anytime to refresh and advance skills.</p>
+              </div>
+              <div class="rounded-xl border border-gray-100 bg-white p-4 shadow-sm">
+                <div class="h-10 w-10 rounded-lg bg-yellow-100 text-yellow-900 flex items-center justify-center mb-3">
+                  <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M9 20H4v-2a3 3 0 015.356-1.857M16 3.13a4 4 0 010 7.75M8 3.13a4 4 0 000 7.75M12 11a4 4 0 100-8 4 4 0 000 8z" />
+                  </svg>
+                </div>
+                <h3 class="text-base font-semibold text-black mb-1">Strong Alumni Network</h3>
+                <p class="text-sm text-gray-700">Connect with mentors and peers across industries for long-term growth.</p>
+              </div>
+            </div>
+          </section>
+
+          <section class="bg-white border border-gray-100 rounded-2xl p-6 md:p-8">
+            <div class="flex flex-col gap-6 md:flex-row md:items-start md:gap-10">
+              <div class="md:w-1/3 flex flex-col items-center">
+                <div class="relative h-72 w-72 md:h-80 md:w-80">
+                  <div
+                    class="absolute inset-0 rounded-full shadow-2xl"
+                    style="background: conic-gradient(#fbbf24 0 23%, #60a5fa 23% 43%, #34d399 43% 63%, #f472b6 63% 82%, #a78bfa 82% 100%); transform: rotate(-18deg);"
+                  ></div>
+                  <div
+                    class="absolute inset-0 rounded-full"
+                    style="background: conic-gradient(#eab308 0 23%, #3b82f6 23% 43%, #10b981 43% 63%, #ec4899 63% 82%, #8b5cf6 82% 100%); transform: translateY(20px) rotate(-18deg); filter: brightness(0.75); opacity: 0.9; z-index: -1;"
+                  ></div>
+                  <div
+                    class="absolute inset-0 rounded-full"
+                    style="box-shadow: 0 28px 35px rgba(0,0,0,0.25); transform: translateY(24px); z-index: -2;"
+                  ></div>
+                  <div class="absolute inset-12 rounded-full bg-white/95 border border-gray-100 shadow-inner"></div>
+                </div>
+                <div class="mt-4 grid grid-cols-2 gap-2 text-xs text-gray-700">
+                  <div class="flex items-center gap-2"><span class="h-2.5 w-2.5 rounded-full bg-yellow-400"></span>Programming 23%</div>
+                  <div class="flex items-center gap-2"><span class="h-2.5 w-2.5 rounded-full bg-blue-400"></span>Generative AI 20%</div>
+                  <div class="flex items-center gap-2"><span class="h-2.5 w-2.5 rounded-full bg-emerald-400"></span>Production 20%</div>
+                  <div class="flex items-center gap-2"><span class="h-2.5 w-2.5 rounded-full bg-pink-400"></span>Visualization 19%</div>
+                  <div class="flex items-center gap-2"><span class="h-2.5 w-2.5 rounded-full bg-purple-400"></span>Advanced ML 18%</div>
+                </div>
+                <p class="mt-2 text-xs text-gray-500">Indicative share of 2026 data science toolboxes.</p>
+              </div>
+
+              <div class="md:flex-1">
+                <p class="text-xs font-semibold uppercase tracking-wide text-yellow-700 mb-2">Skill Pillars</p>
+                <h2 class="text-2xl md:text-3xl font-bold text-black mb-4">What Dominates Data Scientist Toolboxes in 2026</h2>
+                <div class="grid gap-3">
+                  <div class="rounded-xl border border-gray-100 bg-white p-4">
+                    <p class="text-sm font-semibold text-black">Programming</p>
+                    <p class="text-sm text-gray-700">Python (23%+ market share), SQL for database management, and Julia for high-performance computing.</p>
+                  </div>
+                  <div class="rounded-xl border border-gray-100 bg-white p-4">
+                    <p class="text-sm font-semibold text-black">Generative AI</p>
+                    <p class="text-sm text-gray-700">Large Language Models (LLMs), Retrieval-Augmented Generation (RAG), and fine-tuning with Hugging Face.</p>
+                  </div>
+                  <div class="rounded-xl border border-gray-100 bg-white p-4">
+                    <p class="text-sm font-semibold text-black">Production (MLOps)</p>
+                    <p class="text-sm text-gray-700">Docker, Kubernetes, and FastAPI for deploying and monitoring models in cloud environments like AWS and Azure.</p>
+                  </div>
+                  <div class="rounded-xl border border-gray-100 bg-white p-4">
+                    <p class="text-sm font-semibold text-black">Visualization</p>
+                    <p class="text-sm text-gray-700">Advanced Tableau, Power BI, and interactive Python libraries like Plotly and D3.js.</p>
+                  </div>
+                  <div class="rounded-xl border border-gray-100 bg-white p-4">
+                    <p class="text-sm font-semibold text-black">Advanced ML</p>
+                    <p class="text-sm text-gray-700">Deep Learning (CNNs, RNNs), AutoML for rapid prototyping, and Explainable AI (XAI).</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="relative overflow-hidden rounded-3xl border border-gray-100 bg-gradient-to-br from-white via-yellow-50/40 to-white p-6 md:p-10 shadow-sm">
+            <div class="absolute -top-20 -right-20 h-40 w-40 rounded-full bg-yellow-100/70 blur-3xl"></div>
+            <div class="absolute -bottom-24 -left-24 h-48 w-48 rounded-full bg-gray-100 blur-3xl"></div>
+            <div class="relative flex flex-col gap-2 mb-8">
+              <p class="text-xs font-semibold uppercase tracking-wide text-yellow-700">Industry Outlook</p>
+              <h2 class="text-2xl md:text-3xl font-bold text-black">Industry Hiring Distribution for Data Science & AI (2026 Forecast)</h2>
+              <p class="text-sm text-gray-700">
+                Based on current growth trajectories and the NASSCOM 2026 AI Roadmap, the hiring demand is distributed as follows:
+              </p>
+            </div>
+            <div class="relative grid gap-6 md:grid-cols-[1.1fr,0.9fr]">
+              <div class="space-y-4">
+                <div class="rounded-2xl border border-gray-100 bg-white/90 p-4 shadow-sm">
+                  <div class="flex items-center justify-between text-sm font-semibold text-black">
+                    <span>BFSI (Banking & Finance)</span><span>30.0%</span>
+                  </div>
+                  <div class="mt-3 h-3.5 rounded-full bg-gray-100 overflow-hidden">
+                    <div class="h-3.5 rounded-full bg-yellow-400 shadow-[0_0_12px_rgba(250,204,21,0.5)]" style="width: 30%"></div>
+                  </div>
+                  <p class="mt-2 text-sm text-gray-700">Fraud prevention, AI-driven credit scoring, and robo-advisory.</p>
+                </div>
+                <div class="rounded-2xl border border-gray-100 bg-white/90 p-4 shadow-sm">
+                  <div class="flex items-center justify-between text-sm font-semibold text-black">
+                    <span>Retail & E-commerce</span><span>25.0%</span>
+                  </div>
+                  <div class="mt-3 h-3.5 rounded-full bg-gray-100 overflow-hidden">
+                    <div class="h-3.5 rounded-full bg-blue-400 shadow-[0_0_12px_rgba(96,165,250,0.5)]" style="width: 25%"></div>
+                  </div>
+                  <p class="mt-2 text-sm text-gray-700">Hyper-personalization, demand forecasting, and inventory automation.</p>
+                </div>
+                <div class="rounded-2xl border border-gray-100 bg-white/90 p-4 shadow-sm">
+                  <div class="flex items-center justify-between text-sm font-semibold text-black">
+                    <span>IT & Tech Services</span><span>20.0%</span>
+                  </div>
+                  <div class="mt-3 h-3.5 rounded-full bg-gray-100 overflow-hidden">
+                    <div class="h-3.5 rounded-full bg-emerald-400 shadow-[0_0_12px_rgba(52,211,153,0.5)]" style="width: 20%"></div>
+                  </div>
+                  <p class="mt-2 text-sm text-gray-700">Global Capability Centers (GCCs) and AI-as-a-Service platforms.</p>
+                </div>
+                <div class="rounded-2xl border border-gray-100 bg-white/90 p-4 shadow-sm">
+                  <div class="flex items-center justify-between text-sm font-semibold text-black">
+                    <span>Healthcare & Pharma</span><span>15.0%</span>
+                  </div>
+                  <div class="mt-3 h-3.5 rounded-full bg-gray-100 overflow-hidden">
+                    <div class="h-3.5 rounded-full bg-pink-400 shadow-[0_0_12px_rgba(244,114,182,0.5)]" style="width: 15%"></div>
+                  </div>
+                  <p class="mt-2 text-sm text-gray-700">Drug discovery, patient outcome prediction, and medical imaging AI.</p>
+                </div>
+                <div class="rounded-2xl border border-gray-100 bg-white/90 p-4 shadow-sm">
+                  <div class="flex items-center justify-between text-sm font-semibold text-black">
+                    <span>Manufacturing & Automotive</span><span>10.0%</span>
+                  </div>
+                  <div class="mt-3 h-3.5 rounded-full bg-gray-100 overflow-hidden">
+                    <div class="h-3.5 rounded-full bg-purple-400 shadow-[0_0_12px_rgba(167,139,250,0.5)]" style="width: 10%"></div>
+                  </div>
+                  <p class="mt-2 text-sm text-gray-700">Autonomous systems, predictive maintenance, and Digital Twins.</p>
+                </div>
+              </div>
+              <div class="rounded-2xl border border-gray-100 bg-white/90 p-5 shadow-sm">
+                <h3 class="text-sm font-semibold text-black mb-4">Hiring Share Snapshot</h3>
+                <div class="space-y-3 text-sm text-gray-700">
+                  <div class="flex items-center justify-between">
+                    <span class="flex items-center gap-2"><span class="h-2.5 w-2.5 rounded-full bg-yellow-400"></span>BFSI</span>
+                    <span>30.0%</span>
+                  </div>
+                  <div class="flex items-center justify-between">
+                    <span class="flex items-center gap-2"><span class="h-2.5 w-2.5 rounded-full bg-blue-400"></span>Retail & E-commerce</span>
+                    <span>25.0%</span>
+                  </div>
+                  <div class="flex items-center justify-between">
+                    <span class="flex items-center gap-2"><span class="h-2.5 w-2.5 rounded-full bg-emerald-400"></span>IT & Tech Services</span>
+                    <span>20.0%</span>
+                  </div>
+                  <div class="flex items-center justify-between">
+                    <span class="flex items-center gap-2"><span class="h-2.5 w-2.5 rounded-full bg-pink-400"></span>Healthcare & Pharma</span>
+                    <span>15.0%</span>
+                  </div>
+                  <div class="flex items-center justify-between">
+                    <span class="flex items-center gap-2"><span class="h-2.5 w-2.5 rounded-full bg-purple-400"></span>Manufacturing & Automotive</span>
+                    <span>10.0%</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="bg-white border border-gray-100 rounded-2xl p-6 md:p-8">
+            <div class="flex flex-col gap-2 mb-6">
+              <p class="text-xs font-semibold uppercase tracking-wide text-yellow-700">Global Outlook</p>
+              <h2 class="text-2xl md:text-3xl font-bold text-black">Global and Country-Wise Job Market (2026 Forecast)</h2>
+              <p class="text-sm text-gray-700">
+                The data science industry is projected to create approximately 11.5 million new jobs globally by 2026.
+              </p>
+            </div>
+
+            <div class="grid gap-6 lg:grid-cols-[1.05fr,0.95fr]">
+              <div class="rounded-2xl border border-gray-100 bg-white p-5 shadow-sm">
+                <div class="flex items-center justify-between mb-4">
+                  <div>
+                    <p class="text-xs uppercase tracking-wide text-gray-500">Global New Roles</p>
+                    <p class="text-3xl font-bold text-black">11.5M+</p>
+                  </div>
+                  <div class="h-12 w-12 rounded-full bg-yellow-100 text-yellow-900 flex items-center justify-center text-sm font-semibold">
+                    2026
+                  </div>
+                </div>
+
+                <p class="text-sm font-semibold text-black mb-3">Top 2026 Skills by Region</p>
+                <div class="grid grid-cols-3 gap-3 text-xs text-gray-700">
+                  <div class="rounded-xl border border-gray-100 bg-gray-50 p-3">
+                    <p class="font-semibold text-black mb-2">India</p>
+                    <div class="space-y-2">
+                      <div>
+                        <p class="text-[11px] text-gray-500">MLOps</p>
+                        <div class="h-2 rounded-full bg-gray-200">
+                          <div class="h-2 rounded-full bg-yellow-400" style="width: 82%"></div>
+                        </div>
+                      </div>
+                      <div>
+                        <p class="text-[11px] text-gray-500">GenAI Talent</p>
+                        <div class="h-2 rounded-full bg-gray-200">
+                          <div class="h-2 rounded-full bg-yellow-400" style="width: 90%"></div>
+                        </div>
+                      </div>
+                      <div>
+                        <p class="text-[11px] text-gray-500">Big Data Engg</p>
+                        <div class="h-2 rounded-full bg-gray-200">
+                          <div class="h-2 rounded-full bg-yellow-400" style="width: 75%"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="rounded-xl border border-gray-100 bg-gray-50 p-3">
+                    <p class="font-semibold text-black mb-2">USA</p>
+                    <div class="space-y-2">
+                      <div>
+                        <p class="text-[11px] text-gray-500">AI Researchers</p>
+                        <div class="h-2 rounded-full bg-gray-200">
+                          <div class="h-2 rounded-full bg-blue-400" style="width: 88%"></div>
+                        </div>
+                      </div>
+                      <div>
+                        <p class="text-[11px] text-gray-500">ML Engineers</p>
+                        <div class="h-2 rounded-full bg-gray-200">
+                          <div class="h-2 rounded-full bg-blue-400" style="width: 80%"></div>
+                        </div>
+                      </div>
+                      <div>
+                        <p class="text-[11px] text-gray-500">Applied Scientists</p>
+                        <div class="h-2 rounded-full bg-gray-200">
+                          <div class="h-2 rounded-full bg-blue-400" style="width: 72%"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="rounded-xl border border-gray-100 bg-gray-50 p-3">
+                    <p class="font-semibold text-black mb-2">UK</p>
+                    <div class="space-y-2">
+                      <div>
+                        <p class="text-[11px] text-gray-500">BI & Analytics</p>
+                        <div class="h-2 rounded-full bg-gray-200">
+                          <div class="h-2 rounded-full bg-purple-400" style="width: 78%"></div>
+                        </div>
+                      </div>
+                      <div>
+                        <p class="text-[11px] text-gray-500">Fintech Data</p>
+                        <div class="h-2 rounded-full bg-gray-200">
+                          <div class="h-2 rounded-full bg-purple-400" style="width: 70%"></div>
+                        </div>
+                      </div>
+                      <div>
+                        <p class="text-[11px] text-gray-500">Compliance</p>
+                        <div class="h-2 rounded-full bg-gray-200">
+                          <div class="h-2 rounded-full bg-purple-400" style="width: 64%"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="mt-4 rounded-xl border border-gray-100 bg-white p-4">
+                  <p class="text-sm font-semibold text-black mb-2">Regional Industry Highlights</p>
+                  <ul class="text-sm text-gray-700 space-y-2">
+                    <li><strong>India:</strong> The global outsourcing hub with ~9.5M tech professionals by FY 2026 and $300B industry value; Bengaluru drives ~43.5% of tech hiring.</li>
+                    <li><strong>USA:</strong> The innovation leader, projected to reach $166.89B market size by 2026 with premium AI research investment.</li>
+                    <li><strong>UK:</strong> The fintech powerhouse with strong London demand and a persistent skills mismatch despite higher AI talent density.</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="space-y-4">
+                <div class="rounded-2xl border border-gray-100 bg-white p-5 shadow-sm">
+                  <div class="flex items-center justify-between">
+                    <h3 class="text-base font-semibold text-black">India</h3>
+                    <span class="text-xs font-semibold text-yellow-700">~51–53% deficit</span>
+                  </div>
+                  <p class="text-sm text-gray-700 mt-1">Over 1 million AI & Data professionals needed</p>
+                  <div class="mt-3 grid grid-cols-2 gap-3 text-xs text-gray-600">
+                    <div class="rounded-lg border border-gray-100 bg-gray-50 p-3">
+                      <p class="text-[11px] text-gray-500">Entry-Level Salary</p>
+                      <p class="font-semibold text-black">₹6L – ₹12L PA</p>
+                    </div>
+                    <div class="rounded-lg border border-gray-100 bg-gray-50 p-3">
+                      <p class="text-[11px] text-gray-500">Demand Intensity</p>
+                      <div class="mt-2 h-2 rounded-full bg-gray-200">
+                        <div class="h-2 rounded-full bg-yellow-400" style="width: 85%"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="rounded-2xl border border-gray-100 bg-white p-5 shadow-sm">
+                  <div class="flex items-center justify-between">
+                    <h3 class="text-base font-semibold text-black">USA</h3>
+                    <span class="text-xs font-semibold text-blue-700">High demand</span>
+                  </div>
+                  <p class="text-sm text-gray-700 mt-1">~73,100 job change openings (2025–26)</p>
+                  <div class="mt-3 grid grid-cols-2 gap-3 text-xs text-gray-600">
+                    <div class="rounded-lg border border-gray-100 bg-gray-50 p-3">
+                      <p class="text-[11px] text-gray-500">Entry-Level Salary</p>
+                      <p class="font-semibold text-black">$95,000 – $140,000</p>
+                    </div>
+                    <div class="rounded-lg border border-gray-100 bg-gray-50 p-3">
+                      <p class="text-[11px] text-gray-500">Demand Intensity</p>
+                      <div class="mt-2 h-2 rounded-full bg-gray-200">
+                        <div class="h-2 rounded-full bg-blue-400" style="width: 78%"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="rounded-2xl border border-gray-100 bg-white p-5 shadow-sm">
+                  <div class="flex items-center justify-between">
+                    <h3 class="text-base font-semibold text-black">UK</h3>
+                    <span class="text-xs font-semibold text-purple-700">Hiring challenges</span>
+                  </div>
+                  <p class="text-sm text-gray-700 mt-1">~7,000 monthly AI/Data postings</p>
+                  <div class="mt-3 grid grid-cols-2 gap-3 text-xs text-gray-600">
+                    <div class="rounded-lg border border-gray-100 bg-gray-50 p-3">
+                      <p class="text-[11px] text-gray-500">Entry-Level Salary</p>
+                      <p class="font-semibold text-black">£45,000 – £70,000</p>
+                    </div>
+                    <div class="rounded-lg border border-gray-100 bg-gray-50 p-3">
+                      <p class="text-[11px] text-gray-500">Demand Intensity</p>
+                      <div class="mt-2 h-2 rounded-full bg-gray-200">
+                        <div class="h-2 rounded-full bg-purple-400" style="width: 72%"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <p class="mt-2 text-xs text-gray-500">80% of employers report hiring challenges.</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="bg-white border border-gray-100 rounded-2xl p-6 md:p-8">
+            <div class="flex flex-col gap-2 mb-6">
+              <p class="text-xs font-semibold uppercase tracking-wide text-yellow-700">2026 Role Growth</p>
+              <h2 class="text-2xl md:text-3xl font-bold text-black">Top High-Growth Data & AI Roles (2026 Forecast)</h2>
+              <p class="text-sm text-gray-700">
+                The fastest growth is in roles that take models from prototype to production. These bars highlight the highest-velocity career paths.
+              </p>
+            </div>
+
+            <div class="grid gap-6 lg:grid-cols-[1.15fr,0.85fr]">
+              <div class="space-y-4">
+                <div class="rounded-2xl border border-gray-100 bg-white p-4 shadow-sm">
+                  <div class="flex items-center justify-between text-sm font-semibold text-black">
+                    <span>Generative AI Engineer</span><span>~30% – 143% YoY</span>
+                  </div>
+                  <div class="mt-3 h-3.5 rounded-full bg-gray-100 overflow-hidden">
+                    <div class="h-3.5 rounded-full bg-yellow-400" style="width: 95%"></div>
+                  </div>
+                  <p class="mt-2 text-sm text-gray-700">Deployment of LLMs, RAG systems, and AI agents.</p>
+                </div>
+                <div class="rounded-2xl border border-gray-100 bg-white p-4 shadow-sm">
+                  <div class="flex items-center justify-between text-sm font-semibold text-black">
+                    <span>Data Scientist</span><span>36% (through 2033)</span>
+                  </div>
+                  <div class="mt-3 h-3.5 rounded-full bg-gray-100 overflow-hidden">
+                    <div class="h-3.5 rounded-full bg-blue-400" style="width: 80%"></div>
+                  </div>
+                  <p class="mt-2 text-sm text-gray-700">Predictive modeling and causal AI for business strategy.</p>
+                </div>
+                <div class="rounded-2xl border border-gray-100 bg-white p-4 shadow-sm">
+                  <div class="flex items-center justify-between text-sm font-semibold text-black">
+                    <span>MLOps / ML Engineer</span><span>30%+</span>
+                  </div>
+                  <div class="mt-3 h-3.5 rounded-full bg-gray-100 overflow-hidden">
+                    <div class="h-3.5 rounded-full bg-emerald-400" style="width: 78%"></div>
+                  </div>
+                  <p class="mt-2 text-sm text-gray-700">Automating and monitoring production-grade AI pipelines.</p>
+                </div>
+                <div class="rounded-2xl border border-gray-100 bg-white p-4 shadow-sm">
+                  <div class="flex items-center justify-between text-sm font-semibold text-black">
+                    <span>Operations Research / Data Analyst</span><span>23%</span>
+                  </div>
+                  <div class="mt-3 h-3.5 rounded-full bg-gray-100 overflow-hidden">
+                    <div class="h-3.5 rounded-full bg-pink-400" style="width: 62%"></div>
+                  </div>
+                  <p class="mt-2 text-sm text-gray-700">Real-time BI and embedded analytics for decision-making.</p>
+                </div>
+                <div class="rounded-2xl border border-gray-100 bg-white p-4 shadow-sm">
+                  <div class="flex items-center justify-between text-sm font-semibold text-black">
+                    <span>Data Engineer</span><span>High Demand (Sustained)</span>
+                  </div>
+                  <div class="mt-3 h-3.5 rounded-full bg-gray-100 overflow-hidden">
+                    <div class="h-3.5 rounded-full bg-purple-400" style="width: 72%"></div>
+                  </div>
+                  <p class="mt-2 text-sm text-gray-700">Scalable, secure cloud-native data architectures.</p>
+                </div>
+              </div>
+
+              <div class="rounded-2xl border border-gray-100 bg-gray-50 p-5">
+                <h3 class="text-sm font-semibold text-black mb-3">2026 Industry Snapshot: India Focus</h3>
+                <ul class="space-y-3 text-sm text-gray-700">
+                  <li><strong>Total Openings:</strong> 5–7 lakh active openings across India’s tech hubs led by Bengaluru and Hyderabad.</li>
+                  <li><strong>Market Size:</strong> Indian data science market expected to reach $20B by 2026.</li>
+                  <li><strong>Skills Over Credentials:</strong> Hiring favors hands-on portfolios (GitHub/Kaggle) and skills like PyTorch, LangChain, Docker.</li>
+                  <li><strong>Entry-Level Salaries:</strong> ₹4L–₹8L for freshers; mid-level GenAI/MLOps roles at ₹18L–₹50L.</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <section class="bg-white border border-gray-100 rounded-2xl p-6 md:p-8">
+            <div class="flex flex-col gap-2 mb-6">
+              <p class="text-xs font-semibold uppercase tracking-wide text-yellow-700">Salary Trends</p>
+              <h2 class="text-2xl md:text-3xl font-bold text-black">Data Science & AI Salary Trends (India - 2026 Forecast)</h2>
+            </div>
+            <div class="overflow-x-auto">
+              <table class="min-w-full text-left text-sm text-gray-700 border-separate border-spacing-0">
+                <thead class="text-xs uppercase text-gray-500">
+                  <tr>
+                    <th class="py-3 pr-4">Role</th>
+                    <th class="py-3 pr-4">Entry Level (0-2 yrs)</th>
+                    <th class="py-3 pr-4">Mid-Level (3-7 yrs)</th>
+                    <th class="py-3 pr-4">Senior/Lead (8+ yrs)</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-gray-100">
+                  <tr class="bg-white">
+                    <td class="py-4 pr-4 font-semibold text-black">Generative AI Engineer</td>
+                    <td class="py-4 pr-4">₹12L - ₹18L</td>
+                    <td class="py-4 pr-4">₹25L - ₹45L</td>
+                    <td class="py-4 pr-4">₹55L+</td>
+                  </tr>
+                  <tr class="bg-white">
+                    <td class="py-4 pr-4 font-semibold text-black">MLOps Engineer</td>
+                    <td class="py-4 pr-4">₹10L - ₹16L</td>
+                    <td class="py-4 pr-4">₹22L - ₹38L</td>
+                    <td class="py-4 pr-4">₹50L+</td>
+                  </tr>
+                  <tr class="bg-white">
+                    <td class="py-4 pr-4 font-semibold text-black">Data Scientist</td>
+                    <td class="py-4 pr-4">₹8L - ₹14L</td>
+                    <td class="py-4 pr-4">₹18L - ₹32L</td>
+                    <td class="py-4 pr-4">₹45L+</td>
+                  </tr>
+                  <tr class="bg-white">
+                    <td class="py-4 pr-4 font-semibold text-black">Data Engineer</td>
+                    <td class="py-4 pr-4">₹7L - ₹12L</td>
+                    <td class="py-4 pr-4">₹16L - ₹28L</td>
+                    <td class="py-4 pr-4">₹40L+</td>
+                  </tr>
+                  <tr class="bg-white">
+                    <td class="py-4 pr-4 font-semibold text-black">Data Analyst</td>
+                    <td class="py-4 pr-4">₹5L - ₹9L</td>
+                    <td class="py-4 pr-4">₹12L - ₹20L</td>
+                    <td class="py-4 pr-4">₹25L+</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          <section class="relative overflow-hidden rounded-3xl border border-gray-100 bg-gradient-to-br from-white via-yellow-50/40 to-white p-6 md:p-10">
+            <div class="absolute -top-24 -right-24 h-56 w-56 rounded-full bg-yellow-100/70 blur-3xl"></div>
+            <div class="absolute -bottom-24 -left-24 h-56 w-56 rounded-full bg-gray-100 blur-3xl"></div>
+            <div class="relative flex flex-col gap-3 mb-8">
+              <span class="inline-flex w-fit items-center rounded-full border border-yellow-200 bg-yellow-50 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-yellow-900">
+                Why Corpnce
+                </span>
+              <h2 class="text-2xl md:text-3xl font-bold text-black">Why Choose Corpnce for Your Data Science Certification in Bangalore (2026)?</h2>
+              <p class="text-sm text-gray-700 max-w-3xl">
+                While the market is flooded with institutions, Corpnce remains the elite choice for a Data Science course in Bangalore. In 2026, the industry has shifted from simple data analysis to AI-native engineering, and our curriculum has evolved to lead this revolution.
+              </p>
+            </div>
+
+            <div class="relative grid gap-6 lg:grid-cols-[0.95fr,1.05fr]">
+              <div class="rounded-2xl border border-gray-100 bg-white/90 p-5 shadow-sm">
+                <h3 class="text-base font-semibold text-black mb-3">1. The Industry Context: A Million Opportunities</h3>
+                <p class="text-sm text-gray-700 mb-4">
+                  NASSCOM 2026 reports show demand for AI & Data professionals in India has crossed 1 million, with Bangalore (Rajajinagar & surrounding hubs) accounting for over 43% of tech hiring. Yet a ~51% talent gap persists because most institutes still teach yesterday’s code. Corpnce bridges this gap by training you for the Agentic Era.
+                </p>
+                <div class="grid grid-cols-3 gap-3 text-xs text-gray-700">
+                  <div class="rounded-xl border border-gray-100 bg-gray-50 p-3 text-center">
+                    <p class="text-[11px] text-gray-500">Demand</p>
+                    <p class="text-lg font-semibold text-black">1M+</p>
+                  </div>
+                  <div class="rounded-xl border border-gray-100 bg-gray-50 p-3 text-center">
+                    <p class="text-[11px] text-gray-500">Bengaluru Share</p>
+                    <p class="text-lg font-semibold text-black">43%+</p>
+                  </div>
+                  <div class="rounded-xl border border-gray-100 bg-gray-50 p-3 text-center">
+                    <p class="text-[11px] text-gray-500">Talent Gap</p>
+                    <p class="text-lg font-semibold text-black">~51%</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="space-y-4">
+                <div class="rounded-2xl border border-gray-100 bg-white/90 p-5 shadow-sm">
+                  <h3 class="text-base font-semibold text-black mb-3">2. Our "Simplicity-First" Learning Path</h3>
+                  <ul class="grid gap-3 text-sm text-gray-700">
+                    <li class="rounded-xl border border-gray-100 bg-gray-50 p-3"><strong>Python Mastery:</strong> Start with preparatory sessions to master the art of coding — the orchestration layer for AI agents.</li>
+                    <li class="rounded-xl border border-gray-100 bg-gray-50 p-3"><strong>The Math of AI:</strong> Statistics and probability for reliable model building.</li>
+                    <li class="rounded-xl border border-gray-100 bg-gray-50 p-3"><strong>End-to-End Stack:</strong> Data wrangling, visualization, Big Data, and ML (Regression & Classification).</li>
+                    <li class="rounded-xl border border-gray-100 bg-gray-50 p-3"><strong>Advanced AI Frontiers:</strong> Core NLP (NLU & NLG), build LLMs and Agentic workflows using LangGraph.</li>
+                    <li class="rounded-xl border border-gray-100 bg-gray-50 p-3"><strong>Production & MLOps:</strong> Cloud deployment (APIs) and DevOps so models are production-ready.</li>
+                  </ul>
+                </div>
+
+                <div class="grid gap-4 md:grid-cols-2">
+                  <div class="rounded-2xl border border-gray-100 bg-white/90 p-5 shadow-sm">
+                    <h3 class="text-base font-semibold text-black mb-2">3. Research-Level Expertise in 8 Months</h3>
+                    <p class="text-sm text-gray-700">Become an independent architect. In 8 months, gain the ability to read and implement research papers — placing you in the top 5% of data scientists globally.</p>
+                  </div>
+                  <div class="rounded-2xl border border-gray-100 bg-white/90 p-5 shadow-sm">
+                    <h3 class="text-base font-semibold text-black mb-2">4. Real-World Project & Internship Ecosystem</h3>
+                    <ul class="list-disc list-inside text-sm text-gray-700 space-y-2">
+                      <li><strong>Project-Based Learning:</strong> One instructor-led mini project + two major industry-use-case projects.</li>
+                      <li><strong>Internal Internships:</strong> Top performers build full-scale AI products with us.</li>
+                      <li><strong>Portfolio over Certificates:</strong> Certification plus a GitHub portfolio that proves skills.</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div class="rounded-2xl border border-gray-100 bg-white/90 p-5 shadow-sm">
+                  <h3 class="text-base font-semibold text-black mb-3">5. Exclusive Features & Value</h3>
+                  <div class="grid gap-3 text-sm text-gray-700 md:grid-cols-2">
+                    <div class="rounded-lg border border-gray-100 bg-gray-50 p-3">
+                      <p class="font-semibold text-black">Elite Batch Size</p>
+                      <p>Strictly limited to 15 students for personalized attention.</p>
+                    </div>
+                    <div class="rounded-lg border border-gray-100 bg-gray-50 p-3">
+                      <p class="font-semibold text-black">Competitive Fees</p>
+                      <p>~1/4th the cost of comparable elite programs in Bangalore.</p>
+                    </div>
+                    <div class="rounded-lg border border-gray-100 bg-gray-50 p-3">
+                      <p class="font-semibold text-black">100% Placement Aid</p>
+                      <p>Direct assistance based on your projects and internship outcomes.</p>
+                    </div>
+                    <div class="rounded-lg border border-gray-100 bg-gray-50 p-3">
+                      <p class="font-semibold text-black">Community</p>
+                      <p>Lifetime access to a strong alumni network and tech experts.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="rounded-2xl border border-yellow-200 bg-yellow-50 p-5 text-sm text-gray-800 shadow-sm">
+                  <p class="font-semibold text-black mb-1">Start Your Journey in Rajajinagar</p>
+                  <p>New weekend batches start every 60 days at our Rajajinagar center. If you want hands-on expertise over theoretical slides, Corpnce is your destination.</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="bg-white border border-gray-100 rounded-2xl p-6 md:p-8">
+            <div class="grid gap-8 lg:grid-cols-[1.1fr,0.9fr]">
+              <div class="space-y-5">
+                <div>
+                  <p class="text-xs font-semibold uppercase tracking-wide text-yellow-700">Certification Impact</p>
+                  <h2 class="text-2xl md:text-3xl font-bold text-black">Why a Data Science Certification Matters in 2026</h2>
+                  <p class="text-sm text-gray-700 mt-2">
+                    In 2026, a Data Science Certification is more than just a credential—it is a gateway to the second-largest data hub in the world. As India transitions into an AI-first economy, certifications that combine traditional data science with Generative AI and MLOps are seeing the highest ROI.
+                  </p>
+                </div>
+
+                <div class="rounded-xl border border-gray-100 bg-gray-50 p-4">
+                  <h3 class="text-sm font-semibold text-black mb-2">The 2026 Market Pulse</h3>
+                  <p class="text-sm text-gray-700">
+                    By the end of 2026, India is projected to need over 1 million AI and Data Science professionals, yet the current talent gap remains as high as 51% for specialized roles.
+                  </p>
+                </div>
+
+                <div class="rounded-xl border border-gray-100 bg-white p-4">
+                  <h3 class="text-sm font-semibold text-black mb-2">Why MNCs Value This Certification</h3>
+                  <p class="text-sm text-gray-700 mb-3">
+                    Top-tier MNCs are no longer just hiring for reporting. They need professionals who can deploy agentic workflows and production-ready models. This certification is recognized by 80+ global giants in India, including:
+                  </p>
+                  <ul class="text-sm text-gray-700 space-y-1">
+                    <li><strong>Tech Leaders:</strong> Google, Microsoft, IBM, Infosys, TCS.</li>
+                    <li><strong>Product & Retail:</strong> DELL, Amazon, Unilever, Lowe's.</li>
+                    <li><strong>Specialized Sectors:</strong> Volvo (Automotive), Ericsson (Telecom), Banks.</li>
+            </ul>
+                </div>
+
+                <div class="rounded-xl border border-gray-100 bg-white p-4">
+                  <h3 class="text-sm font-semibold text-black mb-2">A Roadmap to Your 2026 Certification</h3>
+                  <ul class="list-disc list-inside text-sm text-gray-700 space-y-2">
+                    <li><strong>Foundational Rigor:</strong> Master Python and SQL—the "bread and butter" of the 2026 tech stack.</li>
+                    <li><strong>Specialized Deep Dives:</strong> Transition from standard ML to Computer Vision and NLP.</li>
+                    <li><strong>The GenAI Edge:</strong> Build LLMs and Agentic AI using LangGraph and Hugging Face.</li>
+                    <li><strong>Portfolio Validation:</strong> Complete 4–6 industry-grade projects (fraud detection, predictive maintenance, etc.).</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="space-y-5">
+                <div class="rounded-2xl border border-dashed border-gray-300 bg-gray-50 p-4">
+                  <img
+                    src="/images/certificate.png"
+                    alt="Corpnce data science certification"
+                    class="aspect-[4/3] w-full rounded-xl border border-gray-200 bg-white object-contain"
+                  />
+                </div>
+
+                <div class="rounded-xl border border-gray-100 bg-white p-4">
+                  <h3 class="text-sm font-semibold text-black mb-2">Expanded List of Prominent MNCs Hiring in 2026</h3>
+                  <div class="grid gap-3 text-sm text-gray-700">
+                    <div class="rounded-lg border border-gray-100 bg-gray-50 p-3">
+                      <p class="font-semibold text-black">Tech Giants</p>
+                      <p>Google, Microsoft, Amazon, Meta, NVIDIA — LLM Research, Cloud AI, Agentic AI Workflows</p>
+                    </div>
+                    <div class="rounded-lg border border-gray-100 bg-gray-50 p-3">
+                      <p class="font-semibold text-black">Financial Services</p>
+                      <p>JPMorgan Chase, Goldman Sachs, HDFC Bank, Morgan Stanley — Quant Analytics, Fraud Detection</p>
+                    </div>
+                    <div class="rounded-lg border border-gray-100 bg-gray-50 p-3">
+                      <p class="font-semibold text-black">Retail & E-commerce</p>
+                      <p>Walmart Global Tech, Target, Flipkart, Wayfair, Best Buy — Supply Chain AI, Personalization</p>
+                    </div>
+                    <div class="rounded-lg border border-gray-100 bg-gray-50 p-3">
+                      <p class="font-semibold text-black">Automotive & Industrial</p>
+                      <p>Bosch, Mercedes-Benz R&D, Volvo, Boeing, Rolls-Royce — Digital Twins, Industrial AI</p>
+                    </div>
+                    <div class="rounded-lg border border-gray-100 bg-gray-50 p-3">
+                      <p class="font-semibold text-black">Energy & Utilities</p>
+                      <p>Shell, Chevron ENGINE, GE Healthcare, Siemens — Predictive Health Analytics</p>
+                    </div>
+                    <div class="rounded-lg border border-gray-100 bg-gray-50 p-3">
+                      <p class="font-semibold text-black">Consulting & Strategy</p>
+                      <p>Accenture, Deloitte, Fractal Analytics, Mu Sigma, Tiger Analytics — AI Transformation</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="rounded-xl border border-yellow-200 bg-yellow-50 p-4 text-sm text-gray-800">
+                  <h3 class="font-semibold text-black mb-2">Why These Companies Are Promising in 2026</h3>
+                  <ul class="list-disc list-inside space-y-2">
+                    <li><strong>The GCC Shift:</strong> Bangalore hosts 870+ GCC units becoming global product owners.</li>
+                    <li><strong>GenAI Dominance:</strong> Accenture and NVIDIA scale Bengaluru innovation hubs for responsible AI.</li>
+                    <li><strong>High-Value Compensation:</strong> Senior roles at Google/Amazon reach ₹35L–₹45L+ CTC.</li>
+                  </ul>
+                </div>
+
+                <div class="rounded-xl border border-gray-100 bg-white p-4">
+                  <h3 class="text-sm font-semibold text-black mb-2">Bangalore's Innovation Corridor Hiring (2026)</h3>
+                  <ul class="text-sm text-gray-700 space-y-1">
+                    <li><strong>Whitefield / Manyata:</strong> Telecom, Aerospace, IT Services.</li>
+                    <li><strong>Electronic City / Adugodi:</strong> Automotive, Industrial IoT, Enterprise Tech.</li>
+                    <li><strong>Bellandur / ORR:</strong> FinTech, Retail, AI Research.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="relative overflow-hidden rounded-3xl border border-gray-100 bg-gradient-to-br from-white via-yellow-50/40 to-white p-6 md:p-10">
+            <div class="absolute -top-20 -right-20 h-40 w-40 rounded-full bg-yellow-100/70 blur-3xl"></div>
+            <div class="absolute -bottom-24 -left-24 h-48 w-48 rounded-full bg-gray-100 blur-3xl"></div>
+            <div class="relative flex flex-col gap-2 mb-8">
+              <p class="text-xs font-semibold uppercase tracking-wide text-yellow-700">Career Benefits</p>
+              <h2 class="text-2xl md:text-3xl font-bold text-black">Benefits of Data Science Course in Bangalore</h2>
+              <p class="text-sm text-gray-700">Build in-demand skills with a curriculum designed for real-world impact.</p>
+            </div>
+            <div class="relative grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+              <div class="group rounded-2xl border border-gray-100 bg-white/90 p-5 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg animate-fade-in-up">
+                <div class="h-10 w-10 rounded-lg bg-yellow-100 text-yellow-900 flex items-center justify-center mb-3">
+                  <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                  </svg>
+                </div>
+                <h3 class="text-base font-semibold text-black mb-1">High Market Demand</h3>
+                <p class="text-sm text-gray-700">Strong hiring demand for data science professionals across industries.</p>
+              </div>
+              <div class="group rounded-2xl border border-gray-100 bg-white/90 p-5 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg animate-fade-in-up">
+                <div class="h-10 w-10 rounded-lg bg-blue-100 text-blue-900 flex items-center justify-center mb-3">
+                  <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M9 20H4v-2a3 3 0 015.356-1.857M16 3.13a4 4 0 010 7.75M8 3.13a4 4 0 000 7.75M12 11a4 4 0 100-8 4 4 0 000 8z" />
+                  </svg>
+                </div>
+                <h3 class="text-base font-semibold text-black mb-1">Executive Exposure</h3>
+                <p class="text-sm text-gray-700">Collaborate with decision-makers and senior stakeholders.</p>
+              </div>
+              <div class="group rounded-2xl border border-gray-100 bg-white/90 p-5 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg animate-fade-in-up">
+                <div class="h-10 w-10 rounded-lg bg-emerald-100 text-emerald-900 flex items-center justify-center mb-3">
+                  <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+                  </svg>
+                </div>
+                <h3 class="text-base font-semibold text-black mb-1">Decision Intelligence</h3>
+                <p class="text-sm text-gray-700">Empower management with data-driven strategies and insights.</p>
+              </div>
+              <div class="group rounded-2xl border border-gray-100 bg-white/90 p-5 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg animate-fade-in-up">
+                <div class="h-10 w-10 rounded-lg bg-purple-100 text-purple-900 flex items-center justify-center mb-3">
+                  <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8V6m0 12v-2m9-4a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                </div>
+                <h3 class="text-base font-semibold text-black mb-1">High-Paying Careers</h3>
+                <p class="text-sm text-gray-700">Unlock premium compensation and faster career growth.</p>
+              </div>
+              <div class="group rounded-2xl border border-gray-100 bg-white/90 p-5 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg animate-fade-in-up">
+                <div class="h-10 w-10 rounded-lg bg-pink-100 text-pink-900 flex items-center justify-center mb-3">
+                  <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17V7a2 2 0 012-2h2a2 2 0 012 2v10m-6 0h6m2 4H7a2 2 0 01-2-2V9a2 2 0 012-2h10a2 2 0 012 2v10a2 2 0 01-2 2z" />
+                  </svg>
+                </div>
+                <h3 class="text-base font-semibold text-black mb-1">Brand-Name Exposure</h3>
+                <p class="text-sm text-gray-700">Work with top brands and impactful industry projects.</p>
+              </div>
+              <div class="group rounded-2xl border border-gray-100 bg-white/90 p-5 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg animate-fade-in-up">
+                <div class="h-10 w-10 rounded-lg bg-gray-100 text-gray-900 flex items-center justify-center mb-3">
+                  <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h12M9 3v2m0 14v2m0-2h12M9 10h12M9 15h12" />
+                  </svg>
+                </div>
+                <h3 class="text-base font-semibold text-black mb-1">Work From Anywhere</h3>
+                <p class="text-sm text-gray-700">Global opportunities and remote-friendly roles.</p>
+              </div>
+            </div>
+          </section>
+
+          <section>
+            <h2 class="text-3xl font-bold text-black mb-4">Frequently Asked Questions</h2>
+            <div class="space-y-4">
+              <details class="bg-white border border-gray-200 rounded-lg p-4">
+                <summary class="font-semibold text-black">Am I the right candidate for this course?</summary>
+                <p class="text-gray-700 mt-2">
+                  Working professionals from any industry can join. If needed, candidates qualify via Python and TQ evaluation tests.
+                </p>
+              </details>
+              <details class="bg-white border border-gray-200 rounded-lg p-4">
+                <summary class="font-semibold text-black">Will this course help freshers?</summary>
+                <p class="text-gray-700 mt-2">
+                  Yes, the syllabus is designed from basics to advanced concepts with projects for real-world exposure.
+                </p>
+              </details>
+              <details class="bg-white border border-gray-200 rounded-lg p-4">
+                <summary class="font-semibold text-black">What prior knowledge do I need?</summary>
+                <p class="text-gray-700 mt-2">
+                  We teach from the basics. Strong fundamentals in stats, math, and Python are a bonus.
+                </p>
+              </details>
+              <details class="bg-white border border-gray-200 rounded-lg p-4">
+                <summary class="font-semibold text-black">Do you provide placement assistance?</summary>
+                <p class="text-gray-700 mt-2">
+                  We provide placement assistance to deserving candidates and offer in-house internship opportunities for top performers.
+                </p>
+              </details>
+              <details class="bg-white border border-gray-200 rounded-lg p-4">
+                <summary class="font-semibold text-black">What is the job scenario in the market?</summary>
+                <p class="text-gray-700 mt-2">
+                  There are 92,000+ Data Science related jobs in India, with strong growth in demand.
+                </p>
+              </details>
+            </div>
+          </section>
+
+          <div class="bg-black text-white p-8 rounded-xl text-center border-2 border-yellow-400">
+            <h2 class="text-2xl font-bold mb-4">Ready to Enroll?</h2>
+            <p class="mb-6 text-gray-300">
+              Enquire now to start your Data Science journey with Corpnce.
+            </p>
+            <a
+              href="/contact"
+              class="btn-primary inline-block"
+              onclick={`if(window.trackCTAClick) window.trackCTAClick('course_enroll', '${course.slug}');`}
+            >
+              Enquire Now
+            </a>
+          </div>
+        </div>
+      ) : slug === 'machine-learning' ? (
+        <div class="space-y-12">
+          <section class="bg-white border border-gray-100 rounded-2xl p-6 md:p-8 lg:p-10">
+            <div class="mb-6">
+              <span class="inline-flex items-center rounded-full border-2 border-yellow-400/60 bg-yellow-50 px-4 py-2 text-xs font-bold uppercase tracking-widest text-yellow-700 mb-4">
+                2026 Industry Outlook
+              </span>
+              <h2 class="text-3xl md:text-4xl font-bold text-black mb-4">
+                Hands-on Machine Learning & Deep Learning Training in <span class="text-yellow-600">Bangalore</span>
+              </h2>
+            </div>
+            
+            <p class="text-gray-700 leading-relaxed text-lg mb-6">
+              In 2026, the demand for <strong>Artificial Intelligence and Machine Learning (ML) professionals</strong> in India has reached a historic peak of <strong class="text-yellow-600">1 million open roles</strong>. As Bangalore remains the nation's primary AI hub, specialized training—like the program at Corpnce—has shifted focus from basic theory to <strong>Agentic AI and Production-Grade MLOps</strong>.
+            </p>
+
+            <!-- The 2026 Job Market Landscape -->
+            <div class="bg-gradient-to-br from-yellow-50 to-yellow-100/50 border-2 border-yellow-200 rounded-2xl p-6 md:p-8 mb-8">
+              <h3 class="text-2xl md:text-3xl font-bold text-black mb-6 flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full bg-yellow-400 flex items-center justify-center">
+                  <svg class="w-6 h-6 text-black" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zM8 7a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zM14 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z"/>
+                  </svg>
+                </div>
+                The 2026 Job Market Landscape
+              </h3>
+              <p class="text-gray-700 mb-6 text-lg">
+                The market for ML engineers is no longer just about building models; it is about <strong>integration and scalability</strong>.
+              </p>
+              
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+                <div class="bg-white rounded-xl p-5 border-2 border-yellow-300 shadow-md hover:shadow-lg transition-all">
+                  <div class="flex items-center justify-between mb-3">
+                    <span class="text-sm font-semibold text-gray-600 uppercase">Massive Demand</span>
+                    <div class="w-8 h-8 rounded-full bg-yellow-400 flex items-center justify-center">
+                      <svg class="w-5 h-5 text-black" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"/>
+                      </svg>
+                    </div>
+                  </div>
+                  <p class="text-2xl font-black text-black mb-1">1.4 Lakh</p>
+                  <p class="text-sm text-gray-600">Talent gap in AI & Big Data</p>
+                </div>
+                
+                <div class="bg-white rounded-xl p-5 border-2 border-yellow-300 shadow-md hover:shadow-lg transition-all">
+                  <div class="flex items-center justify-between mb-3">
+                    <span class="text-sm font-semibold text-gray-600 uppercase">High-Growth</span>
+                    <div class="w-8 h-8 rounded-full bg-yellow-400 flex items-center justify-center">
+                      <svg class="w-5 h-5 text-black" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M3.293 9.707a1 1 0 010-1.414l6-6a1 1 0 011.414 0l6 6a1 1 0 01-1.414 1.414L11 5.414V17a1 1 0 11-2 0V5.414L4.707 9.707a1 1 0 01-1.414 0z" clip-rule="evenodd"/>
+                      </svg>
+                    </div>
+                  </div>
+                  <p class="text-2xl font-black text-black mb-1">60%</p>
+                  <p class="text-sm text-gray-600">AI value from BFSI, Healthcare, Automotive</p>
+                </div>
+                
+                <div class="bg-white rounded-xl p-5 border-2 border-yellow-300 shadow-md hover:shadow-lg transition-all">
+                  <div class="flex items-center justify-between mb-3">
+                    <span class="text-sm font-semibold text-gray-600 uppercase">Emerging Roles</span>
+                    <div class="w-8 h-8 rounded-full bg-yellow-400 flex items-center justify-center">
+                      <svg class="w-5 h-5 text-black" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"/>
+                        <path fill-rule="evenodd" d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm9.707 5.707a1 1 0 00-1.414-1.414L9 12.586l-1.293-1.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                      </svg>
+                    </div>
+                  </div>
+                  <p class="text-2xl font-black text-black mb-1">Top-Tier</p>
+                  <p class="text-sm text-gray-600">MLOps & NLP Engineers highest-paid</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Why Hands-on Training at Corpnce -->
+            <div class="mb-8">
+              <h3 class="text-2xl md:text-3xl font-bold text-black mb-6">
+                Why Hands-on Training at Corpnce is Essential
+              </h3>
+              <p class="text-gray-700 mb-6 text-lg">
+                Our curriculum has been updated for 2026 to ensure you aren't just a "model builder" but an <strong class="text-yellow-600">AI Architect</strong>.
+              </p>
+              
+              <!-- Comparison Table -->
+              <div class="overflow-x-auto">
+                <table class="w-full border-collapse bg-white rounded-xl overflow-hidden shadow-lg">
+                  <thead>
+                    <tr class="bg-gradient-to-r from-yellow-400 to-yellow-500">
+                      <th class="px-6 py-4 text-left text-sm font-bold text-black uppercase">Feature</th>
+                      <th class="px-6 py-4 text-left text-sm font-bold text-black uppercase">2026 Industry Standard</th>
+                      <th class="px-6 py-4 text-left text-sm font-bold text-black uppercase">Corpnce Training Focus</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="border-b border-gray-200 hover:bg-yellow-50 transition-colors">
+                      <td class="px-6 py-4 font-semibold text-gray-900">Generative AI</td>
+                      <td class="px-6 py-4 text-gray-700">Prompt Engineering & Fine-tuning LLMs</td>
+                      <td class="px-6 py-4 text-gray-700"><strong class="text-yellow-600">Building Autonomous AI Agents and LangGraph workflows</strong></td>
+                    </tr>
+                    <tr class="border-b border-gray-200 hover:bg-yellow-50 transition-colors bg-gray-50">
+                      <td class="px-6 py-4 font-semibold text-gray-900">Deep Learning</td>
+                      <td class="px-6 py-4 text-gray-700">Transformers and Attention Mechanisms</td>
+                      <td class="px-6 py-4 text-gray-700"><strong class="text-yellow-600">Hands-on PyTorch implementation for Computer Vision and NLP</strong></td>
+                    </tr>
+                    <tr class="border-b border-gray-200 hover:bg-yellow-50 transition-colors">
+                      <td class="px-6 py-4 font-semibold text-gray-900">Production</td>
+                      <td class="px-6 py-4 text-gray-700">MLOps and Model Monitoring</td>
+                      <td class="px-6 py-4 text-gray-700"><strong class="text-yellow-600">Automating pipelines with Docker, FastAPI, and CI/CD tools</strong></td>
+                    </tr>
+                    <tr class="hover:bg-yellow-50 transition-colors bg-gray-50">
+                      <td class="px-6 py-4 font-semibold text-gray-900">Experience</td>
+                      <td class="px-6 py-4 text-gray-700">"Proof of Work" (Portfolios)</td>
+                      <td class="px-6 py-4 text-gray-700"><strong class="text-yellow-600">Project-based learning with 2 major industry capstones</strong></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <!-- 2026 Salary Benchmarks -->
+            <div class="bg-gradient-to-br from-black to-gray-900 text-white rounded-2xl p-6 md:p-8 mb-8 border-2 border-yellow-400/30">
+              <h3 class="text-2xl md:text-3xl font-bold text-white mb-2 flex items-center gap-3">
+                <span class="text-yellow-400">2026 Salary Benchmarks</span> for Bangalore
+              </h3>
+              <p class="text-gray-300 mb-6">
+                Bangalore continues to offer the highest compensation for ML talent in India.
+              </p>
+              
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div class="bg-white/10 backdrop-blur-sm border border-yellow-400/30 rounded-xl p-5">
+                  <p class="text-sm text-yellow-300 mb-2 font-semibold uppercase">Entry-Level</p>
+                  <p class="text-2xl font-black text-white mb-1">₹7.5L - ₹12L</p>
+                  <p class="text-sm text-gray-300">Freshers (PA)</p>
+                </div>
+                <div class="bg-white/10 backdrop-blur-sm border border-yellow-400/30 rounded-xl p-5">
+                  <p class="text-sm text-yellow-300 mb-2 font-semibold uppercase">Experienced</p>
+                  <p class="text-2xl font-black text-white mb-1">₹15L - ₹40L</p>
+                  <p class="text-sm text-gray-300">3-5 years (PA)</p>
+                </div>
+                <div class="bg-white/10 backdrop-blur-sm border border-yellow-400/30 rounded-xl p-5">
+                  <p class="text-sm text-yellow-300 mb-2 font-semibold uppercase">Top-Tier</p>
+                  <p class="text-2xl font-black text-white mb-1">₹80L+</p>
+                  <p class="text-sm text-gray-300">Senior ML Engineers (Amazon/Google)</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Your Path to Certification -->
+            <div class="mb-6">
+              <h3 class="text-2xl md:text-3xl font-bold text-black mb-4">
+                Your Path to Certification
+              </h3>
+              <p class="text-gray-700 leading-relaxed text-lg mb-6">
+                The Corpnce program is designed to move you from <strong>Python Fundamentals to Advanced Research Implementation</strong> in <strong class="text-yellow-600">4 months</strong>. You will learn to navigate unstructured data, which by 2026 has become the <strong>"new structured data"</strong> for enterprises.
+              </p>
+            </div>
+
+            <!-- Key 2026 Skills -->
+            <div class="bg-yellow-50 border-2 border-yellow-200 rounded-2xl p-6 md:p-8">
+              <h3 class="text-2xl font-bold text-black mb-6">
+                Key 2026 Skills You Will Acquire:
+              </h3>
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div class="bg-white rounded-xl p-5 border-2 border-yellow-300 hover:border-yellow-400 transition-all">
+                  <div class="w-12 h-12 rounded-full bg-yellow-400 flex items-center justify-center mb-3">
+                    <svg class="w-6 h-6 text-black" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"/>
+                      <path fill-rule="evenodd" d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm9.707 5.707a1 1 0 00-1.414-1.414L9 12.586l-1.293-1.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                    </svg>
+                  </div>
+                  <h4 class="font-bold text-black mb-2">Context Engineering</h4>
+                  <p class="text-sm text-gray-700">Mastering how AI agents interact with business data</p>
+                </div>
+                
+                <div class="bg-white rounded-xl p-5 border-2 border-yellow-300 hover:border-yellow-400 transition-all">
+                  <div class="w-12 h-12 rounded-full bg-yellow-400 flex items-center justify-center mb-3">
+                    <svg class="w-6 h-6 text-black" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clip-rule="evenodd"/>
+                    </svg>
+                  </div>
+                  <h4 class="font-bold text-black mb-2">Self-Healing Pipelines</h4>
+                  <p class="text-sm text-gray-700">Building ML systems that detect and fix data drift automatically</p>
+                </div>
+                
+                <div class="bg-white rounded-xl p-5 border-2 border-yellow-300 hover:border-yellow-400 transition-all">
+                  <div class="w-12 h-12 rounded-full bg-yellow-400 flex items-center justify-center mb-3">
+                    <svg class="w-6 h-6 text-black" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                    </svg>
+                  </div>
+                  <h4 class="font-bold text-black mb-2">Responsible AI</h4>
+                  <p class="text-sm text-gray-700">Implementing bias detection and fairness metrics in production models</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="bg-white border border-gray-100 rounded-2xl p-6 md:p-8 lg:p-10">
+            <div class="mb-6">
+              <span class="inline-flex items-center rounded-full border-2 border-yellow-400/60 bg-yellow-50 px-4 py-2 text-xs font-bold uppercase tracking-widest text-yellow-700 mb-4">
+                The 2026 Perspective
+              </span>
+              <h2 class="text-3xl md:text-4xl font-bold text-black mb-4">
+                What is <span class="text-yellow-600">Machine Learning</span>?
+              </h2>
+            </div>
+            
+            <p class="text-gray-700 leading-relaxed text-lg mb-6">
+              In 2026, Machine Learning (ML) is no longer just a "subset of AI"—it is the engine behind the global <strong class="text-yellow-600">"Agentic Era."</strong> At its core, Machine Learning is the science of training computers to learn from data and execute complex tasks without being explicitly programmed for every scenario.
+            </p>
+            
+            <div class="bg-yellow-50 border-2 border-yellow-200 rounded-xl p-5 mb-8">
+              <p class="text-gray-800 leading-relaxed">
+                Unlike traditional software that follows rigid "if-then" rules, ML models use <strong>statistical patterns to adapt, predict, and take autonomous actions</strong>.
+              </p>
+            </div>
+
+            <!-- Machine Learning vs. Traditional Programming -->
+            <div class="mb-8">
+              <h3 class="text-2xl md:text-3xl font-bold text-black mb-6 flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full bg-yellow-400 flex items-center justify-center">
+                  <svg class="w-6 h-6 text-black" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/>
+                    <path fill-rule="evenodd" d="M3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"/>
+                  </svg>
+                </div>
+                Machine Learning vs. Traditional Programming
+              </h3>
+              <p class="text-gray-700 mb-6 text-lg">
+                To understand the shift, consider the classic <strong>"Apples vs. Oranges"</strong> problem.
+              </p>
+              
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                <div class="bg-red-50 border-2 border-red-200 rounded-xl p-6">
+                  <div class="flex items-center gap-3 mb-4">
+                    <div class="w-10 h-10 rounded-full bg-red-500 flex items-center justify-center">
+                      <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M13.477 14.89A6 6 0 015.11 6.524l8.367 8.368zm1.414-1.414L6.524 5.11a6 6 0 018.367 8.367zM4 10a6 6 0 1012 0A6 6 0 004 10z" clip-rule="evenodd"/>
+                      </svg>
+                    </div>
+                    <h4 class="text-xl font-bold text-black">Traditional Programming (Rule-Based)</h4>
+                  </div>
+                  <p class="text-gray-700">
+                    You would have to write thousands of lines of code defining the exact hex code of "red," the precise curvature of an "apple," and the texture of a "peel." <strong class="text-red-600">If you encounter a Green Apple, the system fails</strong> because it wasn't "programmed" for that rule.
+                  </p>
+                </div>
+                
+                <div class="bg-green-50 border-2 border-green-200 rounded-xl p-6">
+                  <div class="flex items-center gap-3 mb-4">
+                    <div class="w-10 h-10 rounded-full bg-green-500 flex items-center justify-center">
+                      <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                      </svg>
+                    </div>
+                    <h4 class="text-xl font-bold text-black">Machine Learning (Data-Driven)</h4>
+                  </div>
+                  <p class="text-gray-700">
+                    You simply feed the system <strong class="text-green-600">50,000 images of apples and oranges</strong>. The algorithm discovers the high-dimensional patterns itself. It "learns" that color is variable but stem structure and internal density are more consistent indicators.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Machine Learning in 2026: From "Answers" to "Actions" -->
+            <div class="mb-8">
+              <h3 class="text-2xl md:text-3xl font-bold text-black mb-6">
+                Machine Learning in 2026: From <span class="text-yellow-600">"Answers"</span> to <span class="text-yellow-600">"Actions"</span>
+              </h3>
+              <p class="text-gray-700 mb-6 text-lg">
+                The most significant evolution in 2026 is the transition from <strong>Generative AI</strong> (which simply answers questions) to <strong class="text-yellow-600">Agentic AI</strong> (which performs tasks).
+              </p>
+              
+              <div class="space-y-4">
+                <div class="bg-gradient-to-r from-yellow-50 to-yellow-100/50 border-2 border-yellow-300 rounded-xl p-6 hover:shadow-lg transition-all">
+                  <div class="flex items-start gap-4">
+                    <div class="flex-shrink-0 w-12 h-12 rounded-full bg-yellow-400 flex items-center justify-center font-bold text-black text-lg">
+                      1
+                    </div>
+                    <div>
+                      <h4 class="text-xl font-bold text-black mb-2">Intelligent Personal Agents (IPAs)</h4>
+                      <p class="text-gray-700">
+                        Moving beyond simple voice commands, 2026 agents (Siri, Gemini, Alexa) don't just play music. They use <strong>Reasoning Models</strong> to plan your entire travel itinerary, book flights within your budget, and reschedule meetings autonomously if a flight is delayed.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="bg-gradient-to-r from-yellow-50 to-yellow-100/50 border-2 border-yellow-300 rounded-xl p-6 hover:shadow-lg transition-all">
+                  <div class="flex items-start gap-4">
+                    <div class="flex-shrink-0 w-12 h-12 rounded-full bg-yellow-400 flex items-center justify-center font-bold text-black text-lg">
+                      2
+                    </div>
+                    <div>
+                      <h4 class="text-xl font-bold text-black mb-2">Hyper-Personalized Ecosystems</h4>
+                      <p class="text-gray-700">
+                        Whether it's YouTube recommendations or E-commerce feeds, ML now uses <strong>"Intent Modeling."</strong> Instead of suggesting what you liked yesterday, it predicts what you need now based on your current emotional tone and micro-behaviors.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="bg-gradient-to-r from-yellow-50 to-yellow-100/50 border-2 border-yellow-300 rounded-xl p-6 hover:shadow-lg transition-all">
+                  <div class="flex items-start gap-4">
+                    <div class="flex-shrink-0 w-12 h-12 rounded-full bg-yellow-400 flex items-center justify-center font-bold text-black text-lg">
+                      3
+                    </div>
+                    <div>
+                      <h4 class="text-xl font-bold text-black mb-2">Autonomous Mobility & Logistics</h4>
+                      <p class="text-gray-700">
+                        Self-driving cars and delivery drones now rely on <strong>Physical AI</strong>—a blend of computer vision and real-time reinforcement learning that allows them to navigate unpredictable human environments with <strong class="text-yellow-600">99.9% higher safety ratings</strong> than in 2020.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="bg-gradient-to-r from-yellow-50 to-yellow-100/50 border-2 border-yellow-300 rounded-xl p-6 hover:shadow-lg transition-all">
+                  <div class="flex items-start gap-4">
+                    <div class="flex-shrink-0 w-12 h-12 rounded-full bg-yellow-400 flex items-center justify-center font-bold text-black text-lg">
+                      4
+                    </div>
+                    <div>
+                      <h4 class="text-xl font-bold text-black mb-2">Predictive Security & Surveillance</h4>
+                      <p class="text-gray-700">
+                        Modern video surveillance uses <strong>Edge AI</strong> to detect anomalies—like an unattended bag or a medical emergency—in real-time, processing data locally on the camera to ensure privacy while maintaining 24/7 safety.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Why Study Machine Learning at Corpnce -->
+            <div class="bg-gradient-to-br from-black to-gray-900 text-white rounded-2xl p-6 md:p-8 mb-8 border-2 border-yellow-400/30">
+              <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">
+                Why Study Machine Learning at <span class="text-yellow-400">Corpnce, Bangalore</span>?
+              </h3>
+              <p class="text-gray-300 mb-6 text-lg">
+                The 2026 job market has a <strong class="text-yellow-400">51% talent gap</strong> for specialists who can go beyond basic coding. At Corpnce Rajajinagar, our curriculum is designed for this high-stakes landscape:
+              </p>
+              
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="bg-white/10 backdrop-blur-sm border border-yellow-400/30 rounded-xl p-5">
+                  <div class="flex items-center gap-3 mb-3">
+                    <div class="w-10 h-10 rounded-full bg-yellow-400 flex items-center justify-center">
+                      <svg class="w-6 h-6 text-black" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"/>
+                        <path fill-rule="evenodd" d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm9.707 5.707a1 1 0 00-1.414-1.414L9 12.586l-1.293-1.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                      </svg>
+                    </div>
+                    <h4 class="font-bold text-white">Beyond Theory</h4>
+                  </div>
+                  <p class="text-gray-300 text-sm">We move from Scikit-Learn basics to PyTorch and Transformers within the first three months.</p>
+                </div>
+                
+                <div class="bg-white/10 backdrop-blur-sm border border-yellow-400/30 rounded-xl p-5">
+                  <div class="flex items-center gap-3 mb-3">
+                    <div class="w-10 h-10 rounded-full bg-yellow-400 flex items-center justify-center">
+                      <svg class="w-6 h-6 text-black" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M11 17a1 1 0 001.447.894l4-2A1 1 0 0017 15V9.236a1 1 0 00-1.447-.894l-4 2a1 1 0 00-.553.894V17zM15.211 6.276a1 1 0 000-1.553l-4.553-3.277a1 1 0 00-1.262.125L4.586 5A2 2 0 003 6.414V14a1 1 0 001.447.894L9 13.382V9.236a1 1 0 01.553-.894l4-2a1 1 0 01.894.022l4.764 2.912z"/>
+                      </svg>
+                    </div>
+                    <h4 class="font-bold text-white">Agentic Workflows</h4>
+                  </div>
+                  <p class="text-gray-300 text-sm">Learn to build autonomous agents using LangGraph and Multi-agent Orchestration.</p>
+                </div>
+                
+                <div class="bg-white/10 backdrop-blur-sm border border-yellow-400/30 rounded-xl p-5">
+                  <div class="flex items-center gap-3 mb-3">
+                    <div class="w-10 h-10 rounded-full bg-yellow-400 flex items-center justify-center">
+                      <svg class="w-6 h-6 text-black" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clip-rule="evenodd"/>
+                      </svg>
+                    </div>
+                    <h4 class="font-bold text-white">Production MLOps</h4>
+                  </div>
+                  <p class="text-gray-300 text-sm">Master the art of deploying models that don't just work on your laptop, but scale to millions of users via Cloud APIs and Docker.</p>
+                </div>
+                
+                <div class="bg-white/10 backdrop-blur-sm border border-yellow-400/30 rounded-xl p-5">
+                  <div class="flex items-center gap-3 mb-3">
+                    <div class="w-10 h-10 rounded-full bg-yellow-400 flex items-center justify-center">
+                      <svg class="w-6 h-6 text-black" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M9 4.804A7.968 7.968 0 005.5 4c-1.255 0-2.443.29-3.5.804v10A7.969 7.969 0 015.5 14c1.669 0 3.218.51 4.5 1.385A7.962 7.962 0 0114.5 14c1.255 0 2.443.29 3.5.804v-10A7.968 7.968 0 0014.5 4c-1.255 0-2.443.29-3.5.804V12a1 1 0 11-2 0V4.804z"/>
+                      </svg>
+                    </div>
+                    <h4 class="font-bold text-white">Research to Reality</h4>
+                  </div>
+                  <p class="text-gray-300 text-sm">Our students are among the few who can read a 2025/2026 research paper and implement its architecture from scratch.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- The Building Blocks of ML -->
+            <div class="mb-6">
+              <h3 class="text-2xl md:text-3xl font-bold text-black mb-6">
+                The Building Blocks of ML
+              </h3>
+              <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                <div class="bg-white border-2 border-gray-200 rounded-xl p-5 hover:border-yellow-400 transition-all hover:shadow-lg">
+                  <div class="w-12 h-12 rounded-full bg-yellow-400 flex items-center justify-center mb-3">
+                    <svg class="w-6 h-6 text-black" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                    </svg>
+                  </div>
+                  <h4 class="font-bold text-black mb-2">Supervised Learning</h4>
+                  <p class="text-sm text-gray-700">Training with an "answer key" (e.g., Fraud detection)</p>
+                </div>
+                
+                <div class="bg-white border-2 border-gray-200 rounded-xl p-5 hover:border-yellow-400 transition-all hover:shadow-lg">
+                  <div class="w-12 h-12 rounded-full bg-yellow-400 flex items-center justify-center mb-3">
+                    <svg class="w-6 h-6 text-black" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"/>
+                      <path fill-rule="evenodd" d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm9.707 5.707a1 1 0 00-1.414-1.414L9 12.586l-1.293-1.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                    </svg>
+                  </div>
+                  <h4 class="font-bold text-black mb-2">Unsupervised Learning</h4>
+                  <p class="text-sm text-gray-700">Finding hidden patterns in raw data (e.g., Customer segmentation)</p>
+                </div>
+                
+                <div class="bg-white border-2 border-gray-200 rounded-xl p-5 hover:border-yellow-400 transition-all hover:shadow-lg">
+                  <div class="w-12 h-12 rounded-full bg-yellow-400 flex items-center justify-center mb-3">
+                    <svg class="w-6 h-6 text-black" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clip-rule="evenodd"/>
+                    </svg>
+                  </div>
+                  <h4 class="font-bold text-black mb-2">Reinforcement Learning</h4>
+                  <p class="text-sm text-gray-700">Learning through trial and error (e.g., Robotics and Gaming AI)</p>
+                </div>
+                
+                <div class="bg-white border-2 border-gray-200 rounded-xl p-5 hover:border-yellow-400 transition-all hover:shadow-lg">
+                  <div class="w-12 h-12 rounded-full bg-yellow-400 flex items-center justify-center mb-3">
+                    <svg class="w-6 h-6 text-black" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z"/>
+                    </svg>
+                  </div>
+                  <h4 class="font-bold text-black mb-2">Deep Learning</h4>
+                  <p class="text-sm text-gray-700">Mimicking the human brain's neural networks for complex tasks like NLP and Vision</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- CTA -->
+            <div class="bg-gradient-to-r from-yellow-400 to-yellow-500 rounded-xl p-6 md:p-8 text-center border-2 border-yellow-600 shadow-lg">
+              <h3 class="text-2xl md:text-3xl font-bold text-black mb-4">
+                Are you ready to stop using AI and start building it?
+              </h3>
+              <p class="text-gray-900 mb-6 text-lg font-semibold">
+                Join the next batch at Corpnce and lead the <strong>Agentic Revolution</strong>.
+              </p>
+              <a
+                href="/contact"
+                class="inline-flex items-center justify-center px-8 py-4 bg-black text-white font-bold rounded-full hover:bg-gray-900 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+                onclick={`if(window.trackCTAClick) window.trackCTAClick('course_enroll', '${course.slug}');`}
+              >
+                Enroll Now
+              </a>
+            </div>
+          </section>
+
+          <section class="bg-white border border-gray-100 rounded-2xl p-6 md:p-8 lg:p-10 overflow-hidden">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+              <!-- Content -->
+              <div>
+                <div class="mb-6">
+                  <span class="inline-flex items-center rounded-full border-2 border-yellow-400/60 bg-yellow-50 px-4 py-2 text-xs font-bold uppercase tracking-widest text-yellow-700 mb-4">
+                    Core Technical Path
+                  </span>
+                  <h3 class="text-2xl md:text-3xl font-bold text-black mb-3">
+                    PROGRAM I: MASTERS IN MACHINE LEARNING & AI AGENTS
+                  </h3>
+                  <p class="text-gray-700 text-lg font-semibold mb-4">
+                    Focus: The Core Technical Path for Aspiring AI Engineers.
+                  </p>
+                </div>
+
+                <!-- Stats Grid -->
+                <div class="grid grid-cols-3 gap-4 mb-6">
+                  <div class="bg-yellow-50 border-2 border-yellow-200 rounded-xl p-4 text-center">
+                    <p class="text-sm text-gray-600 mb-1">Time Frame</p>
+                    <p class="text-xl font-black text-black">5 Months</p>
+                  </div>
+                  <div class="bg-yellow-50 border-2 border-yellow-200 rounded-xl p-4 text-center">
+                    <p class="text-sm text-gray-600 mb-1">Teaching</p>
+                    <p class="text-xl font-black text-black">220+ hrs</p>
+                  </div>
+                  <div class="bg-yellow-50 border-2 border-yellow-200 rounded-xl p-4 text-center">
+                    <p class="text-sm text-gray-600 mb-1">Hands-on</p>
+                    <p class="text-xl font-black text-black">110+</p>
+                  </div>
+                </div>
+
+                <div class="bg-gradient-to-r from-yellow-400 to-yellow-500 rounded-xl p-5 mb-6 text-center">
+                  <p class="text-2xl font-black text-black mb-1">₹75,000/-*</p>
+                  <p class="text-sm text-gray-900">EMI starting @ ₹10,000/-</p>
+                </div>
+
+                <!-- Curriculum -->
+                <div class="mb-6">
+                  <h4 class="text-xl font-bold text-black mb-4 flex items-center gap-2">
+                    <span class="text-yellow-600">2026 Updated Curriculum:</span>
+                  </h4>
+                  <div class="space-y-4">
+                    <div class="border-l-4 border-yellow-400 pl-4">
+                      <h5 class="font-bold text-black mb-2">Month 0: The Modern Tech Stack</h5>
+                      <p class="text-gray-700 text-sm">Python 3.12+ Mastery, NumPy, Pandas, Vectorized Operations. Bayesian Statistics & Linear Algebra for Deep Learning.</p>
+                    </div>
+                    <div class="border-l-4 border-yellow-400 pl-4">
+                      <h5 class="font-bold text-black mb-2">Month 1: Predictive Analytics & Classical ML</h5>
+                      <p class="text-gray-700 text-sm">Supervised Learning: OLS, Gradient Descent, Ridge/Lasso. Feature Engineering & Automated Hyperparameter Tuning (Optuna/GridSearchCV).</p>
+                    </div>
+                    <div class="border-l-4 border-yellow-400 pl-4">
+                      <h5 class="font-bold text-black mb-2">Month 2: Deep Learning & Vision (PyTorch Hub)</h5>
+                      <p class="text-gray-700 text-sm">PyTorch 2.x: Computational Graphs & Neural Network Design. Computer Vision: ResNets, Data Augmentation, and YOLOv11 for real-time object detection.</p>
+                    </div>
+                    <div class="border-l-4 border-yellow-400 pl-4">
+                      <h5 class="font-bold text-black mb-2">Month 3: NLP & The Transformer Era</h5>
+                      <p class="text-gray-700 text-sm">Transformers "from scratch": Attention Mechanisms & Multi-head Attention. LSTMs/RNNs vs. Foundation Models (GPT, Llama 3.x).</p>
+                    </div>
+                    <div class="border-l-4 border-yellow-400 pl-4">
+                      <h5 class="font-bold text-black mb-2">Month 4: Generative AI & LLM Orchestration</h5>
+                      <p class="text-gray-700 text-sm">Fine-tuning LLMs with Hugging Face (PEFT/LoRA). RAG (Retrieval-Augmented Generation): Vector DBs like Pinecone/Chroma.</p>
+                    </div>
+                    <div class="border-l-4 border-yellow-400 pl-4">
+                      <h5 class="font-bold text-black mb-2">Month 5: Agentic AI & MLOps Deployment</h5>
+                      <p class="text-gray-700 text-sm">Agentic Workflows: Building autonomous agents with LangGraph. Deployment: Containerization with Docker, API serving with FastAPI, and Model Monitoring.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Image -->
+              <div class="relative">
+                <img 
+                  src="/images/ml_and_dl_course_corpnce.png" 
+                  alt="Machine Learning and Deep Learning Course at Corpnce" 
+                  class="w-full rounded-2xl object-contain shadow-lg"
+                />
+              </div>
+            </div>
+          </section>
+
+          <section class="bg-white border border-gray-100 rounded-2xl p-6 md:p-8 lg:p-10 overflow-hidden">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+              <!-- Image -->
+              <div class="relative order-2 lg:order-1">
+                <img 
+                  src="/images/ml_and_dl.png" 
+                  alt="Advanced Machine Learning and Deep Learning Course at Corpnce" 
+                  class="w-full rounded-2xl object-contain shadow-lg"
+                />
+              </div>
+
+              <!-- Content -->
+              <div class="order-1 lg:order-2">
+                <div class="mb-6">
+                  <span class="inline-flex items-center rounded-full border-2 border-yellow-400/60 bg-yellow-50 px-4 py-2 text-xs font-bold uppercase tracking-widest text-yellow-700 mb-4">
+                    Comprehensive Path
+                  </span>
+                  <h3 class="text-2xl md:text-3xl font-bold text-black mb-3">
+                    PROGRAM II: ADVANCED MASTERS IN AI & DATA ARCHITECTURE
+                  </h3>
+                  <p class="text-gray-700 text-lg font-semibold mb-4">
+                    Focus: The Comprehensive Path for Data Leaders & Architects.
+                  </p>
+                </div>
+
+                <!-- Stats Grid -->
+                <div class="grid grid-cols-3 gap-4 mb-6">
+                  <div class="bg-yellow-50 border-2 border-yellow-200 rounded-xl p-4 text-center">
+                    <p class="text-sm text-gray-600 mb-1">Time Frame</p>
+                    <p class="text-xl font-black text-black">8 Months</p>
+                  </div>
+                  <div class="bg-yellow-50 border-2 border-yellow-200 rounded-xl p-4 text-center">
+                    <p class="text-sm text-gray-600 mb-1">Teaching</p>
+                    <p class="text-xl font-black text-black">320+ Hrs</p>
+                  </div>
+                  <div class="bg-yellow-50 border-2 border-yellow-200 rounded-xl p-4 text-center">
+                    <p class="text-sm text-gray-600 mb-1">Hands-on</p>
+                    <p class="text-xl font-black text-black">160+</p>
+                  </div>
+                </div>
+
+                <div class="bg-gradient-to-r from-yellow-400 to-yellow-500 rounded-xl p-5 mb-6 text-center">
+                  <p class="text-2xl font-black text-black mb-1">₹110,000/-*</p>
+                  <p class="text-sm text-gray-900">EMI starting @ ₹10,000/-</p>
+                </div>
+
+                <!-- Curriculum -->
+                <div class="mb-6">
+                  <div class="bg-yellow-50 border-2 border-yellow-200 rounded-xl p-4 mb-6">
+                    <p class="text-gray-800 text-sm leading-relaxed">
+                      <strong class="text-yellow-700">Program II includes everything from Program I</strong> plus additional courses to strengthen <strong class="text-yellow-700">Python and Mathematical fundamentals</strong>, along with advanced topics for Data Leaders & Architects.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="bg-white border border-gray-100 rounded-2xl p-6 md:p-8 lg:p-10">
+            <h3 class="text-2xl md:text-3xl font-bold text-black mb-6 text-center">
+              Tools You Will Learn
+            </h3>
+            <div class="flex justify-center">
+              <img 
+                src="/images/ml_tools_corpnce.png" 
+                alt="Machine Learning Tools at Corpnce" 
+                class="w-full max-w-4xl rounded-xl shadow-lg object-contain"
+              />
+            </div>
+          </section>
+
+          <section class="bg-white border border-gray-100 rounded-2xl p-6 md:p-8 lg:p-10">
+            <div class="mb-6">
+              <span class="inline-flex items-center rounded-full border-2 border-yellow-400/60 bg-yellow-50 px-4 py-2 text-xs font-bold uppercase tracking-widest text-yellow-700 mb-4">
+                2026 Career Guide
+              </span>
+              <h3 class="text-2xl md:text-3xl font-bold text-black mb-4">
+                Who Can Learn <span class="text-yellow-600">Machine Learning</span> Course?
+              </h3>
+            </div>
+            
+            <p class="text-gray-700 leading-relaxed text-lg mb-8">
+              Machine Learning has evolved from a niche tech skill to a <strong>fundamental literacy required across all modern career paths</strong>. Whether you are aiming to build the next generation of AI Agents or simply want to future-proof your current role, here is the updated breakdown of who should enroll in our Machine Learning Certification in Bangalore.
+            </p>
+
+            <!-- Four Categories -->
+            <div class="space-y-6 mb-8">
+              <!-- Category 1 -->
+              <div class="bg-gradient-to-r from-yellow-50 to-yellow-100/50 border-2 border-yellow-300 rounded-xl p-6 hover:shadow-lg transition-all">
+                <div class="flex items-start gap-4">
+                  <div class="flex-shrink-0 w-12 h-12 rounded-full bg-yellow-400 flex items-center justify-center font-bold text-black text-lg">
+                    1
+                  </div>
+                  <div class="flex-1">
+                    <h4 class="text-xl font-bold text-black mb-3">Final Year Students & Fresh Graduates</h4>
+                    <p class="text-gray-700 mb-3">
+                      The 2026 job market is hyper-competitive. Standard degrees are often not enough to clear the high bar set by top MNCs.
+                    </p>
+                    <div class="space-y-2">
+                      <div class="flex items-start gap-2">
+                        <span class="text-yellow-600 font-bold">The Goal:</span>
+                        <span class="text-gray-700">Transition from "Academic Learning" to "Production-Ready AI."</span>
+                      </div>
+                      <div class="flex items-start gap-2">
+                        <span class="text-yellow-600 font-bold">Why Now:</span>
+                        <span class="text-gray-700">Over <strong>60% of entry-level tech roles</strong> in 2026 require foundational AI skills.</span>
+                      </div>
+                      <div class="flex items-start gap-2">
+                        <span class="text-yellow-600 font-bold">Outcome:</span>
+                        <span class="text-gray-700">Build a portfolio of real-world projects—like Generative AI applications or Autonomous Systems—that make your resume stand out to recruiters at Google, Amazon, and Adobe.</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Category 2 -->
+              <div class="bg-gradient-to-r from-yellow-50 to-yellow-100/50 border-2 border-yellow-300 rounded-xl p-6 hover:shadow-lg transition-all">
+                <div class="flex items-start gap-4">
+                  <div class="flex-shrink-0 w-12 h-12 rounded-full bg-yellow-400 flex items-center justify-center font-bold text-black text-lg">
+                    2
+                  </div>
+                  <div class="flex-1">
+                    <h4 class="text-xl font-bold text-black mb-3">Tech Professionals (Software Engineers & Developers)</h4>
+                    <p class="text-gray-700 mb-3">
+                      For the working developer, ML is the ultimate upskilling path. In 2026, we are seeing a massive shift from <strong>"Code First" to "Model First"</strong> development.
+                    </p>
+                    <div class="space-y-2">
+                      <div class="flex items-start gap-2">
+                        <span class="text-yellow-600 font-bold">The Goal:</span>
+                        <span class="text-gray-700">Evolve into a Machine Learning Engineer or MLOps Specialist.</span>
+                      </div>
+                      <div class="flex items-start gap-2">
+                        <span class="text-yellow-600 font-bold">Why Now:</span>
+                        <span class="text-gray-700">Traditional software roles are facing automation; however, the demand for those who can build and maintain those automation systems has <strong>grown by 75%</strong>.</span>
+                      </div>
+                      <div class="flex items-start gap-2">
+                        <span class="text-yellow-600 font-bold">Outcome:</span>
+                        <span class="text-gray-700">Master frameworks like PyTorch and TensorFlow to design systems that don't just execute code but "reason" through data.</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Category 3 -->
+              <div class="bg-gradient-to-r from-yellow-50 to-yellow-100/50 border-2 border-yellow-300 rounded-xl p-6 hover:shadow-lg transition-all">
+                <div class="flex items-start gap-4">
+                  <div class="flex-shrink-0 w-12 h-12 rounded-full bg-yellow-400 flex items-center justify-center font-bold text-black text-lg">
+                    3
+                  </div>
+                  <div class="flex-1">
+                    <h4 class="text-xl font-bold text-black mb-3">Non-Tech Professionals (Management, Finance, & Operations)</h4>
+                    <p class="text-gray-700 mb-3">
+                      In 2026, <strong>"Decision Intelligence"</strong> is the top priority for leadership. You don't need to be a math genius to leverage ML for business growth.
+                    </p>
+                    <div class="space-y-2">
+                      <div class="flex items-start gap-2">
+                        <span class="text-yellow-600 font-bold">The Goal:</span>
+                        <span class="text-gray-700">Become an AI-Augmented Manager or Data-Driven Consultant.</span>
+                      </div>
+                      <div class="flex items-start gap-2">
+                        <span class="text-yellow-600 font-bold">Why Now:</span>
+                        <span class="text-gray-700">Businesses are no longer asking if they should use AI, but how. Professionals in Marketing, HR, and Finance need to understand the "Black Box" of ML to lead AI-native teams.</span>
+                      </div>
+                      <div class="flex items-start gap-2">
+                        <span class="text-yellow-600 font-bold">Outcome:</span>
+                        <span class="text-gray-700">Learn to interpret model reasoning, frame the right questions for AI agents, and turn raw data into strategic business wins.</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Category 4 -->
+              <div class="bg-gradient-to-r from-yellow-50 to-yellow-100/50 border-2 border-yellow-300 rounded-xl p-6 hover:shadow-lg transition-all">
+                <div class="flex items-start gap-4">
+                  <div class="flex-shrink-0 w-12 h-12 rounded-full bg-yellow-400 flex items-center justify-center font-bold text-black text-lg">
+                    4
+                  </div>
+                  <div class="flex-1">
+                    <h4 class="text-xl font-bold text-black mb-3">Domain Experts (Healthcare, Pharma, & Manufacturing)</h4>
+                    <p class="text-gray-700 mb-3">
+                      Specialists in traditional sectors are currently the <strong>highest-paid</strong> when they add ML to their toolkit.
+                    </p>
+                    <div class="space-y-2">
+                      <div class="flex items-start gap-2">
+                        <span class="text-yellow-600 font-bold">The Goal:</span>
+                        <span class="text-gray-700">Become a Domain-Specific AI Architect.</span>
+                      </div>
+                      <div class="flex items-start gap-2">
+                        <span class="text-yellow-600 font-bold">Why Now:</span>
+                        <span class="text-gray-700">There is a critical shortage of people who understand both a specific industry (like Drug Discovery or Automotive Engineering) and the ML models that can optimize it.</span>
+                      </div>
+                      <div class="flex items-start gap-2">
+                        <span class="text-yellow-600 font-bold">Outcome:</span>
+                        <span class="text-gray-700">Apply ML to solve high-stakes problems, such as Predictive Maintenance in factories or Diagnostic AI in healthcare.</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Prerequisites Section -->
+            <div class="bg-gradient-to-br from-black to-gray-900 text-white rounded-2xl p-6 md:p-8 mb-8 border-2 border-yellow-400/30">
+              <h4 class="text-2xl font-bold text-white mb-4 flex items-center gap-3">
+                <span class="text-yellow-400">2026 Prerequisites:</span> Do You Qualify?
+              </h4>
+              <p class="text-gray-300 mb-6">
+                At Corpnce, we believe in <strong class="text-yellow-400">potential over prior titles</strong>. However, to ensure you succeed in the 2026 curriculum, we recommend:
+              </p>
+              
+              <div class="space-y-4">
+                <div class="bg-white/10 backdrop-blur-sm border border-yellow-400/30 rounded-xl p-4">
+                  <h5 class="font-bold text-white mb-2 flex items-center gap-2">
+                    <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                    </svg>
+                    For Freshers:
+                  </h5>
+                  <p class="text-gray-300 text-sm">A background in STEM (Science, Tech, Engineering, Math) is helpful, but any graduate with a strong logical mindset can join our Bridge Program.</p>
+                </div>
+                
+                <div class="bg-white/10 backdrop-blur-sm border border-yellow-400/30 rounded-xl p-4">
+                  <h5 class="font-bold text-white mb-2 flex items-center gap-2">
+                    <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                    </svg>
+                    For Professionals:
+                  </h5>
+                  <p class="text-gray-300 text-sm">Basic familiarity with Python is preferred. If you're coming from a non-coding background, we provide an intensive Python for Data Science module to get you up to speed.</p>
+                </div>
+                
+                <div class="bg-yellow-400/20 border-2 border-yellow-400/50 rounded-xl p-4">
+                  <h5 class="font-bold text-yellow-300 mb-2 flex items-center gap-2">
+                    <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                    </svg>
+                    The "Human" Factor:
+                  </h5>
+                  <p class="text-gray-200 text-sm">The most important prerequisite in 2026 is <strong class="text-yellow-300">Analytical Curiosity</strong>—the ability to ask "Why?" and "What if?" when looking at a dataset.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Summary Table -->
+            <div class="mb-6">
+              <h4 class="text-2xl font-bold text-black mb-6">
+                Summary of 2026 Roles You Can Target
+              </h4>
+              <div class="overflow-x-auto">
+                <table class="w-full border-collapse bg-white rounded-xl overflow-hidden shadow-lg">
+                  <thead>
+                    <tr class="bg-gradient-to-r from-yellow-400 to-yellow-500">
+                      <th class="px-6 py-4 text-left text-sm font-bold text-black uppercase">If you are...</th>
+                      <th class="px-6 py-4 text-left text-sm font-bold text-black uppercase">You can become...</th>
+                      <th class="px-6 py-4 text-left text-sm font-bold text-black uppercase">Average 2026 Salary (LPA)</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="border-b border-gray-200 hover:bg-yellow-50 transition-colors">
+                      <td class="px-6 py-4 font-semibold text-gray-900">A Coder</td>
+                      <td class="px-6 py-4 text-gray-700">MLOps Engineer</td>
+                      <td class="px-6 py-4 text-gray-700"><strong class="text-yellow-600">₹18L – ₹40L</strong></td>
+                    </tr>
+                    <tr class="border-b border-gray-200 hover:bg-yellow-50 transition-colors bg-gray-50">
+                      <td class="px-6 py-4 font-semibold text-gray-900">A Graduate</td>
+                      <td class="px-6 py-4 text-gray-700">Junior Data Scientist</td>
+                      <td class="px-6 py-4 text-gray-700"><strong class="text-yellow-600">₹8L – ₹15L</strong></td>
+                    </tr>
+                    <tr class="border-b border-gray-200 hover:bg-yellow-50 transition-colors">
+                      <td class="px-6 py-4 font-semibold text-gray-900">A Manager</td>
+                      <td class="px-6 py-4 text-gray-700">AI Product Manager</td>
+                      <td class="px-6 py-4 text-gray-700"><strong class="text-yellow-600">₹25L – ₹50L</strong></td>
+                    </tr>
+                    <tr class="hover:bg-yellow-50 transition-colors bg-gray-50">
+                      <td class="px-6 py-4 font-semibold text-gray-900">A Research Analyst</td>
+                      <td class="px-6 py-4 text-gray-700">NLP / LLM Specialist</td>
+                      <td class="px-6 py-4 text-gray-700"><strong class="text-yellow-600">₹20L – ₹45L</strong></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </section>
+
+          <section class="bg-white border border-gray-100 rounded-2xl p-6 md:p-8 lg:p-10">
+            <div class="mb-6">
+              <span class="inline-flex items-center rounded-full border-2 border-yellow-400/60 bg-yellow-50 px-4 py-2 text-xs font-bold uppercase tracking-widest text-yellow-700 mb-4">
+                2026 Industry Landscape
+              </span>
+              <h3 class="text-2xl md:text-3xl font-bold text-black mb-4">
+                Industries Accepting <span class="text-yellow-600">Machine Learning</span>
+              </h3>
+            </div>
+            
+            <p class="text-gray-700 leading-relaxed text-lg mb-8">
+              In 2026, Machine Learning (ML) has moved from an experimental "nice-to-have" to a <strong>core operational engine for global enterprises</strong>. Approximately <strong class="text-yellow-600">48% to 50% of businesses globally</strong> have now fully deployed ML in at least one business function, with over <strong class="text-yellow-600">92% of leading firms</strong> reporting active investments in the sector.
+            </p>
+
+            <!-- Market Overview -->
+            <div class="bg-gradient-to-br from-black to-gray-900 text-white rounded-2xl p-6 md:p-8 mb-8 border-2 border-yellow-400/30">
+              <h4 class="text-2xl font-bold text-white mb-2 flex items-center gap-3">
+                <span class="text-yellow-400">Market Share & Financial Impact (2026)</span>
+              </h4>
+              <p class="text-gray-300 mb-6">
+                The global ML market is currently valued at roughly <strong class="text-yellow-400">$391 billion</strong> and is projected to exceed <strong class="text-yellow-400">$500 billion by 2030</strong>, growing at an annual rate of over <strong class="text-yellow-400">34%</strong>.
+              </p>
+              
+              <div class="overflow-x-auto">
+                <table class="w-full border-collapse bg-white/10 backdrop-blur-sm rounded-xl overflow-hidden">
+                  <thead>
+                    <tr class="bg-yellow-400/20">
+                      <th class="px-6 py-4 text-left text-sm font-bold text-yellow-300 uppercase">Industry</th>
+                      <th class="px-6 py-4 text-left text-sm font-bold text-yellow-300 uppercase">2026 Market Share / Adoption</th>
+                      <th class="px-6 py-4 text-left text-sm font-bold text-yellow-300 uppercase">Key Economic Contribution (Projected)</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="border-b border-white/10 hover:bg-white/10 transition-colors">
+                      <td class="px-6 py-4 font-semibold text-white">Manufacturing</td>
+                      <td class="px-6 py-4 text-gray-300"><strong class="text-yellow-400">18.88%</strong> (Largest Share)</td>
+                      <td class="px-6 py-4 text-gray-300"><strong class="text-yellow-400">$3.78 Trillion</strong> gain by 2035</td>
+                    </tr>
+                    <tr class="border-b border-white/10 hover:bg-white/10 transition-colors bg-white/5">
+                      <td class="px-6 py-4 font-semibold text-white">BFSI (Finance)</td>
+                      <td class="px-6 py-4 text-gray-300"><strong class="text-yellow-400">15.42%</strong></td>
+                      <td class="px-6 py-4 text-gray-300"><strong class="text-yellow-400">$1.15 Trillion</strong> additional contribution</td>
+                    </tr>
+                    <tr class="border-b border-white/10 hover:bg-white/10 transition-colors">
+                      <td class="px-6 py-4 font-semibold text-white">Healthcare</td>
+                      <td class="px-6 py-4 text-gray-300"><strong class="text-yellow-400">12.23%</strong></td>
+                      <td class="px-6 py-4 text-gray-300"><strong class="text-yellow-400">$461 Billion</strong> additional contribution</td>
+                    </tr>
+                    <tr class="border-b border-white/10 hover:bg-white/10 transition-colors bg-white/5">
+                      <td class="px-6 py-4 font-semibold text-white">Retail</td>
+                      <td class="px-6 py-4 text-gray-300"><strong class="text-yellow-400">~10%</strong></td>
+                      <td class="px-6 py-4 text-gray-300"><strong class="text-yellow-400">$2.23 Trillion</strong> additional contribution</td>
+                    </tr>
+                    <tr class="hover:bg-white/10 transition-colors">
+                      <td class="px-6 py-4 font-semibold text-white">IT & Telecom</td>
+                      <td class="px-6 py-4 text-gray-300"><strong class="text-yellow-400">38%</strong> Adoption Rate</td>
+                      <td class="px-6 py-4 text-gray-300"><strong class="text-yellow-400">$4.7 Trillion</strong> in gross value</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <!-- Industry-Specific Adoption Profiles -->
+            <div class="mb-8">
+              <h4 class="text-2xl font-bold text-black mb-6">
+                Industry-Specific Adoption Profiles
+              </h4>
+              
+              <div class="space-y-6">
+                <!-- Manufacturing -->
+                <div class="bg-gradient-to-r from-yellow-50 to-yellow-100/50 border-2 border-yellow-300 rounded-xl p-6 hover:shadow-lg transition-all">
+                  <div class="flex items-start gap-4">
+                    <div class="flex-shrink-0 w-12 h-12 rounded-full bg-yellow-400 flex items-center justify-center">
+                      <svg class="w-6 h-6 text-black" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M11.49 3.17c-.38-1.56-2.6-1.56-2.98 0a1.532 1.532 0 01-2.286.948c-1.372-.836-2.942.734-2.106 2.106.54.886.061 2.042-.947 2.287-1.561.379-1.561 2.6 0 2.978a1.532 1.532 0 01.947 2.287c-.836 1.372.734 2.942 2.106 2.106a1.532 1.532 0 012.287.947c.379 1.561 2.6 1.561 2.978 0a1.533 1.533 0 012.287-.947c1.372.836 2.942-.734 2.106-2.106a1.533 1.533 0 01.947-2.287c1.561-.379 1.561-2.6 0-2.978a1.532 1.532 0 01-.947-2.287c.836-1.372-.734-2.942-2.106-2.106a1.532 1.532 0 01-2.287-.947zM10 13a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd"/>
+                      </svg>
+                    </div>
+                    <div class="flex-1">
+                      <h5 class="text-xl font-bold text-black mb-3">1. Manufacturing: The "Smart Factory" Era</h5>
+                      <p class="text-gray-700 mb-3">
+                        Manufacturing currently holds the <strong>largest share of the ML market</strong>.
+                      </p>
+                      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div class="bg-white rounded-lg p-4 border border-yellow-200">
+                          <p class="text-sm text-gray-600 mb-1">Labor Shortage Fix</p>
+                          <p class="text-lg font-bold text-black">41%</p>
+                          <p class="text-xs text-gray-600">of manufacturers adopted ML</p>
+                        </div>
+                        <div class="bg-white rounded-lg p-4 border border-yellow-200">
+                          <p class="text-sm text-gray-600 mb-1">Productivity</p>
+                          <p class="text-lg font-bold text-black">2-3X</p>
+                          <p class="text-xs text-gray-600">increase with Generative AI</p>
+                        </div>
+                        <div class="bg-white rounded-lg p-4 border border-yellow-200">
+                          <p class="text-sm text-gray-600 mb-1">Energy Savings</p>
+                          <p class="text-lg font-bold text-black">30%</p>
+                          <p class="text-xs text-gray-600">reduction in consumption</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Financial Services -->
+                <div class="bg-gradient-to-r from-yellow-50 to-yellow-100/50 border-2 border-yellow-300 rounded-xl p-6 hover:shadow-lg transition-all">
+                  <div class="flex items-start gap-4">
+                    <div class="flex-shrink-0 w-12 h-12 rounded-full bg-yellow-400 flex items-center justify-center">
+                      <svg class="w-6 h-6 text-black" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M8.433 7.418c.155-.103.346-.196.567-.267v1.698a2.305 2.305 0 01-.567-.267C8.07 8.34 8 8.114 8 8c0-.114.07-.34.433-.582zM11 12.849v-1.698c.22.071.412.164.567.267.364.243.433.468.433.582 0 .114-.07.34-.433.582a2.305 2.305 0 01-.567.267z"/>
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-13a1 1 0 10-2 0v.092a4.535 4.535 0 00-1.676.662C6.602 6.234 6 7.009 6 8c0 .99.602 1.765 1.324 2.246.48.32 1.054.545 1.676.662v1.941c-.391-.127-.68-.317-.843-.504a1 1 0 10-1.51 1.31c.562.649 1.413 1.076 2.353 1.253V15a1 1 0 102 0v-.092a4.535 4.535 0 001.676-.662C13.398 13.766 14 12.991 14 12c0-.99-.602-1.765-1.324-2.246A4.535 4.535 0 0011 9.092V7.151c.391.127.68.317.843.504a1 1 0 101.511-1.31c-.563-.649-1.413-1.076-2.354-1.253V5z" clip-rule="evenodd"/>
+                      </svg>
+                    </div>
+                    <div class="flex-1">
+                      <h5 class="text-xl font-bold text-black mb-3">2. Financial Services: Security & Personalization</h5>
+                      <p class="text-gray-700 mb-3">
+                        Financial firms lead in the "centralization" of AI, with <strong>57% having fully centralized hubs</strong> for risk and compliance.
+                      </p>
+                      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div class="bg-white rounded-lg p-4 border border-yellow-200">
+                          <p class="text-sm text-gray-600 mb-1">Risk Prediction</p>
+                          <p class="text-lg font-bold text-black">93%</p>
+                          <p class="text-xs text-gray-600">accuracy vs 62.75% traditional</p>
+                        </div>
+                        <div class="bg-white rounded-lg p-4 border border-yellow-200">
+                          <p class="text-sm text-gray-600 mb-1">Churn Reduction</p>
+                          <p class="text-lg font-bold text-black">20%</p>
+                          <p class="text-xs text-gray-600">decline in European banks</p>
+                        </div>
+                        <div class="bg-white rounded-lg p-4 border border-yellow-200">
+                          <p class="text-sm text-gray-600 mb-1">Centralized AI</p>
+                          <p class="text-lg font-bold text-black">57%</p>
+                          <p class="text-xs text-gray-600">of firms have AI hubs</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Healthcare -->
+                <div class="bg-gradient-to-r from-yellow-50 to-yellow-100/50 border-2 border-yellow-300 rounded-xl p-6 hover:shadow-lg transition-all">
+                  <div class="flex items-start gap-4">
+                    <div class="flex-shrink-0 w-12 h-12 rounded-full bg-yellow-400 flex items-center justify-center">
+                      <svg class="w-6 h-6 text-black" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd"/>
+                      </svg>
+                    </div>
+                    <div class="flex-1">
+                      <h5 class="text-xl font-bold text-black mb-3">3. Healthcare: Precision Diagnostics</h5>
+                      <p class="text-gray-700 mb-3">
+                        By 2026, AI is handling up to <strong>80% of initial diagnostic screenings</strong> in leading hospitals.
+                      </p>
+                      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div class="bg-white rounded-lg p-4 border border-yellow-200">
+                          <p class="text-sm text-gray-600 mb-1">Diagnostic Screenings</p>
+                          <p class="text-lg font-bold text-black">80%</p>
+                          <p class="text-xs text-gray-600">handled by AI</p>
+                        </div>
+                        <div class="bg-white rounded-lg p-4 border border-yellow-200">
+                          <p class="text-sm text-gray-600 mb-1">Eye Diseases</p>
+                          <p class="text-lg font-bold text-black">50+</p>
+                          <p class="text-xs text-gray-600">diagnosed with higher accuracy</p>
+                        </div>
+                        <div class="bg-white rounded-lg p-4 border border-yellow-200">
+                          <p class="text-sm text-gray-600 mb-1">Drug Discovery</p>
+                          <p class="text-lg font-bold text-black">46 Days</p>
+                          <p class="text-xs text-gray-600">vs 5 years traditional</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Retail -->
+                <div class="bg-gradient-to-r from-yellow-50 to-yellow-100/50 border-2 border-yellow-300 rounded-xl p-6 hover:shadow-lg transition-all">
+                  <div class="flex items-start gap-4">
+                    <div class="flex-shrink-0 w-12 h-12 rounded-full bg-yellow-400 flex items-center justify-center">
+                      <svg class="w-6 h-6 text-black" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z"/>
+                      </svg>
+                    </div>
+                    <div class="flex-1">
+                      <h5 class="text-xl font-bold text-black mb-3">4. Retail & E-commerce: Dynamic CX</h5>
+                      <p class="text-gray-700 mb-3">
+                        Retailers have increased AI budget allocations to <strong>20% of their total tech spend</strong>.
+                      </p>
+                      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="bg-white rounded-lg p-4 border border-yellow-200">
+                          <p class="text-sm text-gray-600 mb-1">AI Budget</p>
+                          <p class="text-lg font-bold text-black">20%</p>
+                          <p class="text-xs text-gray-600">of total tech spend</p>
+                        </div>
+                        <div class="bg-white rounded-lg p-4 border border-yellow-200">
+                          <p class="text-sm text-gray-600 mb-1">Conversion Rate</p>
+                          <p class="text-lg font-bold text-black">15%</p>
+                          <p class="text-xs text-gray-600">increase during sales events</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Top Use Cases -->
+            <div class="bg-gradient-to-br from-yellow-50 to-yellow-100 border-2 border-yellow-300 rounded-2xl p-6 md:p-8">
+              <h4 class="text-2xl font-bold text-black mb-4">
+                Top Use Cases Driving ROI in 2026
+              </h4>
+              <p class="text-gray-700 mb-6">
+                Companies are seeing measurable results, with <strong class="text-yellow-700">92.1% of businesses</strong> reporting positive outcomes from their AI/ML implementations.
+              </p>
+              
+              <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+                <div class="bg-white rounded-xl p-5 border-2 border-yellow-200 hover:border-yellow-400 transition-all text-center">
+                  <div class="w-12 h-12 rounded-full bg-yellow-400 mx-auto mb-3 flex items-center justify-center">
+                    <svg class="w-6 h-6 text-black" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z"/>
+                    </svg>
+                  </div>
+                  <h5 class="font-bold text-black mb-2">Customer Experience</h5>
+                  <p class="text-3xl font-black text-yellow-600 mb-1">57%</p>
+                  <p class="text-xs text-gray-600">Personalized recommendations</p>
+                </div>
+                
+                <div class="bg-white rounded-xl p-5 border-2 border-yellow-200 hover:border-yellow-400 transition-all text-center">
+                  <div class="w-12 h-12 rounded-full bg-yellow-400 mx-auto mb-3 flex items-center justify-center">
+                    <svg class="w-6 h-6 text-black" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                    </svg>
+                  </div>
+                  <h5 class="font-bold text-black mb-2">Fraud Detection</h5>
+                  <p class="text-3xl font-black text-yellow-600 mb-1">46%</p>
+                  <p class="text-xs text-gray-600">Real-time monitoring</p>
+                </div>
+                
+                <div class="bg-white rounded-xl p-5 border-2 border-yellow-200 hover:border-yellow-400 transition-all text-center">
+                  <div class="w-12 h-12 rounded-full bg-yellow-400 mx-auto mb-3 flex items-center justify-center">
+                    <svg class="w-6 h-6 text-black" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z"/>
+                    </svg>
+                  </div>
+                  <h5 class="font-bold text-black mb-2">Inventory Management</h5>
+                  <p class="text-3xl font-black text-yellow-600 mb-1">40%</p>
+                  <p class="text-xs text-gray-600">18% reduction in overstocking</p>
+                </div>
+                
+                <div class="bg-white rounded-xl p-5 border-2 border-yellow-200 hover:border-yellow-400 transition-all text-center">
+                  <div class="w-12 h-12 rounded-full bg-yellow-400 mx-auto mb-3 flex items-center justify-center">
+                    <svg class="w-6 h-6 text-black" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M11 17a1 1 0 001.447.894l4-2A1 1 0 0017 15V9.236a1 1 0 00-1.447-.894l-4 2a1 1 0 00-.553.894V17zM15.211 6.276a1 1 0 000-1.553l-4.553-3.277a1 1 0 00-1.262.125L4.586 5A2 2 0 003 6.414V14a1 1 0 001.447.894L9 13.382V9.236a1 1 0 01.553-.894l4-2a1 1 0 01.894.022l4.764 2.912z"/>
+                    </svg>
+                  </div>
+                  <h5 class="font-bold text-black mb-2">Agentic AI</h5>
+                  <p class="text-lg font-bold text-yellow-600 mb-1">2026 Trend</p>
+                  <p class="text-xs text-gray-600">Multi-step task execution</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="relative overflow-hidden rounded-3xl border border-gray-100 bg-gradient-to-br from-white via-yellow-50/40 to-white p-6 md:p-10">
+            <div class="absolute -top-24 -right-24 h-56 w-56 rounded-full bg-yellow-100/70 blur-3xl"></div>
+            <div class="absolute -bottom-24 -left-24 h-56 w-56 rounded-full bg-gray-100 blur-3xl"></div>
+            <div class="relative flex flex-col gap-3 mb-8">
+              <span class="inline-flex w-fit items-center rounded-full border border-yellow-200 bg-yellow-50 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-yellow-900">
+                Why Corpnce
+              </span>
+              <h2 class="text-2xl md:text-3xl font-bold text-black">Why Choose Corpnce for Your Machine Learning Certification in Bangalore (2026)?</h2>
+              <p class="text-sm text-gray-700 max-w-3xl">
+                While the market is flooded with institutions, Corpnce remains the elite choice for a Machine Learning course in Bangalore. In 2026, the industry has shifted from basic ML models to Agentic AI and Production-Grade MLOps, and our curriculum has evolved to lead this revolution.
+              </p>
+            </div>
+
+            <div class="relative grid gap-6 lg:grid-cols-[0.95fr,1.05fr]">
+              <div class="rounded-2xl border border-gray-100 bg-white/90 p-5 shadow-sm">
+                <h3 class="text-base font-semibold text-black mb-3">1. The Industry Context: A Million Opportunities</h3>
+                <p class="text-sm text-gray-700 mb-4">
+                  NASSCOM 2026 reports show demand for AI & ML professionals in India has crossed 1 million, with Bangalore (Rajajinagar & surrounding hubs) accounting for over 43% of tech hiring. Yet a ~51% talent gap persists because most institutes still teach yesterday's code. Corpnce bridges this gap by training you for the Agentic Era.
+                </p>
+                <div class="grid grid-cols-3 gap-3 text-xs text-gray-700">
+                  <div class="rounded-xl border border-gray-100 bg-gray-50 p-3 text-center">
+                    <p class="text-[11px] text-gray-500">Demand</p>
+                    <p class="text-lg font-semibold text-black">1M+</p>
+                  </div>
+                  <div class="rounded-xl border border-gray-100 bg-gray-50 p-3 text-center">
+                    <p class="text-[11px] text-gray-500">Bengaluru Share</p>
+                    <p class="text-lg font-semibold text-black">43%+</p>
+                  </div>
+                  <div class="rounded-xl border border-gray-100 bg-gray-50 p-3 text-center">
+                    <p class="text-[11px] text-gray-500">Talent Gap</p>
+                    <p class="text-lg font-semibold text-black">~51%</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="space-y-4">
+                <div class="rounded-2xl border border-gray-100 bg-white/90 p-5 shadow-sm">
+                  <h3 class="text-base font-semibold text-black mb-3">2. Our "Simplicity-First" Learning Path</h3>
+                  <ul class="grid gap-3 text-sm text-gray-700">
+                    <li class="rounded-xl border border-gray-100 bg-gray-50 p-3"><strong>Python Mastery:</strong> Start with preparatory sessions to master the art of coding — the orchestration layer for AI agents.</li>
+                    <li class="rounded-xl border border-gray-100 bg-gray-50 p-3"><strong>The Math of ML:</strong> Statistics, probability, and linear algebra for reliable model building.</li>
+                    <li class="rounded-xl border border-gray-100 bg-gray-50 p-3"><strong>Classical ML:</strong> Supervised & unsupervised learning, feature engineering, and hyperparameter tuning.</li>
+                    <li class="rounded-xl border border-gray-100 bg-gray-50 p-3"><strong>Deep Learning Excellence:</strong> PyTorch, CNNs, Transformers, and Computer Vision.</li>
+                    <li class="rounded-xl border border-gray-100 bg-gray-50 p-3"><strong>Agentic AI & MLOps:</strong> Build autonomous agents with LangGraph, deploy with Docker & FastAPI, and monitor production models.</li>
+                  </ul>
+                </div>
+
+                <div class="grid gap-4 md:grid-cols-2">
+                  <div class="rounded-2xl border border-gray-100 bg-white/90 p-5 shadow-sm">
+                    <h3 class="text-base font-semibold text-black mb-2">3. Research-Level Expertise in 4-8 Months</h3>
+                    <p class="text-sm text-gray-700">Become an independent ML architect. In 4-8 months, gain the ability to read and implement research papers — placing you in the top 5% of ML engineers globally.</p>
+                  </div>
+                  <div class="rounded-2xl border border-gray-100 bg-white/90 p-5 shadow-sm">
+                    <h3 class="text-base font-semibold text-black mb-2">4. Real-World Project & Internship Ecosystem</h3>
+                    <ul class="list-disc list-inside text-sm text-gray-700 space-y-2">
+                      <li><strong>Project-Based Learning:</strong> One instructor-led mini project + two major industry-use-case projects.</li>
+                      <li><strong>Internal Internships:</strong> Top performers build full-scale AI products with us.</li>
+                      <li><strong>Portfolio over Certificates:</strong> Certification plus a GitHub portfolio that proves skills.</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div class="rounded-2xl border border-gray-100 bg-white/90 p-5 shadow-sm">
+                  <h3 class="text-base font-semibold text-black mb-3">5. Exclusive Features & Value</h3>
+                  <div class="grid gap-3 text-sm text-gray-700 md:grid-cols-2">
+                    <div class="rounded-lg border border-gray-100 bg-gray-50 p-3">
+                      <p class="font-semibold text-black">Elite Batch Size</p>
+                      <p>Strictly limited to 15 students for personalized attention.</p>
+                    </div>
+                    <div class="rounded-lg border border-gray-100 bg-gray-50 p-3">
+                      <p class="font-semibold text-black">Competitive Fees</p>
+                      <p>~1/4th the cost of comparable elite programs in Bangalore.</p>
+                    </div>
+                    <div class="rounded-lg border border-gray-100 bg-gray-50 p-3">
+                      <p class="font-semibold text-black">100% Placement Aid</p>
+                      <p>Direct assistance based on your projects and internship outcomes.</p>
+                    </div>
+                    <div class="rounded-lg border border-gray-100 bg-gray-50 p-3">
+                      <p class="font-semibold text-black">Community</p>
+                      <p>Lifetime access to a strong alumni network and tech experts.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="rounded-2xl border border-yellow-200 bg-yellow-50 p-5 text-sm text-gray-800 shadow-sm">
+                  <p class="font-semibold text-black mb-1">Start Your Journey in Rajajinagar</p>
+                  <p>New weekend batches start every 60 days at our Rajajinagar center. If you want hands-on ML expertise over theoretical slides, Corpnce is your destination.</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="bg-black text-white p-8 rounded-xl text-center border-2 border-yellow-400">
+            <h2 class="text-2xl font-bold mb-4">Ready to Enroll?</h2>
+            <p class="mb-6 text-gray-300">
+              Get certified in Machine Learning and land your dream job with Corpnce.
+            </p>
+            <a
+              href="/contact"
+              class="btn-primary inline-block"
+              onclick={`if(window.trackCTAClick) window.trackCTAClick('course_enroll', '${course.slug}');`}
+            >
+              Enquire Now
+            </a>
+          </section>
+        </div>
+      ) : (
+        <div class="max-w-4xl mx-auto">
+          <div class="prose prose-lg max-w-none mb-12">
+            <h2 class="text-3xl font-bold mt-12 mb-6 text-black">Course Overview</h2>
+            <p class="text-gray-700 mb-6">
+              Our {course.name} course is designed to provide comprehensive training in the
+              fundamentals and advanced concepts of {course.name.toLowerCase()}. Through our
+              project-based learning approach, you'll gain hands-on experience working on real-world
+              projects that mirror industry challenges.
+            </p>
+
+            <h2 class="text-3xl font-bold mt-12 mb-6 text-black">What You'll Learn</h2>
+            <ul class="list-disc list-inside text-gray-700 mb-12 space-y-2">
+              <li>Fundamental concepts and principles</li>
+              <li>Practical implementation techniques</li>
+              <li>Industry best practices and methodologies</li>
+              <li>Real-world project experience</li>
+              <li>Technology Quotient (TQ) assessment</li>
+            </ul>
+
+            <h2 class="text-3xl font-bold mt-12 mb-6 text-black">Course Features</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+              <div class="bg-yellow-50 border-2 border-yellow-200 p-6 rounded-xl hover:border-yellow-400 transition-all">
+                <h3 class="text-xl font-bold mb-3 text-black">Project-Based Learning</h3>
+                <p class="text-gray-700">
+                  Work on real-world projects that enhance your practical skills and portfolio.
+                </p>
+              </div>
+              <div class="bg-yellow-50 border-2 border-yellow-200 p-6 rounded-xl hover:border-yellow-400 transition-all">
+                <h3 class="text-xl font-bold mb-3 text-black">Expert Instructors</h3>
+                <p class="text-gray-700">
+                  Learn from industry experts and researchers with years of experience.
+                </p>
+              </div>
+              <div class="bg-yellow-50 border-2 border-yellow-200 p-6 rounded-xl hover:border-yellow-400 transition-all">
+                <h3 class="text-xl font-bold mb-3 text-black">TQ Assessment</h3>
+                <p class="text-gray-700">
+                  Evaluate and improve your technical capabilities through our TQ system.
+                </p>
+              </div>
+              <div class="bg-yellow-50 border-2 border-yellow-200 p-6 rounded-xl hover:border-yellow-400 transition-all">
+                <h3 class="text-xl font-bold mb-3 text-black">Career Support</h3>
+                <p class="text-gray-700">
+                  Get guidance on career opportunities and job placement assistance.
+                </p>
+              </div>
+            </div>
+
+            <div class="bg-black text-white p-8 rounded-xl text-center border-2 border-yellow-400">
+              <h2 class="text-2xl font-bold mb-4">Ready to Enroll?</h2>
+              <p class="mb-6 text-gray-300">
+                Join our {course.name} course and take the next step in your career.
+              </p>
+              <a
+                href="/contact"
+                class="btn-primary inline-flex items-center justify-center rounded-full px-10 shadow-yellow-400/30 hover:shadow-yellow-400/40"
+                onclick={`if(window.trackCTAClick) window.trackCTAClick('course_enroll', '${course.slug}');`}
+              >
+                Enquire Now
+              </a>
+            </div>
+          </div>
+        </div>
+      )}
+    </div>
+  </div>
+</BaseLayout>
