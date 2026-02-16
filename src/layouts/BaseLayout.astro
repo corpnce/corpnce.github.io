@@ -55,6 +55,16 @@ const posthogUrl = import.meta.env.PUBLIC_POSTHOG_URL ? String(import.meta.env.P
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
+    <!-- Redirect HTTP to HTTPS (skip on localhost so dev server works) -->
+    <script is:inline>
+      (function() {
+        if (typeof window === 'undefined') return;
+        var isLocalhost = /^localhost$|^127\.\d+\.\d+\.\d+$/.test(window.location.hostname);
+        if (!isLocalhost && window.location.protocol === 'http:') {
+          window.location.replace('https://' + window.location.host + window.location.pathname + window.location.search + window.location.hash);
+        }
+      })();
+    </script>
     <meta name="generator" content={Astro.generator} />
     <link rel="icon" type="image/png" href="/images/Corpnce_fav_Icon_500.png" />
     <link rel="canonical" href={currentUrl} />
