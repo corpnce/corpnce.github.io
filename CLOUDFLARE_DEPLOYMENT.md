@@ -22,11 +22,13 @@ This guide will help you deploy your Corpnce website to Cloudflare Pages (Free P
 
 ## Step 1: Install Cloudflare Adapter
 
-First, install the Cloudflare adapter for Astro:
+First, install the Cloudflare adapter for Astro (version 12.x for Astro 5 compatibility):
 
 ```bash
-npm install @astrojs/cloudflare
+npm install @astrojs/cloudflare@^12.6.12
 ```
+
+**Note**: Make sure you're using `@astrojs/cloudflare` version 12.x or higher for Astro 5 compatibility. Version 11.x only supports Astro 4.
 
 ## Step 2: Update Astro Configuration
 
