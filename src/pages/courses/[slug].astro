@@ -2,6 +2,10 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { COURSES, SITE_CONFIG } from '../../utils/constants';
 
+export function getStaticPaths() {
+  return COURSES.map((c) => ({ params: { slug: c.slug } }));
+}
+
 const { slug } = Astro.params;
 const course = COURSES.find((c) => c.slug === slug);
 

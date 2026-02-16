@@ -87,6 +87,20 @@ Preview the production build:
 npm run preview
 ```
 
+### GitHub Pages (deploy branch)
+
+The **deploy** branch is set up for static deployment on GitHub Pages:
+
+1. **Branch**: Use the `deploy` branch. In **Settings → Pages**, set **Source** to **GitHub Actions**.
+2. **Build**: Pushing to `deploy` runs the workflow: it builds with `npm run build:pages` (static output) and deploys the `dist` artifact to GitHub Pages.
+3. **Contact form**: GitHub Pages serves static files only. The `/api/contact` and `/api/jobs` endpoints do not run here. For a working contact form on the Pages site, use a client-side service (e.g. [Formspree](https://formspree.io)) or keep using the main branch/Cloudflare for server-side handling.
+
+Build locally for Pages:
+```bash
+npm run build:pages
+```
+Output is in `dist/`.
+
 ## 🐳 Docker Deployment
 
 ### Using Docker Compose

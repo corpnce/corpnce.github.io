@@ -1,8 +1,13 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { getEntry } from 'astro:content';
+import { getCollection, getEntry } from 'astro:content';
 import { getStructuredData } from '../../utils/seo';
 import readingTime from 'reading-time';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  return posts.map((entry) => ({ params: { slug: entry.slug } }));
+}
 
 const { slug } = Astro.params;
 
@@ -104,7 +109,7 @@ const structuredData = getStructuredData('Article', {
   <article class="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
     <div class="max-w-3xl mx-auto">
       <div class="prose prose-lg max-w-none">
-        <Fragment set:html={content.Content} />
+        <content.Content />
       </div>
 
       <footer class="mt-12 pt-8 border-t-2 border-gray-200">

@@ -6,6 +6,7 @@
     "dev": "astro dev",
     "build": "astro build",
     "build:cloudflare": "cp astro.config.cloudflare.mjs astro.config.mjs && astro build",
+    "build:pages": "cp astro.config.pages.mjs astro.config.mjs && astro build",
     "preview": "astro preview",
     "astro": "astro"
   },
