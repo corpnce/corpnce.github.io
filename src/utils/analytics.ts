@@ -16,7 +16,8 @@ export function trackPageView(url: string) {
   if (typeof window === 'undefined') return;
 
   const plausibleDomain = import.meta.env.PUBLIC_PLAUSIBLE_DOMAIN || 'corpnce.com';
-  const plausibleUrl = import.meta.env.PUBLIC_PLAUSIBLE_URL || `https://plausible.${plausibleDomain}`;
+  const base = import.meta.env.PUBLIC_PLAUSIBLE_URL || `https://plausible.${plausibleDomain}`;
+  const plausibleUrl = base.replace(/^http:\/\//i, 'https://');
 
   // Plausible script should be loaded in the layout
   if (window.plausible) {
@@ -46,7 +47,8 @@ export function trackPageView(url: string) {
 export function trackEvent(event: AnalyticsEvent) {
   if (typeof window === 'undefined') return;
 
-  const posthogUrl = import.meta.env.PUBLIC_POSTHOG_URL;
+  const raw = import.meta.env.PUBLIC_POSTHOG_URL;
+  const posthogUrl = raw ? String(raw).replace(/^http:\/\//i, 'https://') : '';
   const posthogKey = import.meta.env.PUBLIC_POSTHOG_KEY;
 
   if (!posthogUrl || !posthogKey) return;

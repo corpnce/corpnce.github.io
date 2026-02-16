@@ -45,6 +45,8 @@ const seo = getSEOMetadata({
 
 const structuredData = getStructuredData('Organization');
 const currentUrl = new URL(Astro.url.pathname, SITE_CONFIG.url).href;
+const plausibleUrl = import.meta.env.PUBLIC_PLAUSIBLE_URL ? String(import.meta.env.PUBLIC_PLAUSIBLE_URL).replace(/^http:\/\//i, 'https://') : '';
+const posthogUrl = import.meta.env.PUBLIC_POSTHOG_URL ? String(import.meta.env.PUBLIC_POSTHOG_URL).replace(/^http:\/\//i, 'https://') : '';
 ---
 
 <!doctype html>
@@ -52,6 +54,7 @@ const currentUrl = new URL(Astro.url.pathname, SITE_CONFIG.url).href;
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
     <meta name="generator" content={Astro.generator} />
     <link rel="icon" type="image/png" href="/images/Corpnce_fav_Icon_500.png" />
     <link rel="canonical" href={currentUrl} />
@@ -88,16 +91,16 @@ const currentUrl = new URL(Astro.url.pathname, SITE_CONFIG.url).href;
     <!-- Structured Data -->
     <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
 
-    <!-- Analytics Scripts -->
-    {import.meta.env.PUBLIC_PLAUSIBLE_URL && (
+    <!-- Analytics Scripts (URLs forced to HTTPS to avoid mixed content) -->
+    {plausibleUrl && (
       <script
         defer
         data-domain={import.meta.env.PUBLIC_PLAUSIBLE_DOMAIN || 'corpnce.com'}
-        src={`${import.meta.env.PUBLIC_PLAUSIBLE_URL}/js/script.js`}
+        src={`${plausibleUrl}/js/script.js`}
       />
     )}
 
-    {import.meta.env.PUBLIC_POSTHOG_URL && import.meta.env.PUBLIC_POSTHOG_KEY && (
+    {posthogUrl && import.meta.env.PUBLIC_POSTHOG_KEY && (
       <script>
         !(function (t, e) {
           var o, n, p, r;
@@ -140,7 +143,7 @@ const currentUrl = new URL(Astro.url.pathname, SITE_CONFIG.url).href;
             (e.__SV = 1));
         })(document, window.posthog || []);
         posthog.init('{import.meta.env.PUBLIC_POSTHOG_KEY}', {
-          api_host: '{import.meta.env.PUBLIC_POSTHOG_URL}',
+          api_host: '{posthogUrl}',
           loaded: function (posthog) {
             if (import.meta.env.DEV) console.log('PostHog loaded');
           },
