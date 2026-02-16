@@ -43,7 +43,7 @@ export const COURSES = [
     name: 'ML and DL',
     description: 'Advanced Machine Learning course with hands-on projects and real-world applications.',
     slug: 'machine-learning',
-    href: '/courses/machine-learning',
+    href: '/machine-learning-course-in-bangalore',
     image: '/images/ml_and_dl.png',
   },
   {
@@ -69,7 +69,7 @@ export const NAVIGATION = [
     href: '/courses',
     children: [
       { name: 'Data Science and AI', href: '/data-science-courses-bangalore' },
-      { name: 'ML and DL', href: '/courses/machine-learning' },
+      { name: 'ML and DL', href: '/machine-learning-course-in-bangalore' },
       { name: 'Data Analytics', href: '/data-analytics-course-in-bangalore' },
       { name: 'GenAI', href: '/courses/ai-course' },
     ],
