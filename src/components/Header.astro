@@ -70,10 +70,13 @@ const currentPath = Astro.url.pathname;
             )}
           </div>
         ))}
-        <!-- CTA Button - Moved inside navigation -->
+      </div>
+
+      <!-- CTA Button -->
+      <div class="hidden md:block -ml-4">
         <a
           href="/contact"
-          class="ml-4 px-6 py-3 bg-yellow-400 text-black rounded-lg hover:bg-yellow-500 transition-all font-bold shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+          class="px-6 py-3 bg-yellow-400 text-black rounded-lg hover:bg-yellow-500 transition-all font-bold shadow-lg hover:shadow-xl transform hover:-translate-y-1"
           onclick={`trackCTAClick('header_cta', 'header');`}
         >
           Enquire Now
