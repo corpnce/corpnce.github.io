@@ -34,7 +34,14 @@ jobs:
       - name: Build
         env:
           PUBLIC_FORMSPREE_FORM_ID: ${{ secrets.PUBLIC_FORMSPREE_FORM_ID }}
-        run: npm run build
+        run: |
+          if [ -z "$PUBLIC_FORMSPREE_FORM_ID" ]; then
+            echo "⚠️ Warning: PUBLIC_FORMSPREE_FORM_ID is empty. Form submissions will not work."
+            echo "Please add PUBLIC_FORMSPREE_FORM_ID as a repository secret."
+          else
+            echo "✓ PUBLIC_FORMSPREE_FORM_ID is set (length: ${#PUBLIC_FORMSPREE_FORM_ID})"
+          fi
+          npm run build
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
