@@ -153,21 +153,12 @@ const formAction = FORMSPREE_FORM_ID ? `https://formspree.io/f/${FORMSPREE_FORM_
               <h3 class="text-lg font-bold mb-3 text-black">Contact Details</h3>
               <div class="space-y-2 text-gray-700">
                 <p>
-                  <strong class="text-yellow-400">Phone (India):</strong>{' '}
+                  <strong class="text-yellow-400">Phone:</strong>{' '}
                   <a
                     href={`tel:${SITE_CONFIG.contact.phone.india.replace(/\s/g, '')}`}
                     class="text-yellow-400 hover:text-yellow-500 font-semibold"
                   >
                     {SITE_CONFIG.contact.phone.india}
-                  </a>
-                </p>
-                <p>
-                  <strong class="text-yellow-400">Phone (USA):</strong>{' '}
-                  <a
-                    href={`tel:${SITE_CONFIG.contact.phone.usa.replace(/\s/g, '')}`}
-                    class="text-yellow-400 hover:text-yellow-500 font-semibold"
-                  >
-                    {SITE_CONFIG.contact.phone.usa}
                   </a>
                 </p>
                 <p>
@@ -189,8 +180,125 @@ const formAction = FORMSPREE_FORM_ID ? `https://formspree.io/f/${FORMSPREE_FORM_
                 <br />
                 Saturday: 10:00 AM - 4:00 PM IST
                 <br />
-                Sunday: Closed
+                Sunday: 10:00 AM - 4:00 PM IST
               </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Branches Section - Full Width -->
+      <div class="mt-12">
+        <h2 class="text-2xl font-bold mb-6 text-black">Our Branches</h2>
+        <div class="space-y-6">
+          <!-- Main Branch -->
+          <div class="bg-gray-50 border-2 border-gray-200 rounded-xl hover:border-yellow-400 transition-all overflow-hidden">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-0">
+              <!-- Address Info -->
+              <div class="p-6">
+                <h3 class="text-lg font-bold mb-3 text-black">
+                  {SITE_CONFIG.contact.address.main.label}
+                </h3>
+                <p class="text-gray-700 mb-4">
+                  {SITE_CONFIG.contact.address.main.street}
+                  <br />
+                  {SITE_CONFIG.contact.address.main.city}, {SITE_CONFIG.contact.address.main.state}{' '}
+                  {SITE_CONFIG.contact.address.main.zip}
+                  <br />
+                  {SITE_CONFIG.contact.address.main.country}
+                </p>
+                <div class="flex flex-col sm:flex-row gap-3">
+                  <a
+                    href={`https://maps.google.com/?q=${encodeURIComponent(
+                      `${SITE_CONFIG.contact.address.main.street}, ${SITE_CONFIG.contact.address.main.city}`
+                    )}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="inline-flex items-center justify-center px-4 py-2 bg-yellow-400 text-black rounded-lg hover:bg-yellow-500 transition-all font-semibold text-sm"
+                  >
+                    <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
+                    View on Google Maps
+                  </a>
+                  <a
+                    href={`tel:${SITE_CONFIG.contact.phone.india.replace(/\s/g, '')}`}
+                    class="inline-flex items-center justify-center px-4 py-2 bg-gray-800 text-white rounded-lg hover:bg-gray-700 transition-all font-semibold text-sm"
+                  >
+                    <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                    </svg>
+                    {SITE_CONFIG.contact.phone.india.replace('+91 ', '')}
+                  </a>
+                </div>
+              </div>
+              <!-- Google Map -->
+              <div class="w-full h-64 lg:h-auto bg-gray-200">
+                <iframe
+                  src="https://www.google.com/maps?q=191+West+of+Chord+Road+2nd+Stage+Rajajinagar+Bengaluru+Karnataka+560086&output=embed&hl=en&z=15"
+                  width="100%"
+                  height="100%"
+                  style="border:0; min-height: 256px;"
+                  allowfullscreen=""
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"
+                  class="w-full h-full"
+                ></iframe>
+              </div>
+            </div>
+          </div>
+
+          <!-- Jayanagar Branch -->
+          <div class="bg-gray-50 border-2 border-gray-200 rounded-xl hover:border-yellow-400 transition-all overflow-hidden">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-0">
+              <!-- Address Info -->
+              <div class="p-6">
+                <h3 class="text-lg font-bold mb-3 text-black">Jayanagar Branch</h3>
+                <p class="text-gray-700 mb-4">
+                  2nd floor, 19/1, Model House St, S, Kariappa Rd,
+                  <br />
+                  Basavanagudi, Bengaluru, Karnataka 560004
+                  <br />
+                  India
+                </p>
+                <div class="flex flex-col sm:flex-row gap-3">
+                  <a
+                    href="https://maps.google.com/?q=2nd+floor,+19/1,+Model+House+St,+S,+Kariappa+Rd,+Basavanagudi,+Bengaluru,+Karnataka+560004"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="inline-flex items-center justify-center px-4 py-2 bg-yellow-400 text-black rounded-lg hover:bg-yellow-500 transition-all font-semibold text-sm"
+                  >
+                    <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
+                    View on Google Maps
+                  </a>
+                  <a
+                    href="tel:7019910931"
+                    class="inline-flex items-center justify-center px-4 py-2 bg-gray-800 text-white rounded-lg hover:bg-gray-700 transition-all font-semibold text-sm"
+                  >
+                    <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                    </svg>
+                    7019910931
+                  </a>
+                </div>
+              </div>
+              <!-- Google Map -->
+              <div class="w-full h-64 lg:h-auto bg-gray-200">
+                <iframe
+                  src="https://www.google.com/maps?q=2nd+floor,+19/1,+Model+House+St,+S,+Kariappa+Rd,+Basavanagudi,+Bengaluru,+Karnataka+560004&output=embed"
+                  width="100%"
+                  height="100%"
+                  style="border:0; min-height: 256px;"
+                  allowfullscreen=""
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"
+                  class="w-full h-full"
+                ></iframe>
+              </div>
             </div>
           </div>
         </div>
