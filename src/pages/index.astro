@@ -1041,6 +1041,7 @@ const contactFormAction = FORMSPREE_FORM_ID ? `https://formspree.io/f/${FORMSPRE
           </p>
         </div>
         
+        <div id="form-message" class="hidden mb-4 p-4 rounded-lg"></div>
         <form
           action={contactFormAction}
           method="POST"
@@ -1106,6 +1107,7 @@ const contactFormAction = FORMSPREE_FORM_ID ? `https://formspree.io/f/${FORMSPRE
           <button
             type="submit"
             class="w-full btn-primary text-lg"
+            id="submit-btn"
             onclick="if(window.trackFormSubmit) window.trackFormSubmit('homepage_contact', 'contact');"
           >
             Enquire Now
@@ -1117,3 +1119,63 @@ const contactFormAction = FORMSPREE_FORM_ID ? `https://formspree.io/f/${FORMSPRE
 
   <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
 </BaseLayout>
+
+<script>
+  const form = document.getElementById('contact-form');
+  const messageDiv = document.getElementById('form-message');
+  const submitBtn = document.getElementById('submit-btn');
+  const formAction = form ? form.getAttribute('action') : '#';
+
+  if (form && formAction !== '#') {
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Submitting...';
+      }
+
+      if (messageDiv) {
+        messageDiv.className = 'mb-4 p-4 rounded-lg bg-blue-50 border-2 border-blue-300';
+        messageDiv.innerHTML = '<p class="text-blue-800 text-sm">Sending your message...</p>';
+        messageDiv.classList.remove('hidden');
+      }
+
+      try {
+        const formData = new FormData(form);
+        
+        const response = await fetch(formAction, {
+          method: 'POST',
+          body: formData,
+          headers: {
+            'Accept': 'application/json'
+          }
+        });
+
+        const data = await response.json();
+
+        if (response.ok) {
+          if (messageDiv) {
+            messageDiv.className = 'mb-4 p-4 rounded-lg bg-green-50 border-2 border-green-300';
+            messageDiv.innerHTML = '<p class="text-green-800 text-sm font-semibold">✓ Thank you! Your message has been sent successfully. We\'ll get back to you soon.</p>';
+            messageDiv.classList.remove('hidden');
+          }
+          form.reset();
+        } else {
+          throw new Error(data.error || 'Failed to send message');
+        }
+      } catch (error) {
+        if (messageDiv) {
+          messageDiv.className = 'mb-4 p-4 rounded-lg bg-red-50 border-2 border-red-300';
+          messageDiv.innerHTML = `<p class="text-red-800 text-sm font-semibold">✗ Error: ${error.message || 'Failed to send message. Please try again or contact us directly.'}</p>`;
+          messageDiv.classList.remove('hidden');
+        }
+      } finally {
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Enquire Now';
+        }
+      }
+    });
+  }
+</script>

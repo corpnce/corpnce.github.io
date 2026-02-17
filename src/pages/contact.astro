@@ -28,6 +28,7 @@ const formAction = FORMSPREE_FORM_ID ? `https://formspree.io/f/${FORMSPREE_FORM_
         <!-- Contact Form -->
         <div>
           <h2 class="text-2xl font-bold mb-6 text-black">Send us a Message</h2>
+          <div id="form-message" class="hidden mb-4 p-4 rounded-lg"></div>
           <form
             action={formAction}
             method="POST"
@@ -35,7 +36,13 @@ const formAction = FORMSPREE_FORM_ID ? `https://formspree.io/f/${FORMSPREE_FORM_
             id="contact-form"
           >
             {!FORMSPREE_FORM_ID && (
-              <p class="text-amber-600 text-sm mb-4">Contact form: set PUBLIC_FORMSPREE_FORM_ID at build time (e.g. in GitHub repo Secrets) and use Formspree.</p>
+              <div class="bg-amber-50 border-2 border-amber-300 p-4 rounded-lg mb-4">
+                <p class="text-amber-800 text-sm font-semibold mb-2">⚠️ Form Setup Required</p>
+                <p class="text-amber-700 text-sm">
+                  To enable email submissions, set <code class="bg-amber-100 px-1 rounded">PUBLIC_FORMSPREE_FORM_ID</code> in GitHub repo Secrets. 
+                  <a href="https://formspree.io" target="_blank" rel="noopener" class="text-amber-600 underline font-semibold">Get free Formspree account →</a>
+                </p>
+              </div>
             )}
             <div>
               <label for="name" class="block text-sm font-semibold text-black mb-2">
@@ -106,6 +113,7 @@ const formAction = FORMSPREE_FORM_ID ? `https://formspree.io/f/${FORMSPREE_FORM_
             <button
               type="submit"
               class="w-full btn-primary"
+              id="submit-btn"
               onclick="if(window.trackFormSubmit) window.trackFormSubmit('contact_page', 'contact');"
             >
               Submit Enquiry
@@ -190,3 +198,68 @@ const formAction = FORMSPREE_FORM_ID ? `https://formspree.io/f/${FORMSPREE_FORM_
     </div>
   </div>
 </BaseLayout>
+
+<script>
+  const form = document.getElementById('contact-form');
+  const messageDiv = document.getElementById('form-message');
+  const submitBtn = document.getElementById('submit-btn');
+
+  if (form && formAction !== '#') {
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      
+      // Disable submit button
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Submitting...';
+      }
+
+      // Show loading message
+      if (messageDiv) {
+        messageDiv.className = 'mb-4 p-4 rounded-lg bg-blue-50 border-2 border-blue-300';
+        messageDiv.innerHTML = '<p class="text-blue-800 text-sm">Sending your message...</p>';
+        messageDiv.classList.remove('hidden');
+      }
+
+      try {
+        const formData = new FormData(form);
+        
+        const response = await fetch(formAction, {
+          method: 'POST',
+          body: formData,
+          headers: {
+            'Accept': 'application/json'
+          }
+        });
+
+        const data = await response.json();
+
+        if (response.ok) {
+          // Success
+          if (messageDiv) {
+            messageDiv.className = 'mb-4 p-4 rounded-lg bg-green-50 border-2 border-green-300';
+            messageDiv.innerHTML = '<p class="text-green-800 text-sm font-semibold">✓ Thank you! Your message has been sent successfully. We\'ll get back to you soon.</p>';
+            messageDiv.classList.remove('hidden');
+          }
+          form.reset();
+        } else {
+          // Error from Formspree
+          throw new Error(data.error || 'Failed to send message');
+        }
+      } catch (error) {
+        // Network or other error
+        if (messageDiv) {
+          messageDiv.className = 'mb-4 p-4 rounded-lg bg-red-50 border-2 border-red-300';
+          messageDiv.innerHTML = `<p class="text-red-800 text-sm font-semibold">✗ Error: ${error.message || 'Failed to send message. Please try again or contact us directly.'}</p>`;
+          messageDiv.classList.remove('hidden');
+        }
+      } finally {
+        // Re-enable submit button
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Submit Enquiry';
+        }
+      }
+    });
+  }
+</script>
