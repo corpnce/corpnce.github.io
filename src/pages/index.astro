@@ -50,13 +50,13 @@ const contactFormAction = FORMSPREE_FORM_ID ? `https://formspree.io/f/${FORMSPRE
         </div>
 
         <!-- Right Side - Image Space with Creative Design Elements -->
-        <div class="relative h-full min-h-[400px] lg:min-h-[600px] flex items-center justify-center">
+        <div class="relative h-full min-h-[400px] lg:min-h-[600px] flex items-end justify-center">
           <!-- Large Organic Yellow Shape (Background) -->
           <div class="absolute top-10 right-0 w-96 h-96 bg-yellow-400 rounded-full opacity-10 blur-3xl transform rotate-12"></div>
           <div class="absolute bottom-10 left-0 w-80 h-80 bg-yellow-300 rounded-full opacity-[0.08] blur-3xl transform -rotate-12"></div>
           
           <!-- Image Container -->
-          <div class="relative z-10 w-full h-full flex items-center justify-center">
+          <div class="relative z-10 w-full h-full flex items-end justify-center">
             <!-- Glow Effect -->
             <div class="absolute inset-0 bg-gradient-to-br from-yellow-500/3 to-transparent rounded-xl blur-2xl transition-all duration-500 -z-10"></div>
             
@@ -69,7 +69,7 @@ const contactFormAction = FORMSPREE_FORM_ID ? `https://formspree.io/f/${FORMSPRE
                 src="/images/hero-image.png"
                 alt="Corpnce Data Science and AI training session"
                 class="w-full h-full object-cover rounded-xl shadow-2xl relative z-20"
-                style="image-rendering: -webkit-optimize-contrast; filter: contrast(1.05) saturate(1.1) brightness(1.02);"
+                style="image-rendering: -webkit-optimize-contrast; filter: contrast(1.05) saturate(1.1) brightness(1.02); object-position: center bottom; transform: translateY(40px); mask-image: linear-gradient(to bottom, black 0%, black 65%, rgba(0,0,0,0.95) 75%, rgba(0,0,0,0.7) 85%, rgba(0,0,0,0.3) 95%, transparent 100%); -webkit-mask-image: linear-gradient(to bottom, black 0%, black 65%, rgba(0,0,0,0.95) 75%, rgba(0,0,0,0.7) 85%, rgba(0,0,0,0.3) 95%, transparent 100%);"
                 width="1200"
                 fetchpriority="high"
                 height="800"
@@ -78,9 +78,6 @@ const contactFormAction = FORMSPREE_FORM_ID ? `https://formspree.io/f/${FORMSPRE
                 fetchpriority="high"
                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
               />
-              
-              <!-- Subtle Gradient Overlay -->
-              <div class="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent rounded-xl z-20 pointer-events-none"></div>
             </div>
             <!-- Placeholder when image is not available -->
             <div class="hidden w-full h-full bg-gradient-to-br from-yellow-400 to-yellow-500 rounded-xl flex items-center justify-center border-4 border-yellow-300 relative z-20">
