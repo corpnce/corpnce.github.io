@@ -17,7 +17,7 @@ const contactFormAction = FORMSPREE_FORM_ID ? `https://formspree.io/f/${FORMSPRE
     </div>
     
     <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
-      <div class="grid lg:grid-cols-2 gap-8 items-stretch max-w-7xl mx-auto min-h-[500px] lg:min-h-[600px]">
+      <div class="grid lg:grid-cols-2 gap-8 items-start max-w-7xl mx-auto min-h-[500px] lg:min-h-[600px]">
         
         <!-- Left Side - Topic and Event Details -->
         <div class="relative z-10 flex flex-col h-full justify-between">
@@ -124,19 +124,20 @@ const contactFormAction = FORMSPREE_FORM_ID ? `https://formspree.io/f/${FORMSPRE
         </div>
 
         <!-- Right Side - Speaker Image -->
-        <div class="relative h-full">
-          <div class="h-full w-full flex flex-col">
-            <!-- Speaker Image - Constrained Height -->
-            <div class="bg-black rounded-2xl p-2 flex items-center justify-center overflow-hidden h-[184px]">
-              <div class="w-full h-full rounded-xl relative overflow-hidden bg-black">
+        <div class="relative" style="height: fit-content;">
+          <div class="w-full">
+            <!-- Speaker Image - Constrained Height to match speech bubble (184px) -->
+            <div class="bg-black rounded-2xl p-2 overflow-hidden" style="height: 184px !important; max-height: 184px !important; min-height: 184px !important; width: 100%; flex-shrink: 0;">
+              <div class="w-full rounded-xl relative overflow-hidden bg-black" style="height: 180px !important; max-height: 180px !important; min-height: 180px !important;">
                 <img
                   src="/images/webinar-instructor.png"
                   alt="Webinar Instructor - Industry Expert"
-                  class="w-full h-[184px] object-cover rounded-xl"
+                  class="rounded-xl"
+                  style="width: 100% !important; height: 180px !important; max-height: 180px !important; min-height: 180px !important; object-fit: cover !important; object-position: center; display: block;"
                   onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
                 />
                 <!-- Fallback placeholder if image doesn't exist -->
-                <div class="w-full h-[184px] bg-gray-900 rounded-xl flex items-center justify-center hidden">
+                <div class="w-full bg-gray-900 rounded-xl flex items-center justify-center hidden" style="height: 180px !important; max-height: 180px !important; min-height: 180px !important;">
                   <div class="text-center text-gray-400 z-10">
                     <svg class="w-16 h-16 mx-auto mb-2 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
