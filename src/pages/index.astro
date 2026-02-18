@@ -69,7 +69,7 @@ const contactFormAction = FORMSPREE_FORM_ID ? `https://formspree.io/f/${FORMSPRE
                 src="/images/hero-image.png"
                 alt="Corpnce Data Science and AI training session"
                 class="w-full h-full object-cover rounded-xl shadow-2xl relative z-20"
-                style="image-rendering: -webkit-optimize-contrast; filter: contrast(1.05) saturate(1.1) brightness(1.02); object-position: center bottom; transform: translateY(40px); mask-image: linear-gradient(to bottom, black 0%, black 65%, rgba(0,0,0,0.95) 75%, rgba(0,0,0,0.7) 85%, rgba(0,0,0,0.3) 95%, transparent 100%); -webkit-mask-image: linear-gradient(to bottom, black 0%, black 65%, rgba(0,0,0,0.95) 75%, rgba(0,0,0,0.7) 85%, rgba(0,0,0,0.3) 95%, transparent 100%);"
+                style="image-rendering: -webkit-optimize-contrast; filter: contrast(1.05) saturate(1.1) brightness(1.02); object-position: center bottom; transform: translateY(40px) scale(1.1); mask-image: linear-gradient(to bottom, black 0%, black 65%, rgba(0,0,0,0.95) 75%, rgba(0,0,0,0.7) 85%, rgba(0,0,0,0.3) 95%, transparent 100%); -webkit-mask-image: linear-gradient(to bottom, black 0%, black 65%, rgba(0,0,0,0.95) 75%, rgba(0,0,0,0.7) 85%, rgba(0,0,0,0.3) 95%, transparent 100%);"
                 width="1200"
                 fetchpriority="high"
                 height="800"
@@ -78,6 +78,9 @@ const contactFormAction = FORMSPREE_FORM_ID ? `https://formspree.io/f/${FORMSPRE
                 fetchpriority="high"
                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
               />
+              
+              <!-- Yellow strip to cover overflow -->
+              <div class="absolute bottom-0 left-0 right-0 h-16 bg-yellow-400 rounded-b-xl z-25"></div>
             </div>
             <!-- Placeholder when image is not available -->
             <div class="hidden w-full h-full bg-gradient-to-br from-yellow-400 to-yellow-500 rounded-xl flex items-center justify-center border-4 border-yellow-300 relative z-20">
