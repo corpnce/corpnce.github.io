@@ -35,14 +35,14 @@ const contactFormAction = FORMSPREE_FORM_ID ? `https://formspree.io/f/${FORMSPRE
           <div class="flex flex-col sm:flex-row gap-4">
             <a
               href="/contact"
-              class="bg-white text-black font-bold px-8 py-4 rounded-lg hover:bg-gray-100 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-1 inline-block text-center"
+              class="bg-yellow-400 text-black font-bold px-8 py-4 rounded-lg hover:bg-yellow-500 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-1 inline-block text-center"
               onclick="if(window.trackCTAClick) window.trackCTAClick('hero_cta', 'hero');"
             >
               Enquire Now
             </a>
             <a
-              href="/courses"
-              class="bg-white text-black font-bold px-8 py-4 rounded-lg hover:bg-gray-100 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-1 inline-block text-center"
+              href="/webinars"
+              class="bg-yellow-400 text-black font-bold px-8 py-4 rounded-lg hover:bg-yellow-500 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-1 inline-block text-center"
             >
               Explore Courses
             </a>
@@ -283,7 +283,7 @@ const contactFormAction = FORMSPREE_FORM_ID ? `https://formspree.io/f/${FORMSPRE
                         id="corpnce-bar"
                       ></div>
                       <!-- Badge at top of bar -->
-                      <div class="absolute -top-10 left-1/2 transform -translate-x-1/2 px-3 py-1 bg-yellow-400 text-black text-xs font-bold rounded-full whitespace-nowrap z-10">
+                      <div class="absolute -top-6 left-1/2 transform -translate-x-1/2 px-3 py-1 bg-yellow-400 text-black text-xs font-bold rounded-full whitespace-nowrap z-10">
                         +25% Better
                       </div>
                     </div>
@@ -327,8 +327,8 @@ const contactFormAction = FORMSPREE_FORM_ID ? `https://formspree.io/f/${FORMSPRE
                     if (industryTimer) clearInterval(industryTimer);
                     if (corpnceTimer) clearInterval(corpnceTimer);
 
-                    // Set industry average to 80% (baseline)
-                    const industryHeight = 80;
+                    // Set industry average to 75% (baseline)
+                    const industryHeight = 75;
                     // Corpnce is 25% better = 100% (or 125% of industry = 100%)
                     const corpnceHeight = 100;
 

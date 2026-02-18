@@ -88,6 +88,7 @@ export const NAVIGATION = [
     href: '/about',
     children: [
       { name: 'About Us', href: '/about' },
+      { name: 'Webinars', href: '/webinars' },
       { name: 'Gallery', href: '/gallery' },
     ],
   },

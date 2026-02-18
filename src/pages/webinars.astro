@@ -1,0 +1,665 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { SITE_CONFIG, FORMSPREE_FORM_ID } from '../utils/constants';
+
+const contactFormAction = FORMSPREE_FORM_ID ? `https://formspree.io/f/${FORMSPREE_FORM_ID}` : '#';
+---
+
+<BaseLayout
+  title={`Free Webinars - ${SITE_CONFIG.title}`}
+  description="Join Corpnce's free webinars on Data Science, AI, Machine Learning, and more. Learn from industry experts and advance your career. Register now!"
+>
+  <!-- Hero Section - Scaler Style Layout -->
+  <section class="bg-black text-white py-12 lg:py-16 relative overflow-hidden min-h-[600px] lg:min-h-[700px] flex items-center">
+    <!-- Background Pattern -->
+    <div class="absolute inset-0 opacity-5">
+      <div class="absolute inset-0" style="background-image: repeating-linear-gradient(45deg, transparent, transparent 20px, rgba(255, 215, 0, 0.1) 20px, rgba(255, 215, 0, 0.1) 40px);"></div>
+    </div>
+    
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+      <div class="grid lg:grid-cols-2 gap-8 items-stretch max-w-7xl mx-auto min-h-[500px] lg:min-h-[600px]">
+        
+        <!-- Left Side - Topic and Event Details -->
+        <div class="relative z-10 flex flex-col h-full justify-between">
+          <div>
+            <!-- Free Guidance Badge -->
+            <div class="mb-6">
+              <span class="inline-block bg-yellow-400 text-black px-6 py-2 rounded-full text-sm font-bold uppercase tracking-wide">
+                Free Guidance
+              </span>
+            </div>
+
+            <!-- Large Topic Speech Bubble -->
+            <div class="mb-6">
+              <div class="bg-gray-50 text-black p-8 rounded-2xl shadow-2xl transform -rotate-1 hover:rotate-0 transition-transform duration-300">
+                <p class="text-3xl md:text-4xl lg:text-5xl font-black leading-tight">
+                  Want to build a career in <br />
+                  <span class="text-3xl md:text-4xl lg:text-5xl">Data Science?</span>
+                </p>
+              </div>
+            </div>
+
+            <!-- Calendar Format Date/Time -->
+            <div class="bg-gray-900 border-t-2 border-yellow-400 p-4 rounded-lg mb-6">
+              <div class="flex items-center gap-4">
+                <!-- Calendar Icon -->
+                <div class="flex-shrink-0">
+                  <div class="w-16 h-16 bg-yellow-400 rounded-lg flex flex-col items-center justify-center text-black">
+                    <div class="text-xs font-bold uppercase">MAR</div>
+                    <div class="text-2xl font-black">15</div>
+                  </div>
+                </div>
+                <!-- Date and Time Details -->
+                <div class="flex-1">
+                  <div class="text-yellow-400 text-xs font-bold uppercase tracking-widest mb-1">CORPNCE MASTERCLASS</div>
+                  <div class="text-white text-sm md:text-base font-semibold">
+                    THURSDAY, MARCH 15, 2026
+                  </div>
+                  <div class="text-gray-300 text-sm">
+                    7:00 PM - 9:00 PM (IST)
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Registration Form - Now inside left column -->
+          <div class="mt-auto">
+            <div class="bg-white rounded-xl shadow-2xl p-6 border-2 border-yellow-400">
+              <div class="flex items-center justify-between mb-4">
+                <h3 class="text-xl font-black text-black">Register Now!</h3>
+                <div class="text-xs text-gray-600 font-semibold">
+                  Starts in <span class="text-yellow-400 font-bold">23h 37m</span>
+                </div>
+              </div>
+              
+              <form action={contactFormAction} method="POST" class="space-y-4">
+                <input type="hidden" name="_subject" value="Webinar Registration - Quick Form" />
+                <input type="hidden" name="_next" value={`${import.meta.env.SITE || 'https://corpnce.github.io'}/webinars?success=true`} />
+                
+                <div>
+                  <label for="quick-phone" class="block text-sm font-semibold text-gray-700 mb-2">
+                    Mobile Number *
+                  </label>
+                  <div class="flex gap-2">
+                    <select class="px-3 py-3 bg-gray-100 border border-gray-300 rounded-lg text-gray-700 text-sm focus:outline-none focus:border-yellow-400">
+                      <option>+91</option>
+                      <option>+1</option>
+                    </select>
+                    <input
+                      type="tel"
+                      id="quick-phone"
+                      name="phone"
+                      required
+                      class="flex-1 px-4 py-3 border border-gray-300 rounded-lg text-gray-900 focus:outline-none focus:border-yellow-400"
+                      placeholder="9876543210"
+                    />
+                  </div>
+                </div>
+
+                <div class="text-xs text-gray-600 text-center">
+                  <span class="font-semibold text-yellow-400">1.7k+</span> learners already registered.
+                </div>
+
+                <button
+                  type="submit"
+                  class="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-4 px-6 rounded-lg transition-colors shadow-lg"
+                >
+                  REGISTER FOR FREE
+                </button>
+
+                <div class="text-xs text-gray-600 space-y-2">
+                  <label class="flex items-start gap-2 cursor-pointer">
+                    <input type="checkbox" required class="mt-1" />
+                    <span>I agree to the Terms of Use, Privacy Policy, Cookie usage and all applicable laws and regulations.</span>
+                  </label>
+                  <label class="flex items-start gap-2 cursor-pointer">
+                    <input type="checkbox" class="mt-1" />
+                    <span>I agree to receive the OTPs & updates via text SMS and WhatsApp</span>
+                  </label>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Side - Speaker Image -->
+        <div class="relative h-full">
+          <div class="h-full w-full flex flex-col">
+            <!-- Speaker Image - Constrained Height -->
+            <div class="bg-black rounded-2xl p-2 flex items-center justify-center overflow-hidden h-[184px]">
+              <div class="w-full h-full rounded-xl relative overflow-hidden bg-black">
+                <img
+                  src="/images/webinar-instructor.png"
+                  alt="Webinar Instructor - Industry Expert"
+                  class="w-full h-[184px] object-cover rounded-xl"
+                  onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+                />
+                <!-- Fallback placeholder if image doesn't exist -->
+                <div class="w-full h-[184px] bg-gray-900 rounded-xl flex items-center justify-center hidden">
+                  <div class="text-center text-gray-400 z-10">
+                    <svg class="w-16 h-16 mx-auto mb-2 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                    </svg>
+                    <p class="text-sm font-bold">Instructor Image</p>
+                    <p class="text-xs mt-1">Add image: public/images/webinar-instructor.png</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Instructor Info Below Image -->
+            <div class="bg-gray-900 border-t-2 border-yellow-400 p-4 rounded-lg mt-4">
+              <div class="text-white text-sm md:text-base text-center">
+                By <span class="font-bold text-yellow-400">Industry Experts</span>, Corpnce Technologies
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+  </section>
+
+  <!-- About This Masterclass Section -->
+  <section class="py-16 lg:py-24 bg-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6 text-black text-center">
+          About this <span class="text-yellow-400">Masterclass</span>
+        </h2>
+        <div class="w-24 h-1 bg-yellow-400 mx-auto mb-8"></div>
+        
+        <div class="grid md:grid-cols-2 gap-8 items-center">
+          <!-- Text Content - Left Side -->
+          <div class="prose prose-lg max-w-none">
+            <p class="text-lg text-gray-700 leading-relaxed mb-6">
+              Data Science is one of the most in-demand skills today, but breaking into the field can feel overwhelming. Where do you start? What skills do you need? How do real-world Data Science projects work?
+            </p>
+            <p class="text-lg text-gray-700 leading-relaxed">
+              Join Corpnce's masterclass and get a clear roadmap to becoming a Data Science Professional. Learn how Data Science projects are developed, the role of industry best practices, and the fundamentals of building production-ready solutions.
+            </p>
+          </div>
+
+          <!-- Image - Right Side -->
+          <div class="rounded-xl overflow-hidden shadow-xl">
+            <div class="bg-gradient-to-br from-yellow-400 to-yellow-500 h-64 flex items-center justify-center">
+              <div class="text-center text-black">
+                <svg class="w-24 h-24 mx-auto mb-4 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                </svg>
+                <p class="text-xl font-bold">Masterclass Image</p>
+                <p class="text-sm mt-2">Add your webinar/classroom image here</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What You Will Learn Section -->
+  <section class="py-16 lg:py-24 bg-gray-50">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6 text-black text-center">
+          What You Will Learn From This <span class="text-yellow-400">Session</span>
+        </h2>
+        <div class="w-24 h-1 bg-yellow-400 mx-auto mb-12"></div>
+
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-yellow-400">
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 bg-yellow-400 rounded-lg flex items-center justify-center flex-shrink-0">
+                <svg class="w-6 h-6 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-xl font-bold mb-2 text-black">Industry Best Practices</h3>
+                <p class="text-gray-700">Learn the methodologies and practices used by top Data Science teams in the industry</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-yellow-400">
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 bg-yellow-400 rounded-lg flex items-center justify-center flex-shrink-0">
+                <svg class="w-6 h-6 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-xl font-bold mb-2 text-black">Project Development Lifecycle</h3>
+                <p class="text-gray-700">Understand how Data Science projects are developed from ideation to deployment</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-yellow-400">
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 bg-yellow-400 rounded-lg flex items-center justify-center flex-shrink-0">
+                <svg class="w-6 h-6 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-xl font-bold mb-2 text-black">Career Roadmap</h3>
+                <p class="text-gray-700">Get a clear path to becoming a Data Science professional with actionable steps</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-yellow-400">
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 bg-yellow-400 rounded-lg flex items-center justify-center flex-shrink-0">
+                <svg class="w-6 h-6 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-xl font-bold mb-2 text-black">Real-World Case Studies</h3>
+                <p class="text-gray-700">Explore actual projects and learn from industry case studies and examples</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Meet the Instructor Section -->
+  <section class="py-16 lg:py-24 bg-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6 text-black text-center">
+          Meet Our <span class="text-yellow-400">Expert Instructors</span>
+        </h2>
+        <div class="w-24 h-1 bg-yellow-400 mx-auto mb-12"></div>
+
+        <div class="bg-gradient-to-br from-yellow-50 to-yellow-100 rounded-xl p-8 border-2 border-yellow-200">
+          <div class="flex flex-col md:flex-row gap-6">
+            <!-- Instructor Image Placeholder -->
+            <div class="flex-shrink-0">
+              <div class="w-32 h-32 bg-yellow-400 rounded-full flex items-center justify-center mx-auto md:mx-0">
+                <svg class="w-16 h-16 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                </svg>
+              </div>
+            </div>
+            <div class="flex-1">
+              <h3 class="text-2xl font-bold mb-4 text-black">Industry Experts & Researchers</h3>
+              <ul class="space-y-3 text-gray-700">
+                <li class="flex items-start">
+                  <svg class="w-5 h-5 text-yellow-400 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span>Industry professionals from top tech companies</span>
+                </li>
+                <li class="flex items-start">
+                  <svg class="w-5 h-5 text-yellow-400 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span>Researchers working on cutting-edge AI/ML projects</span>
+                </li>
+                <li class="flex items-start">
+                  <svg class="w-5 h-5 text-yellow-400 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span>Years of hands-on experience in Data Science</span>
+                </li>
+                <li class="flex items-start">
+                  <svg class="w-5 h-5 text-yellow-400 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span>Dedicated mentors committed to your success</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What Our Learners Say Section -->
+  <section class="py-16 lg:py-24 bg-gray-50">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6 text-black text-center">
+          What Our <span class="text-yellow-400">Learners</span> Have to Say
+        </h2>
+        <div class="w-24 h-1 bg-yellow-400 mx-auto mb-12"></div>
+
+        <div class="grid md:grid-cols-3 gap-6">
+          <!-- Testimonial 1 -->
+          <div class="bg-white p-6 rounded-xl shadow-lg">
+            <div class="flex items-center mb-4">
+              <div class="w-12 h-12 bg-yellow-400 rounded-full flex items-center justify-center mr-3">
+                <span class="text-black font-bold">RK</span>
+              </div>
+              <div>
+                <div class="font-bold text-black">Rajesh Kumar</div>
+                <div class="text-sm text-gray-600">Data Scientist</div>
+              </div>
+            </div>
+            <div class="flex mb-2">
+              <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+              </svg>
+              <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+              </svg>
+              <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+              </svg>
+              <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+              </svg>
+              <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+              </svg>
+            </div>
+            <p class="text-gray-700 italic">"The webinar gave me clarity on my career path. The instructors are knowledgeable and the content is practical."</p>
+          </div>
+
+          <!-- Testimonial 2 -->
+          <div class="bg-white p-6 rounded-xl shadow-lg">
+            <div class="flex items-center mb-4">
+              <div class="w-12 h-12 bg-yellow-400 rounded-full flex items-center justify-center mr-3">
+                <span class="text-black font-bold">PS</span>
+              </div>
+              <div>
+                <div class="font-bold text-black">Priya Sharma</div>
+                <div class="text-sm text-gray-600">ML Engineer</div>
+              </div>
+            </div>
+            <div class="flex mb-2">
+              <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+              </svg>
+              <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+              </svg>
+              <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+              </svg>
+              <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+              </svg>
+              <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+              </svg>
+            </div>
+            <p class="text-gray-700 italic">"Excellent session! Learned about industry best practices that I could apply immediately in my work."</p>
+          </div>
+
+          <!-- Testimonial 3 -->
+          <div class="bg-white p-6 rounded-xl shadow-lg">
+            <div class="flex items-center mb-4">
+              <div class="w-12 h-12 bg-yellow-400 rounded-full flex items-center justify-center mr-3">
+                <span class="text-black font-bold">AM</span>
+              </div>
+              <div>
+                <div class="font-bold text-black">Amit Mehta</div>
+                <div class="text-sm text-gray-600">Data Analyst</div>
+              </div>
+            </div>
+            <div class="flex mb-2">
+              <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+              </svg>
+              <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+              </svg>
+              <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+              </svg>
+              <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+              </svg>
+              <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+              </svg>
+            </div>
+            <p class="text-gray-700 italic">"The roadmap provided was exactly what I needed. Now I have a clear path forward in my Data Science journey."</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Corpnce Programs Section -->
+  <section class="py-16 lg:py-24 bg-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6 text-black text-center">
+          About <span class="text-yellow-400">Corpnce Programs</span> for Data Science, AI & ML
+        </h2>
+        <div class="w-24 h-1 bg-yellow-400 mx-auto mb-12"></div>
+
+        <p class="text-lg text-gray-700 text-center mb-12 max-w-3xl mx-auto">
+          Master the future with Corpnce's comprehensive AI & Machine Learning Program, designed to equip you with the skills and expertise to excel in Artificial Intelligence, Machine Learning, and Generative AI. Build real-world solutions with hands-on projects, expert mentorship, and career support to accelerate your growth.
+        </p>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="bg-yellow-50 border-2 border-yellow-200 p-6 rounded-xl">
+            <div class="w-12 h-12 bg-yellow-400 rounded-lg flex items-center justify-center mb-4">
+              <svg class="w-6 h-6 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <h3 class="text-lg font-bold mb-2 text-black">Structured Curriculum</h3>
+            <p class="text-gray-700 text-sm">Industry-vetted curriculum covering all essential Data Science and AI concepts</p>
+          </div>
+
+          <div class="bg-yellow-50 border-2 border-yellow-200 p-6 rounded-xl">
+            <div class="w-12 h-12 bg-yellow-400 rounded-lg flex items-center justify-center mb-4">
+              <svg class="w-6 h-6 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+              </svg>
+            </div>
+            <h3 class="text-lg font-bold mb-2 text-black">Live Classes</h3>
+            <p class="text-gray-700 text-sm">Interactive sessions by AI specialists from the industry</p>
+          </div>
+
+          <div class="bg-yellow-50 border-2 border-yellow-200 p-6 rounded-xl">
+            <div class="w-12 h-12 bg-yellow-400 rounded-lg flex items-center justify-center mb-4">
+              <svg class="w-6 h-6 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+              </svg>
+            </div>
+            <h3 class="text-lg font-bold mb-2 text-black">Expert Mentorship</h3>
+            <p class="text-gray-700 text-sm">1:1 guidance from Expert AIML Engineers & Specialists</p>
+          </div>
+
+          <div class="bg-yellow-50 border-2 border-yellow-200 p-6 rounded-xl">
+            <div class="w-12 h-12 bg-yellow-400 rounded-lg flex items-center justify-center mb-4">
+              <svg class="w-6 h-6 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+              </svg>
+            </div>
+            <h3 class="text-lg font-bold mb-2 text-black">Real-World Projects</h3>
+            <p class="text-gray-700 text-sm">50+ case studies sourced directly from top companies</p>
+          </div>
+
+          <div class="bg-yellow-50 border-2 border-yellow-200 p-6 rounded-xl">
+            <div class="w-12 h-12 bg-yellow-400 rounded-lg flex items-center justify-center mb-4">
+              <svg class="w-6 h-6 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
+            </div>
+            <h3 class="text-lg font-bold mb-2 text-black">Career Support</h3>
+            <p class="text-gray-700 text-sm">Dedicated placement assistance & employer partnerships</p>
+          </div>
+
+          <div class="bg-yellow-50 border-2 border-yellow-200 p-6 rounded-xl">
+            <div class="w-12 h-12 bg-yellow-400 rounded-lg flex items-center justify-center mb-4">
+              <svg class="w-6 h-6 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+              </svg>
+            </div>
+            <h3 class="text-lg font-bold mb-2 text-black">Peer Network</h3>
+            <p class="text-gray-700 text-sm">Join a community of learners and alumni</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Registration Form Section -->
+  <section id="register" class="py-16 lg:py-24 bg-black text-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-2xl mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-bold mb-4">
+            Register for <span class="text-yellow-400">Free Webinar</span>
+          </h2>
+          <div class="w-24 h-1 bg-yellow-400 mx-auto mb-4"></div>
+          <p class="text-gray-300 text-lg">Fill out the form below to secure your spot. We'll send you the webinar link via email.</p>
+        </div>
+
+        <div class="bg-gray-900 rounded-xl p-8 border-2 border-yellow-400">
+          <form
+            action={contactFormAction}
+            method="POST"
+            class="space-y-6"
+          >
+            <input type="hidden" name="_subject" value="Webinar Registration Request" />
+            <input type="hidden" name="_next" value={`${import.meta.env.SITE || 'https://corpnce.github.io'}/webinars?success=true`} />
+            
+            <div>
+              <label for="name" class="block text-sm font-semibold mb-2 text-yellow-400">
+                Full Name *
+              </label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                required
+                class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white focus:outline-none focus:border-yellow-400 transition-colors"
+                placeholder="Enter your full name"
+              />
+            </div>
+
+            <div>
+              <label for="email" class="block text-sm font-semibold mb-2 text-yellow-400">
+                Email Address *
+              </label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                required
+                class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white focus:outline-none focus:border-yellow-400 transition-colors"
+                placeholder="your.email@example.com"
+              />
+            </div>
+
+            <div>
+              <label for="phone" class="block text-sm font-semibold mb-2 text-yellow-400">
+                Phone Number *
+              </label>
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                required
+                class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white focus:outline-none focus:border-yellow-400 transition-colors"
+                placeholder="+91 9876543210"
+              />
+            </div>
+
+            <div>
+              <label for="webinar" class="block text-sm font-semibold mb-2 text-yellow-400">
+                Select Webinar *
+              </label>
+              <select
+                id="webinar"
+                name="webinar"
+                required
+                class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white focus:outline-none focus:border-yellow-400 transition-colors"
+              >
+                <option value="">Select a webinar</option>
+                <option value="roadmap-data-science">Roadmap to Become a Data Science Professional - March 15, 2026</option>
+                <option value="introduction-to-data-science">Introduction to Data Science - March 15, 2026</option>
+                <option value="machine-learning-fundamentals">Machine Learning Fundamentals - March 22, 2026</option>
+                <option value="ai-deep-learning">AI & Deep Learning - March 29, 2026</option>
+                <option value="all-webinars">All Upcoming Webinars</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="experience" class="block text-sm font-semibold mb-2 text-yellow-400">
+                Experience Level
+              </label>
+              <select
+                id="experience"
+                name="experience"
+                class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white focus:outline-none focus:border-yellow-400 transition-colors"
+              >
+                <option value="">Select your experience level</option>
+                <option value="beginner">Beginner</option>
+                <option value="intermediate">Intermediate</option>
+                <option value="advanced">Advanced</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="message" class="block text-sm font-semibold mb-2 text-yellow-400">
+                Questions or Comments
+              </label>
+              <textarea
+                id="message"
+                name="message"
+                rows="4"
+                class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white focus:outline-none focus:border-yellow-400 transition-colors"
+                placeholder="Any specific topics you'd like us to cover?"
+              ></textarea>
+            </div>
+
+            <button
+              type="submit"
+              class="w-full bg-yellow-400 text-black font-bold py-4 px-8 rounded-lg hover:bg-yellow-500 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+            >
+              Register for Free Webinar
+            </button>
+
+            <p class="text-sm text-gray-400 text-center">
+              By registering, you agree to receive webinar updates and related communications from Corpnce.
+            </p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-16 lg:py-24 bg-gradient-to-br from-yellow-400 to-yellow-500">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-3xl md:text-4xl font-black mb-6 text-black">
+          Ready to Transform Your Career?
+        </h2>
+        <p class="text-xl text-black/80 mb-8">
+          Join our comprehensive training programs and become an industry-ready Data Science professional
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a
+            href="/courses"
+            class="bg-black text-yellow-400 font-bold px-8 py-4 rounded-lg hover:bg-gray-900 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-1 inline-block"
+          >
+            Explore Our Courses
+          </a>
+          <a
+            href="/contact"
+            class="bg-white text-black font-bold px-8 py-4 rounded-lg hover:bg-gray-100 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-1 inline-block"
+          >
+            Contact Us
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
