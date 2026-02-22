@@ -5,18 +5,17 @@ import { trackCTAClick } from '../utils/analytics';
 const currentPath = Astro.url.pathname;
 ---
 
-<header class="bg-black text-white shadow-lg sticky top-0 z-50 border-b-2 border-yellow-400 w-full max-w-full">
-  <nav class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-full">
-    <div class="flex items-center justify-between h-14 sm:h-16 md:h-20 px-4 sm:px-6 lg:px-8 min-w-0 gap-2">
-      <!-- Logo (shrink-0 and min-width ensure it never disappears) -->
-      <a href="/" class="flex items-center shrink-0 min-w-[100px] sm:min-w-[120px] group" aria-label="Corpnce Technologies - Home">
+<header class="bg-black text-white shadow-lg sticky top-0 z-50 border-b-2 border-yellow-400 w-full">
+  <nav class="w-full max-w-full px-4 sm:px-6 lg:px-8 xl:px-12">
+    <div class="flex items-center justify-between h-20 w-full gap-4">
+      <!-- Logo -->
+      <a href="/" class="flex items-center shrink-0 group">
         <img
           src="/images/Corpnce_Yellow.svg"
           alt="Corpnce Technologies"
-          class="h-8 sm:h-9 md:h-10 w-auto max-w-[120px] sm:max-w-[140px] md:max-w-none transition-transform group-hover:scale-105"
+          class="h-7 sm:h-8 w-auto transition-transform group-hover:scale-105"
           width="120"
           height="40"
-          fetchpriority="high"
         />
       </a>
 
@@ -74,7 +73,7 @@ const currentPath = Astro.url.pathname;
       </div>
 
       <!-- CTA Button: only on large screens (laptops and up); hidden on small/medium -->
-      <div class="hidden lg:block shrink-0 -ml-4">
+      <div class="hidden lg:block shrink-0">
         <a
           href="/contact"
           class="px-6 py-3 bg-yellow-400 text-black rounded-lg hover:bg-yellow-500 transition-all font-bold shadow-lg hover:shadow-xl transform hover:-translate-y-1"
