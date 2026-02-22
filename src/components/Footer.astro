@@ -2,16 +2,16 @@
 import { SITE_CONFIG, COURSES, NAVIGATION } from '../utils/constants';
 ---
 
-<footer class="bg-black text-white border-t-2 border-yellow-400">
-  <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+<footer class="bg-black text-white border-t-2 border-yellow-400 w-full max-w-full overflow-hidden">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-12 max-w-full">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 min-w-0">
       <!-- Company Info -->
-      <div>
-        <h3 class="text-yellow-400 text-lg font-bold mb-4">
+      <div class="min-w-0">
+        <h3 class="text-yellow-400 text-base sm:text-lg font-bold mb-4">
           {SITE_CONFIG.contact.address.main.label}
         </h3>
         <h4 class="text-white font-bold mb-2">{SITE_CONFIG.title}</h4>
-        <p class="mb-4 text-sm text-gray-300">
+        <p class="mb-4 text-sm text-gray-300 break-words">
           {SITE_CONFIG.contact.address.main.street}
           <br />
           {SITE_CONFIG.contact.address.main.city}, {SITE_CONFIG.contact.address.main.state}{' '}
@@ -61,9 +61,9 @@ import { SITE_CONFIG, COURSES, NAVIGATION } from '../utils/constants';
       </div>
 
       <!-- Other Branches -->
-      <div>
-        <h3 class="text-yellow-400 text-lg font-bold mb-4">OTHER BRANCHES</h3>
-        <div class="space-y-3 text-sm">
+      <div class="min-w-0">
+        <h3 class="text-yellow-400 text-base sm:text-lg font-bold mb-4">OTHER BRANCHES</h3>
+        <div class="space-y-3 text-sm break-words">
           <div class="text-gray-300">
             <strong class="text-yellow-400">Jayanagar Branch:</strong>
             <div class="mt-1">
@@ -94,8 +94,8 @@ import { SITE_CONFIG, COURSES, NAVIGATION } from '../utils/constants';
       </div>
 
       <!-- Courses -->
-      <div>
-        <h3 class="text-yellow-400 text-lg font-bold mb-4">Our Courses</h3>
+      <div class="min-w-0">
+        <h3 class="text-yellow-400 text-base sm:text-lg font-bold mb-4">Our Courses</h3>
         <ul class="space-y-2">
           {COURSES.map((course) => (
             <li>
@@ -111,8 +111,8 @@ import { SITE_CONFIG, COURSES, NAVIGATION } from '../utils/constants';
       </div>
 
       <!-- Quick Links -->
-      <div>
-        <h3 class="text-yellow-400 text-lg font-bold mb-4">Quick Links</h3>
+      <div class="min-w-0">
+        <h3 class="text-yellow-400 text-base sm:text-lg font-bold mb-4">Quick Links</h3>
         <ul class="space-y-2">
           <li>
             <a href="/about" class="text-sm text-gray-300 hover:text-yellow-400 transition-colors">
@@ -157,12 +157,12 @@ import { SITE_CONFIG, COURSES, NAVIGATION } from '../utils/constants';
     </div>
 
     <!-- Copyright -->
-    <div class="border-t-2 border-gray-800 mt-8 pt-8">
-      <div class="flex flex-col md:flex-row justify-between items-center">
-        <p class="text-sm text-gray-400">
+    <div class="border-t-2 border-gray-800 mt-8 pt-8 min-w-0">
+      <div class="flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left">
+        <p class="text-xs sm:text-sm text-gray-400 break-words">
           © Copyright {new Date().getFullYear()} {SITE_CONFIG.title}. All rights reserved.
         </p>
-        <div class="flex space-x-6 mt-4 md:mt-0">
+        <div class="flex flex-wrap justify-center md:justify-end gap-4 sm:gap-6 mt-4 md:mt-0">
           <a
             href="/privacy"
             class="text-sm text-gray-400 hover:text-yellow-400 transition-colors"

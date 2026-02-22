@@ -230,9 +230,9 @@ const posthogUrl = import.meta.env.PUBLIC_POSTHOG_URL ? String(import.meta.env.P
       });
     </script>
   </head>
-  <body>
+  <body class="min-w-0 overflow-x-hidden">
     <Header />
-    <main>
+    <main class="min-w-0 overflow-x-hidden">
       <slot />
     </main>
     <Footer />
