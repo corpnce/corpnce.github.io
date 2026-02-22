@@ -11,8 +11,8 @@ const contactFormAction = FORMSPREE_FORM_ID ? `https://formspree.io/f/${FORMSPRE
   title={`${SITE_CONFIG.title} - Data Science, AI & Machine Learning Training in Bangalore`}
   description={SITE_CONFIG.description}
 >
-  <!-- Hero Section -->
-  <section class="relative bg-black text-white pt-16 sm:pt-20 pb-10 sm:pb-12 lg:pt-32 lg:pb-16 overflow-hidden w-full max-w-full">
+  <!-- Hero Section (reduced top padding so content sits closer to header) -->
+  <section class="relative bg-black text-white pt-6 sm:pt-8 lg:pt-10 pb-10 sm:pb-12 lg:pb-16 overflow-hidden w-full max-w-full">
     <!-- Background Pattern -->
     <div class="absolute inset-0 opacity-10">
       <div class="absolute inset-0" style="background-image: repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(255, 215, 0, 0.1) 10px, rgba(255, 215, 0, 0.1) 20px);"></div>
@@ -49,8 +49,8 @@ const contactFormAction = FORMSPREE_FORM_ID ? `https://formspree.io/f/${FORMSPRE
           </div>
         </div>
 
-        <!-- Right Side - Image Space with Creative Design Elements (overflow-hidden to prevent image spill) -->
-        <div class="relative h-full min-h-[280px] sm:min-h-[360px] md:min-h-[400px] lg:min-h-[600px] flex items-end justify-center min-w-0 overflow-hidden">
+        <!-- Right Side - Image Space (larger min-heights so hero image appears bigger) -->
+        <div class="relative h-full min-h-[320px] sm:min-h-[420px] md:min-h-[500px] lg:min-h-[680px] xl:min-h-[720px] flex items-end justify-center min-w-0 overflow-hidden">
           <!-- Large Organic Yellow Shape (Background) - scaled on small screens -->
           <div class="absolute top-10 right-0 w-48 h-48 sm:w-72 sm:h-72 lg:w-96 lg:h-96 bg-yellow-400 rounded-full opacity-10 blur-3xl transform rotate-12"></div>
           <div class="absolute bottom-10 left-0 w-40 h-40 sm:w-60 sm:h-60 lg:w-80 lg:h-80 bg-yellow-300 rounded-full opacity-[0.08] blur-3xl transform -rotate-12"></div>
@@ -68,8 +68,8 @@ const contactFormAction = FORMSPREE_FORM_ID ? `https://formspree.io/f/${FORMSPRE
               <img
                 src="/images/hero-image.png"
                 alt="Corpnce Data Science and AI training session"
-                class="w-full h-full object-cover rounded-xl shadow-2xl relative z-20 object-center"
-                style="image-rendering: -webkit-optimize-contrast; filter: contrast(1.05) saturate(1.1) brightness(1.02); object-position: center bottom; mask-image: linear-gradient(to bottom, black 0%, black 65%, rgba(0,0,0,0.95) 75%, rgba(0,0,0,0.7) 85%, rgba(0,0,0,0.3) 95%, transparent 100%); -webkit-mask-image: linear-gradient(to bottom, black 0%, black 65%, rgba(0,0,0,0.95) 75%, rgba(0,0,0,0.7) 85%, rgba(0,0,0,0.3) 95%, transparent 100%);"
+                class="w-full h-full object-cover rounded-xl shadow-2xl relative z-20 object-center hero-image-scale"
+                style="image-rendering: -webkit-optimize-contrast; filter: contrast(1.05) saturate(1.1) brightness(1.02); object-position: center bottom; transform: scale(1.08); mask-image: linear-gradient(to bottom, black 0%, black 65%, rgba(0,0,0,0.95) 75%, rgba(0,0,0,0.7) 85%, rgba(0,0,0,0.3) 95%, transparent 100%); -webkit-mask-image: linear-gradient(to bottom, black 0%, black 65%, rgba(0,0,0,0.95) 75%, rgba(0,0,0,0.7) 85%, rgba(0,0,0,0.3) 95%, transparent 100%);"
                 width="1200"
                 height="800"
                 fetchpriority="high"
