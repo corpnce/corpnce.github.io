@@ -7,19 +7,20 @@ const currentPath = Astro.url.pathname;
 
 <header class="bg-black text-white shadow-lg sticky top-0 z-50 border-b-2 border-yellow-400 w-full max-w-full">
   <nav class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-full">
-    <div class="flex items-center justify-between h-14 sm:h-16 md:h-20 px-2 sm:px-4 lg:px-8 min-w-0">
-      <!-- Logo -->
-      <a href="/" class="flex items-center space-x-2 sm:space-x-3 group shrink-0 min-w-0">
+    <div class="flex items-center justify-between h-14 sm:h-16 md:h-20 px-4 sm:px-6 lg:px-8 min-w-0 gap-2">
+      <!-- Logo (shrink-0 and min-width ensure it never disappears) -->
+      <a href="/" class="flex items-center shrink-0 min-w-[100px] sm:min-w-[120px] group" aria-label="Corpnce Technologies - Home">
         <img
           src="/images/Corpnce_Yellow.svg"
           alt="Corpnce Technologies"
-          class="h-8 sm:h-9 md:h-10 w-auto max-w-[140px] sm:max-w-none transition-transform group-hover:scale-105"
+          class="h-8 sm:h-9 md:h-10 w-auto max-w-[120px] sm:max-w-[140px] md:max-w-none transition-transform group-hover:scale-105"
           width="120"
           height="40"
+          fetchpriority="high"
         />
       </a>
 
-      <!-- Desktop Navigation -->
+      <!-- Desktop Navigation (visible from md up) -->
       <div class="hidden md:flex items-center space-x-1">
         {NAVIGATION.map((item) => (
           <div class="relative group">
@@ -72,8 +73,8 @@ const currentPath = Astro.url.pathname;
         ))}
       </div>
 
-      <!-- CTA Button -->
-      <div class="hidden md:block -ml-4">
+      <!-- CTA Button: only on large screens (laptops and up); hidden on small/medium -->
+      <div class="hidden lg:block shrink-0 -ml-4">
         <a
           href="/contact"
           class="px-6 py-3 bg-yellow-400 text-black rounded-lg hover:bg-yellow-500 transition-all font-bold shadow-lg hover:shadow-xl transform hover:-translate-y-1"
@@ -83,10 +84,10 @@ const currentPath = Astro.url.pathname;
         </a>
       </div>
 
-      <!-- Mobile Menu Button (min 44px touch target for accessibility) -->
+      <!-- Mobile Menu Button (visible on small and medium; hidden on lg and up) -->
       <button
         id="mobile-menu-button"
-        class="md:hidden p-3 -mr-1 text-white hover:text-yellow-400 transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center"
+        class="lg:hidden p-3 -mr-1 text-white hover:text-yellow-400 transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center"
         aria-label="Toggle menu"
         aria-expanded="false"
       >
@@ -106,10 +107,10 @@ const currentPath = Astro.url.pathname;
       </button>
     </div>
 
-    <!-- Mobile Navigation -->
+    <!-- Mobile Navigation (visible when menu open, below lg) -->
     <div
       id="mobile-menu"
-      class="hidden md:hidden pb-4 border-t-2 border-yellow-400 mt-2 overflow-x-hidden"
+      class="hidden lg:hidden pb-4 border-t-2 border-yellow-400 mt-2 overflow-x-hidden"
     >
       {NAVIGATION.map((item) => (
         <div class="py-2">
